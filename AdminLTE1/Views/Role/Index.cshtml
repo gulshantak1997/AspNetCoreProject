@@ -1,7 +1,6 @@
 ﻿@model List<Microsoft.AspNetCore.Identity.IdentityRole>
 @{
     ViewData["Title"] = "ListRole";
-    //Layout = "~/Views/Shared/AdminLTE/_Layout.cshtml";
 }
 <h1>Role Manager</h1>
 <form method="post" asp-action="AddRole" asp-controller="Role">
@@ -30,16 +29,3 @@
 
     </tbody>
 </table>
-
-@section scripts{
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.25/af-2.3.7/datatables.min.css" />
-
-    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.25/af-2.3.7/datatables.min.js"></script>
-
-    <script>
-        $(document).ready(function () {
-            $("#MyDataTable").DataTable();
-        }
-        )
-    </script>
-}

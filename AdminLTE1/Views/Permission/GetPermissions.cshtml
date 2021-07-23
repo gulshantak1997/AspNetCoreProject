@@ -8,8 +8,8 @@
         <div class="card">
           
             <div class="card-header">
-                <label>Select Role</label>
-                @Html.DropDownList("RoleId", (IEnumerable<SelectListItem>)ViewBag.RolesList)
+                <label>Role</label>
+                @Html.DropDownList("RoleId", (IEnumerable<SelectListItem>)ViewBag.RolesList,"Select Role")
 
                 <button id="btnSave" class="btn btn-primary fa-pull-right">Save</button>
             </div>

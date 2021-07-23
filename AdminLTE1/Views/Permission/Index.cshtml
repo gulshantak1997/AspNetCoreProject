@@ -1,0 +1,47 @@
+﻿@model IEnumerable<AdminLTE1.ViewModels.EditRoleViewModel>
+@{
+    ViewData["Title"] = "GetPermissions";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table class="table" id="MyDataTable">
+    <thead>
+        <tr>
+            <th>Serial No</th>
+            <th>RoleName</th>
+            <th>Edit</th>
+            <th>Delete</th>
+            <th>View</th>
+
+        </tr>
+    </thead>
+    <tbody>
+
+        @{int count = 1;}
+        @foreach (var role in Model)
+        {
+
+            <tr>
+                <td>@count</td>
+                <td>@role.RoleName</td>
+                <td><a asp-action="" asp-controller="" asp-route-Id="" class="btn btn-primary">Edit</a></td>
+                <td><a asp-action="" asp-controller="" asp-route-Id="" class="btn btn-primary">Delete</a></td>
+                <td><a asp-action="" asp-controller="" asp-route-Id="" class="btn btn-primary">View</a></td>
+            </tr>
+            count++;
+        }
+    </tbody>
+</table>
+
+@section scripts{
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.25/af-2.3.7/datatables.min.css" />
+
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.25/af-2.3.7/datatables.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $("#MyDataTable").DataTable();
+        }
+        )
+    </script>
+}
