@@ -43,38 +43,3 @@
 }
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
-<script>
-
-    $(document).ready(function () {
-        
-        $("#btnSave").on('click', function (e) {
-            var RoleId = $('#RoleId').val();
-            var arr = [];
-            $('#idgrid').find('input[type="checkbox"]:checked').each(function () {
-               
-                requestData= {
-                    MenuId: this.value,
-                    RoleId: RoleId
-                }
-                arr.push(requestData);
-            });
-
-            debugger;
-            $.ajax({
-                url: '/Permission/EditPermissions',
-                type: 'POST',
-                data: JSON.stringify(arr),
-               dataType: 'json',
-               contentType: 'application/json',
-               error: function (xhr) {
-                    alert('Error: ' + xhr.statusText);
-                },
-                success: function (result) {
-                    alert(result);
-                },
-               
-            });
-
-        });
-    });
-</script>
