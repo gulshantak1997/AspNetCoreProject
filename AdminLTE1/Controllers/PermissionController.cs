@@ -21,7 +21,7 @@ namespace AdminLTE1.Controllers
         }
 
 
-        public IActionResult Index()        {            var role = (from r in _context.Roles                        join per in _context.MenuPermissions                        on r.Id equals Convert.ToString(per.RoleId)                        select new EditRoleViewModel                        {                            RoleName = r.Name,                        }).GroupBy(n => n.RoleName).Select(g => g.FirstOrDefault()).ToList();
+        public IActionResult Index()        {            var role = (from r in _context.Roles                        join per in _context.MenuPermissions                        on r.Id equals Convert.ToString(per.RoleId)                        select new EditRoleViewModel                        {                            RoleName = r.Name,                            RoleId = r.Id                        }).GroupBy(n => new { n.RoleId, n.RoleName }).Select(g => g.FirstOrDefault()).ToList();
 
 
             return View(role);        }
@@ -94,6 +94,73 @@ namespace AdminLTE1.Controllers
             return Json("NoData");
 
         }
+
+
+
+
+        [HttpGet]
+        public IActionResult EditPermission(Guid RoleId)
+        {
+            ViewBag.RoleId = RoleId;
+            List<PermissionViewModel> lstPermission = new List<PermissionViewModel>();
+
+            var result = (from Menus in _context.MenuItems
+                          join Permissions in _context.MenuPermissions.Where(r => r.RoleId == RoleId)
+                          on Menus.Id equals Permissions.MenuId into menuPerm
+                          from perm in menuPerm.DefaultIfEmpty()
+                          select new PermissionViewModel
+                          {
+                              Id = Menus.Id,
+                              Path = Menus.Path,
+                              Name = Menus.Name,
+                              ParentId = Menus.ParentId,
+                              MenuLevel = Menus.MenuLevel,
+                              HasAccess = perm == null ? false : !(string.IsNullOrEmpty(Convert.ToString(perm.RoleId)))
+                          }).ToList();
+
+            return View(result);
+        }
+
+        [HttpPost]
+        public JsonResult EditPermission([FromBody]UpdatePermissionViewModel[] model)
+        {
+
+            if (model != null)
+            {
+
+                int count = 0;
+                foreach (var item in model)
+                {
+                    if (count == 0)
+                    {
+                        var existing = _context.MenuPermissions.Where(R => R.RoleId == item.RoleId);
+
+                        foreach (var roles in existing)
+                        {
+                            _context.MenuPermissions.Remove(roles);
+                        }
+                        count++;
+                    }
+                    MenuPermission mnp = new MenuPermission();
+                    mnp.MenuId = item.MenuId;
+                    mnp.PermissionId = Guid.NewGuid();
+                    mnp.RoleId = item.RoleId;
+                    _context.MenuPermissions.Add(mnp);
+                }
+
+                _context.SaveChanges();
+
+                return Json("Saved Successfully!");
+            }
+            return Json("NoData");
+        }
+
+
+
+                public IActionResult ViewPermission(Guid RoleId)        {            List<PermissionViewModel> lstPermission = new List<PermissionViewModel>();            var result = (from Menus in _context.MenuItems                          join Permissions in _context.MenuPermissions.Where(r => r.RoleId == RoleId)                          on Menus.Id equals Permissions.MenuId into menuPerm                          from perm in menuPerm.DefaultIfEmpty()                          select new PermissionViewModel                          {                              Id = Menus.Id,                              Path = Menus.Path,                              Name = Menus.Name,                              ParentId = Menus.ParentId,                              MenuLevel = Menus.MenuLevel,                              HasAccess = perm == null ? false : !(string.IsNullOrEmpty(Convert.ToString(perm.RoleId)))                          }).ToList();            var RolesList = (from roles in _context.Roles                             select new SelectListItem                             {                                 Value = roles.Id,                                 Text = roles.Name                             }).ToList();            ViewBag.RolesList = RolesList;            return View(result);        }
+
+
+
 
 
 
