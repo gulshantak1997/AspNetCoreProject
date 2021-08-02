@@ -36,7 +36,30 @@
                 <input asp-for="Input.PhoneNumber" class="form-control" />
                 <span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
             </div>
+
+
+
+
+
+            <div class="form-group">
+                @if (Model.Input.Image != null)
+                {
+                    <label asp-for="Input.ImageFile"></label>
+                    <img id="profilePicture" style="width:350px;height:350px; object-fit:cover" src="~/Upload/@Model.Input.Image">
+                    <input asp-for="Input.ImageFile" class="form-control" type="file" />
+                    <span asp-validation-for="Input.ImageFile" class="text-danger"></span>
+                }
+                else
+                {
+                    <label asp-for="Input.ImageFile"></label>
+                    <input asp-for="Input.ImageFile" class="form-control" type="file" />
+                    <span asp-validation-for="Input.ImageFile" class="text-danger"></span>
+                }
+            </div>
+
             <button id="update-profile-button" type="submit" class="btn btn-primary">Save</button>
+
+
         </form>
     </div>
 </div>

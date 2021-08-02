@@ -34,7 +34,7 @@ namespace AdminLTE1
             services.AddDbContext<AppDbContext>(options =>
                             options.UseSqlServer(
                                 Configuration.GetConnectionString("DefaultConnection")));
-            services.AddIdentity<IdentityUser, IdentityRole>(options => {
+            services.AddIdentity<ApplicationUser, IdentityRole>(options => {
                 options.SignIn.RequireConfirmedEmail = true;
             })
             .AddEntityFrameworkStores<AppDbContext>()

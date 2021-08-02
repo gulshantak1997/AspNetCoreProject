@@ -1,5 +1,6 @@
 ﻿using System.Threading.Tasks;
 using AdminLTE1.Helper;
+using AdminLTE1.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -10,8 +11,8 @@ namespace AdminLTE1.Controllers
     public class UserController : Controller
     {
 
-        private readonly UserManager<IdentityUser> _userManager;
-        public UserController(UserManager<IdentityUser> userManager)
+        private readonly UserManager<ApplicationUser> _userManager;
+        public UserController(UserManager<ApplicationUser> userManager)
         {
             _userManager = userManager;
         }
