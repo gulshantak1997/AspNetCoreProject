@@ -7419,17 +7419,17 @@ var Buttons_Buttons = /*#__PURE__*/function () {
             }
           }
         }), this.button({
-          className: 'dropdown-toggle',
-          contents: this.ui.dropdownButtonContents('', this.options),
+          className: 'Dropdown-toggle',
+          contents: this.ui.DropdownButtonContents('', this.options),
           tooltip: this.lang.color.more,
           data: {
-            toggle: 'dropdown'
+            toggle: 'Dropdown'
           }
-        }), this.ui.dropdown({
+        }), this.ui.Dropdown({
           items: (backColor ? ['<div class="note-palette">', '<div class="note-palette-title">' + this.lang.color.background + '</div>', '<div>', '<button type="button" class="note-color-reset btn btn-light btn-default" data-event="backColor" data-value="transparent">', this.lang.color.transparent, '</button>', '</div>', '<div class="note-holder" data-event="backColor"><!-- back colors --></div>', '<div>', '<button type="button" class="note-color-select btn btn-light btn-default" data-event="openPalette" data-value="backColorPicker">', this.lang.color.cpSelect, '</button>', '<input type="color" id="backColorPicker" class="note-btn note-color-select-btn" value="' + this.options.colorButton.backColor + '" data-event="backColorPalette">', '</div>', '<div class="note-holder-custom" id="backColorPalette" data-event="backColor"></div>', '</div>'].join('') : '') + (foreColor ? ['<div class="note-palette">', '<div class="note-palette-title">' + this.lang.color.foreground + '</div>', '<div>', '<button type="button" class="note-color-reset btn btn-light btn-default" data-event="removeFormat" data-value="foreColor">', this.lang.color.resetToDefault, '</button>', '</div>', '<div class="note-holder" data-event="foreColor"><!-- fore colors --></div>', '<div>', '<button type="button" class="note-color-select btn btn-light btn-default" data-event="openPalette" data-value="foreColorPicker">', this.lang.color.cpSelect, '</button>', '<input type="color" id="foreColorPicker" class="note-btn note-color-select-btn" value="' + this.options.colorButton.foreColor + '" data-event="foreColorPalette">', '</div>', // Fix missing Div, Commented to find easily if it's wrong
           '<div class="note-holder-custom" id="foreColorPalette" data-event="foreColor"></div>', '</div>'].join('') : ''),
-          callback: function callback($dropdown) {
-            $dropdown.find('.note-holder').each(function (idx, item) {
+          callback: function callback($Dropdown) {
+            $Dropdown.find('.note-holder').each(function (idx, item) {
               var $holder = external_root_jQuery_commonjs2_jquery_commonjs_jquery_amd_jquery_default()(item);
               $holder.append(_this.ui.palette({
                 colors: _this.options.colors,
@@ -7442,7 +7442,7 @@ var Buttons_Buttons = /*#__PURE__*/function () {
             /* TODO: do we have to record recent custom colors within cookies? */
 
             var customColors = [['#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF']];
-            $dropdown.find('.note-holder-custom').each(function (idx, item) {
+            $Dropdown.find('.note-holder-custom').each(function (idx, item) {
               var $holder = external_root_jQuery_commonjs2_jquery_commonjs_jquery_amd_jquery_default()(item);
               $holder.append(_this.ui.palette({
                 colors: customColors,
@@ -7452,9 +7452,9 @@ var Buttons_Buttons = /*#__PURE__*/function () {
                 tooltip: _this.options.tooltip
               }).render());
             });
-            $dropdown.find('input[type=color]').each(function (idx, item) {
+            $Dropdown.find('input[type=color]').each(function (idx, item) {
               external_root_jQuery_commonjs2_jquery_commonjs_jquery_amd_jquery_default()(item).change(function () {
-                var $chip = $dropdown.find('#' + external_root_jQuery_commonjs2_jquery_commonjs_jquery_amd_jquery_default()(this).data('event')).find('.note-color-btn').first();
+                var $chip = $Dropdown.find('#' + external_root_jQuery_commonjs2_jquery_commonjs_jquery_amd_jquery_default()(this).data('event')).find('.note-color-btn').first();
                 var color = this.value.toUpperCase();
                 $chip.css('background-color', color).attr('aria-label', color).attr('data-value', color).attr('data-original-title', color);
                 $chip.click();
@@ -7463,7 +7463,7 @@ var Buttons_Buttons = /*#__PURE__*/function () {
           },
           click: function click(event) {
             event.stopPropagation();
-            var $parent = external_root_jQuery_commonjs2_jquery_commonjs_jquery_amd_jquery_default()('.' + className).find('.note-dropdown-menu');
+            var $parent = external_root_jQuery_commonjs2_jquery_commonjs_jquery_amd_jquery_default()('.' + className).find('.note-Dropdown-menu');
             var $button = external_root_jQuery_commonjs2_jquery_commonjs_jquery_amd_jquery_default()(event.target);
             var eventName = $button.data('event');
             var value = $button.attr('data-value');
@@ -7500,14 +7500,14 @@ var Buttons_Buttons = /*#__PURE__*/function () {
 
       this.context.memo('button.style', function () {
         return _this2.ui.buttonGroup([_this2.button({
-          className: 'dropdown-toggle',
-          contents: _this2.ui.dropdownButtonContents(_this2.ui.icon(_this2.options.icons.magic), _this2.options),
+          className: 'Dropdown-toggle',
+          contents: _this2.ui.DropdownButtonContents(_this2.ui.icon(_this2.options.icons.magic), _this2.options),
           tooltip: _this2.lang.style.style,
           data: {
-            toggle: 'dropdown'
+            toggle: 'Dropdown'
           }
-        }), _this2.ui.dropdown({
-          className: 'dropdown-style',
+        }), _this2.ui.Dropdown({
+          className: 'Dropdown-style',
           items: _this2.options.styleTags,
           title: _this2.lang.style.style,
           template: function template(item) {
@@ -7618,14 +7618,14 @@ var Buttons_Buttons = /*#__PURE__*/function () {
         }
 
         return _this2.ui.buttonGroup([_this2.button({
-          className: 'dropdown-toggle',
-          contents: _this2.ui.dropdownButtonContents('<span class="note-current-fontname"></span>', _this2.options),
+          className: 'Dropdown-toggle',
+          contents: _this2.ui.DropdownButtonContents('<span class="note-current-fontname"></span>', _this2.options),
           tooltip: _this2.lang.font.name,
           data: {
-            toggle: 'dropdown'
+            toggle: 'Dropdown'
           }
-        }), _this2.ui.dropdownCheck({
-          className: 'dropdown-fontname',
+        }), _this2.ui.DropdownCheck({
+          className: 'Dropdown-fontname',
           checkClassName: _this2.options.icons.menuCheck,
           items: _this2.options.fontNames.filter(_this2.isFontInstalled.bind(_this2)),
           title: _this2.lang.font.name,
@@ -7637,14 +7637,14 @@ var Buttons_Buttons = /*#__PURE__*/function () {
       });
       this.context.memo('button.fontsize', function () {
         return _this2.ui.buttonGroup([_this2.button({
-          className: 'dropdown-toggle',
-          contents: _this2.ui.dropdownButtonContents('<span class="note-current-fontsize"></span>', _this2.options),
+          className: 'Dropdown-toggle',
+          contents: _this2.ui.DropdownButtonContents('<span class="note-current-fontsize"></span>', _this2.options),
           tooltip: _this2.lang.font.size,
           data: {
-            toggle: 'dropdown'
+            toggle: 'Dropdown'
           }
-        }), _this2.ui.dropdownCheck({
-          className: 'dropdown-fontsize',
+        }), _this2.ui.DropdownCheck({
+          className: 'Dropdown-fontsize',
           checkClassName: _this2.options.icons.menuCheck,
           items: _this2.options.fontSizes,
           title: _this2.lang.font.size,
@@ -7653,14 +7653,14 @@ var Buttons_Buttons = /*#__PURE__*/function () {
       });
       this.context.memo('button.fontsizeunit', function () {
         return _this2.ui.buttonGroup([_this2.button({
-          className: 'dropdown-toggle',
-          contents: _this2.ui.dropdownButtonContents('<span class="note-current-fontsizeunit"></span>', _this2.options),
+          className: 'Dropdown-toggle',
+          contents: _this2.ui.DropdownButtonContents('<span class="note-current-fontsizeunit"></span>', _this2.options),
           tooltip: _this2.lang.font.sizeunit,
           data: {
-            toggle: 'dropdown'
+            toggle: 'Dropdown'
           }
-        }), _this2.ui.dropdownCheck({
-          className: 'dropdown-fontsizeunit',
+        }), _this2.ui.DropdownCheck({
+          className: 'Dropdown-fontsizeunit',
           checkClassName: _this2.options.icons.menuCheck,
           items: _this2.options.fontSizeUnits,
           title: _this2.lang.font.sizeunit,
@@ -7728,13 +7728,13 @@ var Buttons_Buttons = /*#__PURE__*/function () {
       this.context.memo('button.indent', func.invoke(indent, 'render'));
       this.context.memo('button.paragraph', function () {
         return _this2.ui.buttonGroup([_this2.button({
-          className: 'dropdown-toggle',
-          contents: _this2.ui.dropdownButtonContents(_this2.ui.icon(_this2.options.icons.alignLeft), _this2.options),
+          className: 'Dropdown-toggle',
+          contents: _this2.ui.DropdownButtonContents(_this2.ui.icon(_this2.options.icons.alignLeft), _this2.options),
           tooltip: _this2.lang.paragraph.paragraph,
           data: {
-            toggle: 'dropdown'
+            toggle: 'Dropdown'
           }
-        }), _this2.ui.dropdown([_this2.ui.buttonGroup({
+        }), _this2.ui.Dropdown([_this2.ui.buttonGroup({
           className: 'note-align',
           children: [justifyLeft, justifyCenter, justifyRight, justifyFull]
         }), _this2.ui.buttonGroup({
@@ -7744,29 +7744,29 @@ var Buttons_Buttons = /*#__PURE__*/function () {
       });
       this.context.memo('button.height', function () {
         return _this2.ui.buttonGroup([_this2.button({
-          className: 'dropdown-toggle',
-          contents: _this2.ui.dropdownButtonContents(_this2.ui.icon(_this2.options.icons.textHeight), _this2.options),
+          className: 'Dropdown-toggle',
+          contents: _this2.ui.DropdownButtonContents(_this2.ui.icon(_this2.options.icons.textHeight), _this2.options),
           tooltip: _this2.lang.font.height,
           data: {
-            toggle: 'dropdown'
+            toggle: 'Dropdown'
           }
-        }), _this2.ui.dropdownCheck({
+        }), _this2.ui.DropdownCheck({
           items: _this2.options.lineHeights,
           checkClassName: _this2.options.icons.menuCheck,
-          className: 'dropdown-line-height',
+          className: 'Dropdown-line-height',
           title: _this2.lang.font.height,
           click: _this2.context.createInvokeHandler('editor.lineHeight')
         })]).render();
       });
       this.context.memo('button.table', function () {
         return _this2.ui.buttonGroup([_this2.button({
-          className: 'dropdown-toggle',
-          contents: _this2.ui.dropdownButtonContents(_this2.ui.icon(_this2.options.icons.table), _this2.options),
+          className: 'Dropdown-toggle',
+          contents: _this2.ui.DropdownButtonContents(_this2.ui.icon(_this2.options.icons.table), _this2.options),
           tooltip: _this2.lang.table.table,
           data: {
-            toggle: 'dropdown'
+            toggle: 'Dropdown'
           }
-        }), _this2.ui.dropdown({
+        }), _this2.ui.Dropdown({
           title: _this2.lang.table.table,
           className: 'note-table',
           items: ['<div class="note-dimension-picker">', '<div class="note-dimension-picker-mousecatcher" data-event="insertTable" data-value="1x1"></div>', '<div class="note-dimension-picker-highlighted"></div>', '<div class="note-dimension-picker-unhighlighted"></div>', '</div>', '<div class="note-dimension-display">1 x 1</div>'].join('')
@@ -8067,7 +8067,7 @@ var Buttons_Buttons = /*#__PURE__*/function () {
           return name.replace(/[\'\"]/g, '').replace(/\s+$/, '').replace(/^\s+/, '');
         });
         var fontName = lists.find(fontNames, this.isFontInstalled.bind(this));
-        $cont.find('.dropdown-fontname a').each(function (idx, item) {
+        $cont.find('.Dropdown-fontname a').each(function (idx, item) {
           var $item = external_root_jQuery_commonjs2_jquery_commonjs_jquery_amd_jquery_default()(item); // always compare string to avoid creating another func.
 
           var isChecked = $item.data('value') + '' === fontName + '';
@@ -8078,7 +8078,7 @@ var Buttons_Buttons = /*#__PURE__*/function () {
 
       if (styleInfo['font-size']) {
         var fontSize = styleInfo['font-size'];
-        $cont.find('.dropdown-fontsize a').each(function (idx, item) {
+        $cont.find('.Dropdown-fontsize a').each(function (idx, item) {
           var $item = external_root_jQuery_commonjs2_jquery_commonjs_jquery_amd_jquery_default()(item); // always compare with string to avoid creating another func.
 
           var isChecked = $item.data('value') + '' === fontSize + '';
@@ -8086,7 +8086,7 @@ var Buttons_Buttons = /*#__PURE__*/function () {
         });
         $cont.find('.note-current-fontsize').text(fontSize);
         var fontSizeUnit = styleInfo['font-size-unit'];
-        $cont.find('.dropdown-fontsizeunit a').each(function (idx, item) {
+        $cont.find('.Dropdown-fontsizeunit a').each(function (idx, item) {
           var $item = external_root_jQuery_commonjs2_jquery_commonjs_jquery_amd_jquery_default()(item);
           var isChecked = $item.data('value') + '' === fontSizeUnit + '';
           $item.toggleClass('checked', isChecked);
@@ -8096,7 +8096,7 @@ var Buttons_Buttons = /*#__PURE__*/function () {
 
       if (styleInfo['line-height']) {
         var lineHeight = styleInfo['line-height'];
-        $cont.find('.dropdown-line-height li a').each(function (idx, item) {
+        $cont.find('.Dropdown-line-height li a').each(function (idx, item) {
           // always compare with string to avoid creating another func.
           var isChecked = external_root_jQuery_commonjs2_jquery_commonjs_jquery_amd_jquery_default()(item).data('value') + '' === lineHeight + '';
           _this6.className = isChecked ? 'checked' : '';
@@ -10032,14 +10032,14 @@ var statusbar = renderer["a" /* default */].create(['<output class="note-status-
 var airEditor = renderer["a" /* default */].create('<div class="note-editor note-airframe"/>');
 var airEditable = renderer["a" /* default */].create(['<div class="note-editable" contentEditable="true" role="textbox" aria-multiline="true"></div>', '<output class="note-status-output" role="status" aria-live="polite"></output>'].join(''));
 var buttonGroup = renderer["a" /* default */].create('<div class="note-btn-group btn-group">');
-var dropdown = renderer["a" /* default */].create('<div class="note-dropdown-menu dropdown-menu" role="list">', function ($node, options) {
+var Dropdown = renderer["a" /* default */].create('<div class="note-Dropdown-menu Dropdown-menu" role="list">', function ($node, options) {
   var markup = Array.isArray(options.items) ? options.items.map(function (item) {
     var value = typeof item === 'string' ? item : item.value || '';
     var content = options.template ? options.template(item) : item;
     var option = _typeof(item) === 'object' ? item.option : undefined;
     var dataValue = 'data-value="' + value + '"';
     var dataOption = option !== undefined ? ' data-option="' + option + '"' : '';
-    return '<a class="dropdown-item" href="#" ' + (dataValue + dataOption) + ' role="listitem" aria-label="' + value + '">' + content + '</a>';
+    return '<a class="Dropdown-item" href="#" ' + (dataValue + dataOption) + ' role="listitem" aria-label="' + value + '">' + content + '</a>';
   }).join('') : options.items;
   $node.html(markup).attr({
     'aria-label': options.title
@@ -10050,15 +10050,15 @@ var dropdown = renderer["a" /* default */].create('<div class="note-dropdown-men
   }
 });
 
-var dropdownButtonContents = function dropdownButtonContents(contents) {
+var DropdownButtonContents = function DropdownButtonContents(contents) {
   return contents;
 };
 
-var dropdownCheck = renderer["a" /* default */].create('<div class="note-dropdown-menu dropdown-menu note-check" role="list">', function ($node, options) {
+var DropdownCheck = renderer["a" /* default */].create('<div class="note-Dropdown-menu Dropdown-menu note-check" role="list">', function ($node, options) {
   var markup = Array.isArray(options.items) ? options.items.map(function (item) {
     var value = typeof item === 'string' ? item : item.value || '';
     var content = options.template ? options.template(item) : item;
-    return '<a class="dropdown-item" href="#" data-value="' + value + '" role="listitem" aria-label="' + item + '">' + icon(options.checkClassName) + ' ' + content + '</a>';
+    return '<a class="Dropdown-item" href="#" data-value="' + value + '" role="listitem" aria-label="' + item + '">' + icon(options.checkClassName) + ' ' + content + '</a>';
   }).join('') : options.items;
   $node.html(markup).attr({
     'aria-label': options.title
@@ -10106,9 +10106,9 @@ var ui_ui = function ui(editorOptions) {
     airEditor: airEditor,
     airEditable: airEditable,
     buttonGroup: buttonGroup,
-    dropdown: dropdown,
-    dropdownButtonContents: dropdownButtonContents,
-    dropdownCheck: dropdownCheck,
+    Dropdown: Dropdown,
+    DropdownButtonContents: DropdownButtonContents,
+    DropdownCheck: DropdownCheck,
     dialog: dialog,
     popover: popover,
     icon: icon,

@@ -1,0 +1,47 @@
+﻿
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Success</title>
+</head>
+<body>
+
+    <h3>Transaction Details</h3>
+
+    <table border="1">
+        <tr>
+            <th>Id</th>
+            <th>Cart</th>
+            <th>Intent</th>
+            <th>Transaction State</th>
+            <th>Create Time</th>
+        </tr>
+
+        @if (ViewBag.result != null)
+        {
+            var item = ViewBag.result;
+            <tr>
+                <td>@item.id</td>
+                <td>@item.cart</td>
+                <td>@item.intent</td>
+                <td>@item.state</td>
+                <td>@item.create_time</td>
+            </tr>
+        }
+    </table>
+
+
+</body>
+</html>
+
+
+
+
+
+<script type="text/javascript">
+    window.onload = function () {
+        alert("Transaction completed successfully");
+    };
+</script>

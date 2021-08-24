@@ -82,15 +82,15 @@ namespace AdminLTE1.Areas.Identity.Pages.Account
             [Display(Name = "UserName")]
             public string UserName { get; set; }
 
-            [Required]
+            [Required(ErrorMessage = "Please select Country")]
             [Display(Name = "Country")]
             public int CountryId { get; set; }
 
-            [Required]
+            [Required(ErrorMessage = "Please select State")]
             [Display(Name = "State")]
             public int StateId { get; set; }
 
-            [Required]
+            [Required(ErrorMessage = "Please select City")]
             [Display(Name = "City")]
             public int CityId { get; set; }
 
@@ -103,6 +103,7 @@ namespace AdminLTE1.Areas.Identity.Pages.Account
             public string Address2 { get; set; }
 
 
+           
             [Display(Name = "Image")]
             public IFormFile ImageFile { get; set; }
 
@@ -114,10 +115,12 @@ namespace AdminLTE1.Areas.Identity.Pages.Account
             [Required]
             [EmailAddress]
             [Display(Name = "Email")]
+            //[Remote("EmailAlreadyExist", "Home", ErrorMessage = "Email already exists")]
             public string Email { get; set; }
 
             [Required]
-            [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 8)]
+            [RegularExpression("^((?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])|(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[^a-zA-Z0-9])|(?=.*?[A-Z])(?=.*?[0-9])(?=.*?[^a-zA-Z0-9])|(?=.*?[a-z])(?=.*?[0-9])(?=.*?[^a-zA-Z0-9])).{8,}$", ErrorMessage = "Passwords must be at least 8 characters and contain at 3 of 4 of the following: upper case (A-Z), lower case (a-z), number (0-9) and special character (e.g. !@#$%^&*)")]
+            //[StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 8)]
             [DataType(DataType.Password)]
             [Display(Name = "Password")]
             public string Password { get; set; }
@@ -127,7 +130,20 @@ namespace AdminLTE1.Areas.Identity.Pages.Account
             [Display(Name = "Confirm password")]
             [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
             public string ConfirmPassword { get; set; }
-            
+
+
+
+
+
+//           [AllowAnonymous]
+//public async Task<JsonResult> UserAlreadyExistsAsync(string email)
+//{
+//    var result = 
+//        await _userManager.FindByNameAsync(email) ?? 
+//        await userManager.FindByEmailAsync(email);
+//    return Json(result == null, JsonRequestBehavior.AllowGet);
+//}
+
         }
 
 
@@ -242,3 +258,4 @@ namespace AdminLTE1.Areas.Identity.Pages.Account
         }
     }
 }
+

@@ -7,12 +7,13 @@
 
 <h1>@ViewData["Title"]</h1>
 
+
 <div class="row">
     <div class="col-md-4">
         <form asp-route-returnUrl="@Model.ReturnUrl" method="post" enctype="multipart/form-data">
             <h4>Create a new account.</h4>
             <hr />
-            <div asp-validation-summary="All" class="text-danger"></div>
+            @*<div asp-validation-summary="All" class="text-danger"></div>*@
 
             <div class="form-group">
                 <label asp-for="Input.FirstName"></label>
@@ -62,28 +63,33 @@
 
 
 
+           
 
+            <div class="form-group">
+                Country:
+                <select id="CId" asp-for="Input.CountryId">
+                    <option value="">Select Country</option>
+                </select>
+                <span asp-validation-for="Input.CountryId" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                State:
+                <select id="StateId" asp-for="Input.StateId">
+                    <option value="">Select State</option>
+                </select>
+                <span asp-validation-for="Input.StateId" class="text-danger"></span>
+            </div>
+            <br />
 
-
-            Country:
-            <select id="CId" name="Input.CountryId">
-                <option value="0">Select</option>
-            </select>
-            <br /><br />
-
-            State:
-            <select id="StateId" name="Input.StateId">
-                <option value="0">Select</option>
-            </select>
-            <br /><br />
-            City:
-            <select id="CityId" name="Input.CityId">
-                <option value="0">Select</option>
-            </select>
-            <br /><br />
-
-
-
+            <div class="form-group">
+                City:
+                <select id="CityId" asp-for="Input.CityId">
+                    <option value="">Select City</option>
+                </select>
+                <span asp-validation-for="Input.CityId" class="text-danger"></span>
+            </div>
+            <br />
 
 
 
@@ -130,8 +136,26 @@
 
 
             $("#CId").on("change", function () {
-                //$("#StateId").empty();
-                //$("#CityId").empty();
+                $("#StateId").empty();
+                $("#CityId").empty();
+
+                //var ddlCID = $("#CID");
+                //if (ddlCID.val()==false) {
+                //    //If the "Please Select" option is selected display error.
+                //    alert("Please select an option!");
+                //    return false;
+                //}
+
+                //<asp: RequiredFieldValidator ID="RequiredFieldValidator2" ControlToValidate="CID" InitialValue="0" runat="server" ErrorMessage="Please select city"></asp: RequiredFieldValidator >
+
+                //var selectedText = $('#CID');
+                //if (selectedText == 'select')
+                //{
+                //    alert('Please select any language.');
+                //}
+
+
+
 
                 $.ajax({
                     url: '/Home/GetStatesByCountryId',
@@ -148,6 +172,7 @@
                     success: function (result) {
 
                         //alert(result);
+                        $("#StateId").append($("<option>" + "Select State" + "</option>"));
                         $.each(result, function (data, value) {
                             //debugger;
                             //alert(value);
@@ -158,7 +183,7 @@
                 });
             });
             $("#StateId").on("change", function () {
-                //$("#CityId").empty();
+                $("#CityId").empty();
 
                 $.ajax({
                     url: '/Home/GetCitiesByStateId',
@@ -168,11 +193,12 @@
                         StateId: $(this).val()
                     },
                     dataType: 'json',
-                    //contentType: 'application/json',
                     error: function (xhr) {
                         alert('Error: ' + xhr);
                     },
+
                     success: function (result) {
+                        $("#CityId").append($("<option>" + "Select State" + "</option>"));
                         $.each(result, function (data, value) {
                             $("#CityId").append($("<option></option>").val(value.value).html(value.text));
                         })
@@ -183,6 +209,7 @@
         });
     </script>
 }
+
 
 
 

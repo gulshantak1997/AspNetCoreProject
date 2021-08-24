@@ -782,14 +782,14 @@
    */
 
   var NAME$a = 'Dropdown';
-  var DATA_KEY$a = 'lte.dropdown';
+  var DATA_KEY$a = 'lte.Dropdown';
   var JQUERY_NO_CONFLICT$a = $__default['default'].fn[NAME$a];
   var SELECTOR_NAVBAR = '.navbar';
-  var SELECTOR_DROPDOWN_MENU = '.dropdown-menu';
-  var SELECTOR_DROPDOWN_MENU_ACTIVE = '.dropdown-menu.show';
-  var SELECTOR_DROPDOWN_TOGGLE = '[data-toggle="dropdown"]';
-  var CLASS_NAME_DROPDOWN_RIGHT = 'dropdown-menu-right';
-  var CLASS_NAME_DROPDOWN_SUBMENU = 'dropdown-submenu'; // TODO: this is unused; should be removed along with the extend?
+  var SELECTOR_Dropdown_MENU = '.Dropdown-menu';
+  var SELECTOR_Dropdown_MENU_ACTIVE = '.Dropdown-menu.show';
+  var SELECTOR_Dropdown_TOGGLE = '[data-toggle="Dropdown"]';
+  var CLASS_NAME_Dropdown_RIGHT = 'Dropdown-menu-right';
+  var CLASS_NAME_Dropdown_SUBMENU = 'Dropdown-submenu'; // TODO: this is unused; should be removed along with the extend?
 
   var Default$9 = {};
   /**
@@ -810,22 +810,22 @@
       this._element.siblings().show().toggleClass('show');
 
       if (!this._element.next().hasClass('show')) {
-        this._element.parents(SELECTOR_DROPDOWN_MENU).first().find('.show').removeClass('show').hide();
+        this._element.parents(SELECTOR_Dropdown_MENU).first().find('.show').removeClass('show').hide();
       }
 
-      this._element.parents('li.nav-item.dropdown.show').on('hidden.bs.dropdown', function () {
-        $__default['default']('.dropdown-submenu .show').removeClass('show').hide();
+      this._element.parents('li.nav-item.Dropdown.show').on('hidden.bs.Dropdown', function () {
+        $__default['default']('.Dropdown-submenu .show').removeClass('show').hide();
       });
     };
 
     _proto.fixPosition = function fixPosition() {
-      var $element = $__default['default'](SELECTOR_DROPDOWN_MENU_ACTIVE);
+      var $element = $__default['default'](SELECTOR_Dropdown_MENU_ACTIVE);
 
       if ($element.length === 0) {
         return;
       }
 
-      if ($element.hasClass(CLASS_NAME_DROPDOWN_RIGHT)) {
+      if ($element.hasClass(CLASS_NAME_Dropdown_RIGHT)) {
         $element.css({
           left: 'inherit',
           right: 0
@@ -880,16 +880,16 @@
    */
 
 
-  $__default['default'](SELECTOR_DROPDOWN_MENU + " " + SELECTOR_DROPDOWN_TOGGLE).on('click', function (event) {
+  $__default['default'](SELECTOR_Dropdown_MENU + " " + SELECTOR_Dropdown_TOGGLE).on('click', function (event) {
     event.preventDefault();
     event.stopPropagation();
 
     Dropdown._jQueryInterface.call($__default['default'](this), 'toggleSubmenu');
   });
-  $__default['default'](SELECTOR_NAVBAR + " " + SELECTOR_DROPDOWN_TOGGLE).on('click', function (event) {
+  $__default['default'](SELECTOR_NAVBAR + " " + SELECTOR_Dropdown_TOGGLE).on('click', function (event) {
     event.preventDefault();
 
-    if ($__default['default'](event.target).parent().hasClass(CLASS_NAME_DROPDOWN_SUBMENU)) {
+    if ($__default['default'](event.target).parent().hasClass(CLASS_NAME_Dropdown_SUBMENU)) {
       return;
     }
 
@@ -1165,7 +1165,7 @@
   var SELECTOR_SIDEBAR_MENU_ITEM = '.main-sidebar .nav-item > a.nav-link';
   var SELECTOR_SIDEBAR_SEARCH_ITEM = '.sidebar-search-results .list-group-item';
   var SELECTOR_HEADER_MENU_ITEM = '.main-header .nav-item a.nav-link';
-  var SELECTOR_HEADER_DROPDOWN_ITEM = '.main-header a.dropdown-item';
+  var SELECTOR_HEADER_Dropdown_ITEM = '.main-header a.Dropdown-item';
   var CLASS_NAME_IFRAME_MODE = 'iframe-mode';
   var CLASS_NAME_FULLSCREEN_MODE = 'iframe-mode-fullscreen';
   var Default$7 = {
@@ -1412,7 +1412,7 @@
       });
 
       if (this._config.useNavbarItems) {
-        $__default['default'](document).on('click', SELECTOR_HEADER_MENU_ITEM + ", " + SELECTOR_HEADER_DROPDOWN_ITEM, function (e) {
+        $__default['default'](document).on('click', SELECTOR_HEADER_MENU_ITEM + ", " + SELECTOR_HEADER_Dropdown_ITEM, function (e) {
           e.preventDefault();
 
           _this2.openTabSidebar(e.target);
@@ -1494,10 +1494,10 @@
     };
 
     _proto._setItemActive = function _setItemActive(href) {
-      $__default['default'](SELECTOR_SIDEBAR_MENU_ITEM + ", " + SELECTOR_HEADER_DROPDOWN_ITEM).removeClass('active');
+      $__default['default'](SELECTOR_SIDEBAR_MENU_ITEM + ", " + SELECTOR_HEADER_Dropdown_ITEM).removeClass('active');
       $__default['default'](SELECTOR_HEADER_MENU_ITEM).parent().removeClass('active');
       var $headerMenuItem = $__default['default'](SELECTOR_HEADER_MENU_ITEM + "[href$=\"" + href + "\"]");
-      var $headerDropdownItem = $__default['default'](SELECTOR_HEADER_DROPDOWN_ITEM + "[href$=\"" + href + "\"]");
+      var $headerDropdownItem = $__default['default'](SELECTOR_HEADER_Dropdown_ITEM + "[href$=\"" + href + "\"]");
       var $sidebarMenuItem = $__default['default'](SELECTOR_SIDEBAR_MENU_ITEM + "[href$=\"" + href + "\"]");
       $headerMenuItem.each(function (i, e) {
         $__default['default'](e).parent().addClass('active');

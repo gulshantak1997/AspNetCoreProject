@@ -1463,7 +1463,7 @@
 	                .addClass(this.classes.buttonContainer),
 	            condition: $('<select disabled/>')
 	                .addClass(this.classes.condition)
-	                .addClass(this.classes.dropDown)
+	                .addClass(this.classes.Dropdown)
 	                .addClass(this.classes.italic)
 	                .attr('autocomplete', 'hacking'),
 	            conditionTitle: $('<option value="" disabled selected hidden/>')
@@ -1472,13 +1472,13 @@
 	                .addClass(this.classes.container),
 	            data: $('<select/>')
 	                .addClass(this.classes.data)
-	                .addClass(this.classes.dropDown)
+	                .addClass(this.classes.Dropdown)
 	                .addClass(this.classes.italic),
 	            dataTitle: $('<option value="" disabled selected hidden/>')
 	                .text(this.s.dt.i18n('searchBuilder.data', i18n.data)),
 	            defaultValue: $('<select disabled/>')
 	                .addClass(this.classes.value)
-	                .addClass(this.classes.dropDown),
+	                .addClass(this.classes.Dropdown),
 	            "delete": $('<button>&times</button>')
 	                .addClass(this.classes["delete"])
 	                .addClass(this.classes.button)
@@ -1495,7 +1495,7 @@
 	                .attr('title', this.s.dt.i18n('searchBuilder.rightTitle', i18n.rightTitle))
 	                .attr('type', 'button'),
 	            value: [
-	                $('<select disabled/>').addClass(this.classes.value).addClass(this.classes.dropDown).addClass(this.classes.italic)
+	                $('<select disabled/>').addClass(this.classes.value).addClass(this.classes.Dropdown).addClass(this.classes.italic)
 	            ],
 	            valueTitle: $('<option value="--valueTitle--" selected/>').text(this.s.dt.i18n('searchBuilder.value', i18n.value))
 	        };
@@ -1867,7 +1867,7 @@
 	        return $.extend(true, {}, Criteria.defaults, table.settings()[0].aoColumns[this.s.dataIdx].searchBuilder);
 	    };
 	    /**
-	     * Populates the condition dropdown
+	     * Populates the condition Dropdown
 	     */
 	    Criteria.prototype._populateCondition = function () {
 	        var conditionOpts = [];
@@ -2082,7 +2082,7 @@
 	        container: 'dtsb-criteria',
 	        data: 'dtsb-data',
 	        "delete": 'dtsb-delete',
-	        dropDown: 'dtsb-dropDown',
+	        Dropdown: 'dtsb-Dropdown',
 	        greyscale: 'dtsb-greyscale',
 	        input: 'dtsb-input',
 	        italic: 'dtsb-italic',
@@ -2106,7 +2106,7 @@
 	        // Declare select element to be used with all of the default classes and listeners.
 	        var el = $('<select/>')
 	            .addClass(Criteria.classes.value)
-	            .addClass(Criteria.classes.dropDown)
+	            .addClass(Criteria.classes.Dropdown)
 	            .addClass(Criteria.classes.italic)
 	            .append(that.dom.valueTitle)
 	            .on('input change', function () {

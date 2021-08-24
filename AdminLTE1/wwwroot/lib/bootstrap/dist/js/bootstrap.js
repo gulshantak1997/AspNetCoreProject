@@ -1508,9 +1508,9 @@
    * ------------------------------------------------------------------------
    */
 
-  var NAME$4 = 'dropdown';
+  var NAME$4 = 'Dropdown';
   var VERSION$4 = '4.3.1';
-  var DATA_KEY$4 = 'bs.dropdown';
+  var DATA_KEY$4 = 'bs.Dropdown';
   var EVENT_KEY$4 = "." + DATA_KEY$4;
   var DATA_API_KEY$4 = '.data-api';
   var JQUERY_NO_CONFLICT$4 = $.fn[NAME$4];
@@ -1543,16 +1543,16 @@
     DROPUP: 'dropup',
     DROPRIGHT: 'dropright',
     DROPLEFT: 'dropleft',
-    MENURIGHT: 'dropdown-menu-right',
-    MENULEFT: 'dropdown-menu-left',
+    MENURIGHT: 'Dropdown-menu-right',
+    MENULEFT: 'Dropdown-menu-left',
     POSITION_STATIC: 'position-static'
   };
   var Selector$4 = {
-    DATA_TOGGLE: '[data-toggle="dropdown"]',
-    FORM_CHILD: '.dropdown form',
-    MENU: '.dropdown-menu',
+    DATA_TOGGLE: '[data-toggle="Dropdown"]',
+    FORM_CHILD: '.Dropdown form',
+    MENU: '.Dropdown-menu',
     NAVBAR_NAV: '.navbar-nav',
-    VISIBLE_ITEMS: '.dropdown-menu .dropdown-item:not(.disabled):not(:disabled)'
+    VISIBLE_ITEMS: '.Dropdown-menu .Dropdown-item:not(.disabled):not(:disabled)'
   };
   var AttachmentMap = {
     TOP: 'top-start',
@@ -1634,7 +1634,7 @@
          * Popper - https://popper.js.org
          */
         if (typeof Popper === 'undefined') {
-          throw new TypeError('Bootstrap\'s dropdowns require Popper.js (https://popper.js.org/)');
+          throw new TypeError('Bootstrap\'s Dropdowns require Popper.js (https://popper.js.org/)');
         }
 
         var referenceElement = this._element;
@@ -1881,7 +1881,7 @@
           continue;
         }
 
-        var dropdownMenu = context._menu;
+        var DropdownMenu = context._menu;
 
         if (!$(parent).hasClass(ClassName$4.SHOW)) {
           continue;
@@ -1905,7 +1905,7 @@
         }
 
         toggles[i].setAttribute('aria-expanded', 'false');
-        $(dropdownMenu).removeClass(ClassName$4.SHOW);
+        $(DropdownMenu).removeClass(ClassName$4.SHOW);
         $(parent).removeClass(ClassName$4.SHOW).trigger($.Event(Event$4.HIDDEN, relatedTarget));
       }
     };
@@ -1924,12 +1924,12 @@
 
     Dropdown._dataApiKeydownHandler = function _dataApiKeydownHandler(event) {
       // If not input/textarea:
-      //  - And not a key in REGEXP_KEYDOWN => not a dropdown command
+      //  - And not a key in REGEXP_KEYDOWN => not a Dropdown command
       // If input/textarea:
-      //  - If space key => not a dropdown command
+      //  - If space key => not a Dropdown command
       //  - If key is other than escape
-      //    - If key is not up or down => not a dropdown command
-      //    - If trigger inside the menu => not a dropdown command
+      //    - If key is not up or down => not a Dropdown command
+      //    - If trigger inside the menu => not a Dropdown command
       if (/input|textarea/i.test(event.target.tagName) ? event.which === SPACE_KEYCODE || event.which !== ESCAPE_KEYCODE && (event.which !== ARROW_DOWN_KEYCODE && event.which !== ARROW_UP_KEYCODE || $(event.target).closest(Selector$4.MENU).length) : !REGEXP_KEYDOWN.test(event.which)) {
         return;
       }
@@ -3663,8 +3663,8 @@
     LOAD_DATA_API: "load" + EVENT_KEY$8 + DATA_API_KEY$6
   };
   var ClassName$8 = {
-    DROPDOWN_ITEM: 'dropdown-item',
-    DROPDOWN_MENU: 'dropdown-menu',
+    Dropdown_ITEM: 'Dropdown-item',
+    Dropdown_MENU: 'Dropdown-menu',
     ACTIVE: 'active'
   };
   var Selector$8 = {
@@ -3674,9 +3674,9 @@
     NAV_LINKS: '.nav-link',
     NAV_ITEMS: '.nav-item',
     LIST_ITEMS: '.list-group-item',
-    DROPDOWN: '.dropdown',
-    DROPDOWN_ITEMS: '.dropdown-item',
-    DROPDOWN_TOGGLE: '.dropdown-toggle'
+    Dropdown: '.Dropdown',
+    Dropdown_ITEMS: '.Dropdown-item',
+    Dropdown_TOGGLE: '.Dropdown-toggle'
   };
   var OffsetMethod = {
     OFFSET: 'offset',
@@ -3698,7 +3698,7 @@
       this._element = element;
       this._scrollElement = element.tagName === 'BODY' ? window : element;
       this._config = this._getConfig(config);
-      this._selector = this._config.target + " " + Selector$8.NAV_LINKS + "," + (this._config.target + " " + Selector$8.LIST_ITEMS + ",") + (this._config.target + " " + Selector$8.DROPDOWN_ITEMS);
+      this._selector = this._config.target + " " + Selector$8.NAV_LINKS + "," + (this._config.target + " " + Selector$8.LIST_ITEMS + ",") + (this._config.target + " " + Selector$8.Dropdown_ITEMS);
       this._offsets = [];
       this._targets = [];
       this._activeTarget = null;
@@ -3849,8 +3849,8 @@
 
       var $link = $([].slice.call(document.querySelectorAll(queries.join(','))));
 
-      if ($link.hasClass(ClassName$8.DROPDOWN_ITEM)) {
-        $link.closest(Selector$8.DROPDOWN).find(Selector$8.DROPDOWN_TOGGLE).addClass(ClassName$8.ACTIVE);
+      if ($link.hasClass(ClassName$8.Dropdown_ITEM)) {
+        $link.closest(Selector$8.Dropdown).find(Selector$8.Dropdown_TOGGLE).addClass(ClassName$8.ACTIVE);
         $link.addClass(ClassName$8.ACTIVE);
       } else {
         // Set triggered link as active
@@ -3962,20 +3962,20 @@
     CLICK_DATA_API: "click" + EVENT_KEY$9 + DATA_API_KEY$7
   };
   var ClassName$9 = {
-    DROPDOWN_MENU: 'dropdown-menu',
+    Dropdown_MENU: 'Dropdown-menu',
     ACTIVE: 'active',
     DISABLED: 'disabled',
     FADE: 'fade',
     SHOW: 'show'
   };
   var Selector$9 = {
-    DROPDOWN: '.dropdown',
+    Dropdown: '.Dropdown',
     NAV_LIST_GROUP: '.nav, .list-group',
     ACTIVE: '.active',
     ACTIVE_UL: '> li > .active',
     DATA_TOGGLE: '[data-toggle="tab"], [data-toggle="pill"], [data-toggle="list"]',
-    DROPDOWN_TOGGLE: '.dropdown-toggle',
-    DROPDOWN_ACTIVE_CHILD: '> .dropdown-menu .active'
+    Dropdown_TOGGLE: '.Dropdown-toggle',
+    Dropdown_ACTIVE_CHILD: '> .Dropdown-menu .active'
     /**
      * ------------------------------------------------------------------------
      * Class Definition
@@ -4082,10 +4082,10 @@
     _proto._transitionComplete = function _transitionComplete(element, active, callback) {
       if (active) {
         $(active).removeClass(ClassName$9.ACTIVE);
-        var dropdownChild = $(active.parentNode).find(Selector$9.DROPDOWN_ACTIVE_CHILD)[0];
+        var DropdownChild = $(active.parentNode).find(Selector$9.Dropdown_ACTIVE_CHILD)[0];
 
-        if (dropdownChild) {
-          $(dropdownChild).removeClass(ClassName$9.ACTIVE);
+        if (DropdownChild) {
+          $(DropdownChild).removeClass(ClassName$9.ACTIVE);
         }
 
         if (active.getAttribute('role') === 'tab') {
@@ -4105,12 +4105,12 @@
         element.classList.add(ClassName$9.SHOW);
       }
 
-      if (element.parentNode && $(element.parentNode).hasClass(ClassName$9.DROPDOWN_MENU)) {
-        var dropdownElement = $(element).closest(Selector$9.DROPDOWN)[0];
+      if (element.parentNode && $(element.parentNode).hasClass(ClassName$9.Dropdown_MENU)) {
+        var DropdownElement = $(element).closest(Selector$9.Dropdown)[0];
 
-        if (dropdownElement) {
-          var dropdownToggleList = [].slice.call(dropdownElement.querySelectorAll(Selector$9.DROPDOWN_TOGGLE));
-          $(dropdownToggleList).addClass(ClassName$9.ACTIVE);
+        if (DropdownElement) {
+          var DropdownToggleList = [].slice.call(DropdownElement.querySelectorAll(Selector$9.Dropdown_TOGGLE));
+          $(DropdownToggleList).addClass(ClassName$9.ACTIVE);
         }
 
         element.setAttribute('aria-expanded', true);

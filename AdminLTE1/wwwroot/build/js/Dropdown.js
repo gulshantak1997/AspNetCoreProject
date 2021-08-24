@@ -13,16 +13,16 @@ import $ from 'jquery'
  */
 
 const NAME = 'Dropdown'
-const DATA_KEY = 'lte.dropdown'
+const DATA_KEY = 'lte.Dropdown'
 const JQUERY_NO_CONFLICT = $.fn[NAME]
 
 const SELECTOR_NAVBAR = '.navbar'
-const SELECTOR_DROPDOWN_MENU = '.dropdown-menu'
-const SELECTOR_DROPDOWN_MENU_ACTIVE = '.dropdown-menu.show'
-const SELECTOR_DROPDOWN_TOGGLE = '[data-toggle="dropdown"]'
+const SELECTOR_Dropdown_MENU = '.Dropdown-menu'
+const SELECTOR_Dropdown_MENU_ACTIVE = '.Dropdown-menu.show'
+const SELECTOR_Dropdown_TOGGLE = '[data-toggle="Dropdown"]'
 
-const CLASS_NAME_DROPDOWN_RIGHT = 'dropdown-menu-right'
-const CLASS_NAME_DROPDOWN_SUBMENU = 'dropdown-submenu'
+const CLASS_NAME_Dropdown_RIGHT = 'Dropdown-menu-right'
+const CLASS_NAME_Dropdown_SUBMENU = 'Dropdown-submenu'
 
 // TODO: this is unused; should be removed along with the extend?
 const Default = {}
@@ -44,22 +44,22 @@ class Dropdown {
     this._element.siblings().show().toggleClass('show')
 
     if (!this._element.next().hasClass('show')) {
-      this._element.parents(SELECTOR_DROPDOWN_MENU).first().find('.show').removeClass('show').hide()
+      this._element.parents(SELECTOR_Dropdown_MENU).first().find('.show').removeClass('show').hide()
     }
 
-    this._element.parents('li.nav-item.dropdown.show').on('hidden.bs.dropdown', () => {
-      $('.dropdown-submenu .show').removeClass('show').hide()
+    this._element.parents('li.nav-item.Dropdown.show').on('hidden.bs.Dropdown', () => {
+      $('.Dropdown-submenu .show').removeClass('show').hide()
     })
   }
 
   fixPosition() {
-    const $element = $(SELECTOR_DROPDOWN_MENU_ACTIVE)
+    const $element = $(SELECTOR_Dropdown_MENU_ACTIVE)
 
     if ($element.length === 0) {
       return
     }
 
-    if ($element.hasClass(CLASS_NAME_DROPDOWN_RIGHT)) {
+    if ($element.hasClass(CLASS_NAME_Dropdown_RIGHT)) {
       $element.css({
         left: 'inherit',
         right: 0
@@ -112,17 +112,17 @@ class Dropdown {
  * ====================================================
  */
 
-$(`${SELECTOR_DROPDOWN_MENU} ${SELECTOR_DROPDOWN_TOGGLE}`).on('click', function (event) {
+$(`${SELECTOR_Dropdown_MENU} ${SELECTOR_Dropdown_TOGGLE}`).on('click', function (event) {
   event.preventDefault()
   event.stopPropagation()
 
   Dropdown._jQueryInterface.call($(this), 'toggleSubmenu')
 })
 
-$(`${SELECTOR_NAVBAR} ${SELECTOR_DROPDOWN_TOGGLE}`).on('click', event => {
+$(`${SELECTOR_NAVBAR} ${SELECTOR_Dropdown_TOGGLE}`).on('click', event => {
   event.preventDefault()
 
-  if ($(event.target).parent().hasClass(CLASS_NAME_DROPDOWN_SUBMENU)) {
+  if ($(event.target).parent().hasClass(CLASS_NAME_Dropdown_SUBMENU)) {
     return
   }
 

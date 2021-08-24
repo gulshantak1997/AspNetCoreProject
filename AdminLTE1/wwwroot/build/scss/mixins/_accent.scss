@@ -11,7 +11,7 @@
     $pagination-active-border-color: $color;
 
     .btn-link,
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.btn),
+    a:not(.Dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.btn),
     .nav-tabs .nav-link {
       color: $link-color;
 
@@ -20,7 +20,7 @@
       }
     }
 
-    .dropdown-item {
+    .Dropdown-item {
       &:active,
       &.active {
         background-color: $color;
@@ -69,7 +69,7 @@
 
     [class*="sidebar-dark-"] {
       .sidebar {
-        a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link) {
+        a:not(.Dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link) {
           color: $sidebar-dark-color;
 
           @include hover () {
@@ -81,7 +81,7 @@
 
     [class*="sidebar-light-"] {
       .sidebar {
-        a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link) {
+        a:not(.Dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link) {
           color: $sidebar-light-color;
 
           @include hover () {

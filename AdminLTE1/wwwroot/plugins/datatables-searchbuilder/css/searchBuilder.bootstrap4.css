@@ -265,13 +265,13 @@ div.dtsb-searchBuilder div.dtsb-group div.dtsb-logicContainer {
 div.dtsb-searchBuilder div.dtsb-group div.dtsb-criteria {
   margin-bottom: 0.8em;
 }
-div.dtsb-searchBuilder div.dtsb-group div.dtsb-criteria select.dtsb-dropDown,
+div.dtsb-searchBuilder div.dtsb-group div.dtsb-criteria select.dtsb-Dropdown,
 div.dtsb-searchBuilder div.dtsb-group div.dtsb-criteria input.dtsb-input {
   padding: 0.4em;
   margin-right: 0.8em;
   max-width: 20em;
 }
-div.dtsb-searchBuilder div.dtsb-group div.dtsb-criteria select.dtsb-dropDown option.dtsb-notItalic,
+div.dtsb-searchBuilder div.dtsb-group div.dtsb-criteria select.dtsb-Dropdown option.dtsb-notItalic,
 div.dtsb-searchBuilder div.dtsb-group div.dtsb-criteria input.dtsb-input option.dtsb-notItalic {
   font-style: normal;
 }

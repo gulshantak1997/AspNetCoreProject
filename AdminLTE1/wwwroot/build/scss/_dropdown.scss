@@ -3,7 +3,7 @@
 //
 
 // General Dropdown Rules
-//.dropdown-item {
+//.Dropdown-item {
 //  &:first-of-type {
 //    @include border-top-radius($border-radius);
 //  }
@@ -13,38 +13,38 @@
 //}
 
 .text-sm {
-  .dropdown-menu {
+  .Dropdown-menu {
     font-size: $font-size-sm !important;
   }
 
-  .dropdown-toggle::after {
+  .Dropdown-toggle::after {
     vertical-align: .2rem;
   }
 }
 
-.dropdown-item-title {
+.Dropdown-item-title {
   font-size: $font-size-base;
   margin: 0;
 }
 
-.dropdown-icon {
+.Dropdown-icon {
   &::after {
     margin-left: 0;
   }
 }
 
 // Dropdown Sizes
-.dropdown-menu-lg {
+.Dropdown-menu-lg {
   max-width: 300px;
   min-width: 280px;
   padding: 0;
 
-  .dropdown-divider {
+  .Dropdown-divider {
     margin: 0;
   }
 
-  .dropdown-item {
-    padding: $dropdown-padding-y $dropdown-item-padding-x;
+  .Dropdown-item {
+    padding: $Dropdown-padding-y $Dropdown-item-padding-x;
   }
 
   p {
@@ -54,7 +54,7 @@
 }
 
 // Dropdown Submenu
-.dropdown-submenu {
+.Dropdown-submenu {
   position: relative;
 
   > a::after {
@@ -64,7 +64,7 @@
     margin-top: .5rem;
   }
 
-  > .dropdown-menu {
+  > .Dropdown-menu {
     left: 100%;
     margin-left: 0;
     margin-top: 0;
@@ -73,12 +73,12 @@
 }
 
 // Dropdown Hover
-.dropdown-hover {
+.Dropdown-hover {
   &:hover,
-  &.nav-item.dropdown:hover,
-  .dropdown-submenu:hover,
-  &.dropdown-submenu:hover {
-    > .dropdown-menu {
+  &.nav-item.Dropdown:hover,
+  .Dropdown-submenu:hover,
+  &.Dropdown-submenu:hover {
+    > .Dropdown-menu {
       display: block;
     }
   }
@@ -86,17 +86,17 @@
 
 
 // Dropdown Sizes
-.dropdown-menu-xl {
+.Dropdown-menu-xl {
   max-width: 420px;
   min-width: 360px;
   padding: 0;
 
-  .dropdown-divider {
+  .Dropdown-divider {
     margin: 0;
   }
 
-  .dropdown-item {
-    padding: $dropdown-padding-y $dropdown-item-padding-x;
+  .Dropdown-item {
+    padding: $Dropdown-padding-y $Dropdown-item-padding-x;
   }
 
   p {
@@ -106,26 +106,26 @@
 }
 
 // Dropdown header and footer
-.dropdown-footer,
-.dropdown-header {
+.Dropdown-footer,
+.Dropdown-header {
   display: block;
   font-size: $font-size-sm;
-  padding: .5rem $dropdown-item-padding-x;
+  padding: .5rem $Dropdown-item-padding-x;
   text-align: center;
 }
 
-// Add fade animation to dropdown menus by appending
-// the class .animated-dropdown-menu to the .dropdown-menu ul (or ol)
-.open:not(.dropup) > .animated-dropdown-menu {
+// Add fade animation to Dropdown menus by appending
+// the class .animated-Dropdown-menu to the .Dropdown-menu ul (or ol)
+.open:not(.dropup) > .animated-Dropdown-menu {
   @include animation(flipInX .7s both);
   backface-visibility: visible !important;
 }
 
-// Fix dropdown menu in navbars
+// Fix Dropdown menu in navbars
 .navbar-custom-menu > .navbar-nav {
   > li {
     position: relative;
-    > .dropdown-menu {
+    > .Dropdown-menu {
       position: absolute;
       right: 0;
       left: auto;
@@ -138,7 +138,7 @@
     float: right;
     > li {
       position: static;
-      > .dropdown-menu {
+      > .Dropdown-menu {
         position: absolute;
         right: 5%;
         left: auto;
@@ -155,7 +155,7 @@
     content: none;
   }
 
-  > .dropdown-menu {
+  > .Dropdown-menu {
     @include border-top-radius(0);
     padding: 0;
     width: 280px;
@@ -245,11 +245,11 @@
 }
 
 .dark-mode {
-  .dropdown-menu {
+  .Dropdown-menu {
     background-color: $dark;
     color: $white;
   }
-  .dropdown-item {
+  .Dropdown-item {
     color: $white;
 
     &:focus,
@@ -257,11 +257,11 @@
       background-color: lighten($dark, 5%);
     }
   }
-  .dropdown-divider {
+  .Dropdown-divider {
     border-color: $gray-600;
   }
 
-  .navbar-nav > .user-menu > .dropdown-menu {
+  .navbar-nav > .user-menu > .Dropdown-menu {
     > .user-footer {
       background-color: lighten($dark, 2.5%);
       color: $white;

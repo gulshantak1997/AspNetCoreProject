@@ -23,8 +23,21 @@ namespace AdminLTE1.Models
         public DbSet<State> State { get; set; }
         public DbSet<City> City { get; set; }
 
+        public DbSet<CMS> CMS { get; set; }
+
+        public DbSet<Transaction> Transaction { get; set; }
+
+        public DbSet<PayPalAPITransaction> PayPalAPITransaction { get; set; }
 
 
-       
+        public DbSet<Questions> Questions { get; set; }
+        public DbSet<RelatedValues> RelatedValues { get; set; }
+
+        public DbSet<FeedbackResult> FeedbackResult { get; set; }
+
+        public DbSet<SurveyUrl> SurveyURL { get; set; }
+
+
+
     }
 }

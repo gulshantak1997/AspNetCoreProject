@@ -45,10 +45,10 @@ $.extend( true, DataTable.Buttons.defaults, {
 		},
 		collection: {
 			tag: 'div',
-			className: 'dropdown-menu',
+			className: 'Dropdown-menu',
 			button: {
 				tag: 'a',
-				className: 'dt-button dropdown-item',
+				className: 'dt-button Dropdown-item',
 				active: 'active',
 				disabled: 'disabled'
 			}
@@ -61,8 +61,8 @@ $.extend( true, DataTable.Buttons.defaults, {
 	}
 } );
 
-DataTable.ext.buttons.collection.className += ' dropdown-toggle';
-DataTable.ext.buttons.collection.rightAlignClassName = 'dropdown-menu-right';
+DataTable.ext.buttons.collection.className += ' Dropdown-toggle';
+DataTable.ext.buttons.collection.rightAlignClassName = 'Dropdown-menu-right';
 
 return DataTable.Buttons;
 }));

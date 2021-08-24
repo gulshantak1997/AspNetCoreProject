@@ -21,5 +21,6 @@ namespace AdminLTE1.Models
         public string Image { get; set; }
 
 
+        
     }
 }

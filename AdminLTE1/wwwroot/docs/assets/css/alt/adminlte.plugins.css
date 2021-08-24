@@ -399,7 +399,7 @@
   border-color: #80bdff;
 }
 
-.select2-container--default .select2-dropdown {
+.select2-container--default .select2-Dropdown {
   border: 1px solid #ced4da;
 }
 
@@ -431,22 +431,22 @@
   margin-top: 0;
 }
 
-.select2-container--default .select2-dropdown .select2-search__field,
+.select2-container--default .select2-Dropdown .select2-search__field,
 .select2-container--default .select2-search--inline .select2-search__field {
   border: 1px solid #ced4da;
 }
 
-.select2-container--default .select2-dropdown .select2-search__field:focus,
+.select2-container--default .select2-Dropdown .select2-search__field:focus,
 .select2-container--default .select2-search--inline .select2-search__field:focus {
   outline: none;
   border: 1px solid #80bdff;
 }
 
-.select2-container--default .select2-dropdown.select2-dropdown--below {
+.select2-container--default .select2-Dropdown.select2-Dropdown--below {
   border-top: 0;
 }
 
-.select2-container--default .select2-dropdown.select2-dropdown--above {
+.select2-container--default .select2-Dropdown.select2-Dropdown--above {
   border-bottom: 0;
 }
 
@@ -594,7 +594,7 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   margin-top: 6px;
 }
 
-.maximized-card .select2-dropdown {
+.maximized-card .select2-Dropdown {
   z-index: 9999;
 }
 
@@ -606,11 +606,11 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #80bdff;
 }
 
-.select2-container--default .select2-primary.select2-dropdown .select2-search__field:focus,
-.select2-container--default .select2-primary .select2-dropdown .select2-search__field:focus,
+.select2-container--default .select2-primary.select2-Dropdown .select2-search__field:focus,
+.select2-container--default .select2-primary .select2-Dropdown .select2-search__field:focus,
 .select2-container--default .select2-primary .select2-search--inline .select2-search__field:focus,
-.select2-primary .select2-container--default.select2-dropdown .select2-search__field:focus,
-.select2-primary .select2-container--default .select2-dropdown .select2-search__field:focus,
+.select2-primary .select2-container--default.select2-Dropdown .select2-search__field:focus,
+.select2-primary .select2-container--default .select2-Dropdown .select2-search__field:focus,
 .select2-primary .select2-container--default .select2-search--inline .select2-search__field:focus {
   border: 1px solid #80bdff;
 }
@@ -663,11 +663,11 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #afb5ba;
 }
 
-.select2-container--default .select2-secondary.select2-dropdown .select2-search__field:focus,
-.select2-container--default .select2-secondary .select2-dropdown .select2-search__field:focus,
+.select2-container--default .select2-secondary.select2-Dropdown .select2-search__field:focus,
+.select2-container--default .select2-secondary .select2-Dropdown .select2-search__field:focus,
 .select2-container--default .select2-secondary .select2-search--inline .select2-search__field:focus,
-.select2-secondary .select2-container--default.select2-dropdown .select2-search__field:focus,
-.select2-secondary .select2-container--default .select2-dropdown .select2-search__field:focus,
+.select2-secondary .select2-container--default.select2-Dropdown .select2-search__field:focus,
+.select2-secondary .select2-container--default .select2-Dropdown .select2-search__field:focus,
 .select2-secondary .select2-container--default .select2-search--inline .select2-search__field:focus {
   border: 1px solid #afb5ba;
 }
@@ -720,11 +720,11 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #71dd8a;
 }
 
-.select2-container--default .select2-success.select2-dropdown .select2-search__field:focus,
-.select2-container--default .select2-success .select2-dropdown .select2-search__field:focus,
+.select2-container--default .select2-success.select2-Dropdown .select2-search__field:focus,
+.select2-container--default .select2-success .select2-Dropdown .select2-search__field:focus,
 .select2-container--default .select2-success .select2-search--inline .select2-search__field:focus,
-.select2-success .select2-container--default.select2-dropdown .select2-search__field:focus,
-.select2-success .select2-container--default .select2-dropdown .select2-search__field:focus,
+.select2-success .select2-container--default.select2-Dropdown .select2-search__field:focus,
+.select2-success .select2-container--default .select2-Dropdown .select2-search__field:focus,
 .select2-success .select2-container--default .select2-search--inline .select2-search__field:focus {
   border: 1px solid #71dd8a;
 }
@@ -777,11 +777,11 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #63d9ec;
 }
 
-.select2-container--default .select2-info.select2-dropdown .select2-search__field:focus,
-.select2-container--default .select2-info .select2-dropdown .select2-search__field:focus,
+.select2-container--default .select2-info.select2-Dropdown .select2-search__field:focus,
+.select2-container--default .select2-info .select2-Dropdown .select2-search__field:focus,
 .select2-container--default .select2-info .select2-search--inline .select2-search__field:focus,
-.select2-info .select2-container--default.select2-dropdown .select2-search__field:focus,
-.select2-info .select2-container--default .select2-dropdown .select2-search__field:focus,
+.select2-info .select2-container--default.select2-Dropdown .select2-search__field:focus,
+.select2-info .select2-container--default .select2-Dropdown .select2-search__field:focus,
 .select2-info .select2-container--default .select2-search--inline .select2-search__field:focus {
   border: 1px solid #63d9ec;
 }
@@ -834,11 +834,11 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #ffe187;
 }
 
-.select2-container--default .select2-warning.select2-dropdown .select2-search__field:focus,
-.select2-container--default .select2-warning .select2-dropdown .select2-search__field:focus,
+.select2-container--default .select2-warning.select2-Dropdown .select2-search__field:focus,
+.select2-container--default .select2-warning .select2-Dropdown .select2-search__field:focus,
 .select2-container--default .select2-warning .select2-search--inline .select2-search__field:focus,
-.select2-warning .select2-container--default.select2-dropdown .select2-search__field:focus,
-.select2-warning .select2-container--default .select2-dropdown .select2-search__field:focus,
+.select2-warning .select2-container--default.select2-Dropdown .select2-search__field:focus,
+.select2-warning .select2-container--default .select2-Dropdown .select2-search__field:focus,
 .select2-warning .select2-container--default .select2-search--inline .select2-search__field:focus {
   border: 1px solid #ffe187;
 }
@@ -891,11 +891,11 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #efa2a9;
 }
 
-.select2-container--default .select2-danger.select2-dropdown .select2-search__field:focus,
-.select2-container--default .select2-danger .select2-dropdown .select2-search__field:focus,
+.select2-container--default .select2-danger.select2-Dropdown .select2-search__field:focus,
+.select2-container--default .select2-danger .select2-Dropdown .select2-search__field:focus,
 .select2-container--default .select2-danger .select2-search--inline .select2-search__field:focus,
-.select2-danger .select2-container--default.select2-dropdown .select2-search__field:focus,
-.select2-danger .select2-container--default .select2-dropdown .select2-search__field:focus,
+.select2-danger .select2-container--default.select2-Dropdown .select2-search__field:focus,
+.select2-danger .select2-container--default .select2-Dropdown .select2-search__field:focus,
 .select2-danger .select2-container--default .select2-search--inline .select2-search__field:focus {
   border: 1px solid #efa2a9;
 }
@@ -948,11 +948,11 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: white;
 }
 
-.select2-container--default .select2-light.select2-dropdown .select2-search__field:focus,
-.select2-container--default .select2-light .select2-dropdown .select2-search__field:focus,
+.select2-container--default .select2-light.select2-Dropdown .select2-search__field:focus,
+.select2-container--default .select2-light .select2-Dropdown .select2-search__field:focus,
 .select2-container--default .select2-light .select2-search--inline .select2-search__field:focus,
-.select2-light .select2-container--default.select2-dropdown .select2-search__field:focus,
-.select2-light .select2-container--default .select2-dropdown .select2-search__field:focus,
+.select2-light .select2-container--default.select2-Dropdown .select2-search__field:focus,
+.select2-light .select2-container--default .select2-Dropdown .select2-search__field:focus,
 .select2-light .select2-container--default .select2-search--inline .select2-search__field:focus {
   border: 1px solid white;
 }
@@ -1005,11 +1005,11 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #6d7a86;
 }
 
-.select2-container--default .select2-dark.select2-dropdown .select2-search__field:focus,
-.select2-container--default .select2-dark .select2-dropdown .select2-search__field:focus,
+.select2-container--default .select2-dark.select2-Dropdown .select2-search__field:focus,
+.select2-container--default .select2-dark .select2-Dropdown .select2-search__field:focus,
 .select2-container--default .select2-dark .select2-search--inline .select2-search__field:focus,
-.select2-dark .select2-container--default.select2-dropdown .select2-search__field:focus,
-.select2-dark .select2-container--default .select2-dropdown .select2-search__field:focus,
+.select2-dark .select2-container--default.select2-Dropdown .select2-search__field:focus,
+.select2-dark .select2-container--default .select2-Dropdown .select2-search__field:focus,
 .select2-dark .select2-container--default .select2-search--inline .select2-search__field:focus {
   border: 1px solid #6d7a86;
 }
@@ -1062,11 +1062,11 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #99c5de;
 }
 
-.select2-container--default .select2-lightblue.select2-dropdown .select2-search__field:focus,
-.select2-container--default .select2-lightblue .select2-dropdown .select2-search__field:focus,
+.select2-container--default .select2-lightblue.select2-Dropdown .select2-search__field:focus,
+.select2-container--default .select2-lightblue .select2-Dropdown .select2-search__field:focus,
 .select2-container--default .select2-lightblue .select2-search--inline .select2-search__field:focus,
-.select2-lightblue .select2-container--default.select2-dropdown .select2-search__field:focus,
-.select2-lightblue .select2-container--default .select2-dropdown .select2-search__field:focus,
+.select2-lightblue .select2-container--default.select2-Dropdown .select2-search__field:focus,
+.select2-lightblue .select2-container--default .select2-Dropdown .select2-search__field:focus,
 .select2-lightblue .select2-container--default .select2-search--inline .select2-search__field:focus {
   border: 1px solid #99c5de;
 }
@@ -1119,11 +1119,11 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #005ebf;
 }
 
-.select2-container--default .select2-navy.select2-dropdown .select2-search__field:focus,
-.select2-container--default .select2-navy .select2-dropdown .select2-search__field:focus,
+.select2-container--default .select2-navy.select2-Dropdown .select2-search__field:focus,
+.select2-container--default .select2-navy .select2-Dropdown .select2-search__field:focus,
 .select2-container--default .select2-navy .select2-search--inline .select2-search__field:focus,
-.select2-navy .select2-container--default.select2-dropdown .select2-search__field:focus,
-.select2-navy .select2-container--default .select2-dropdown .select2-search__field:focus,
+.select2-navy .select2-container--default.select2-Dropdown .select2-search__field:focus,
+.select2-navy .select2-container--default .select2-Dropdown .select2-search__field:focus,
 .select2-navy .select2-container--default .select2-search--inline .select2-search__field:focus {
   border: 1px solid #005ebf;
 }
@@ -1176,11 +1176,11 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #87cfaf;
 }
 
-.select2-container--default .select2-olive.select2-dropdown .select2-search__field:focus,
-.select2-container--default .select2-olive .select2-dropdown .select2-search__field:focus,
+.select2-container--default .select2-olive.select2-Dropdown .select2-search__field:focus,
+.select2-container--default .select2-olive .select2-Dropdown .select2-search__field:focus,
 .select2-container--default .select2-olive .select2-search--inline .select2-search__field:focus,
-.select2-olive .select2-container--default.select2-dropdown .select2-search__field:focus,
-.select2-olive .select2-container--default .select2-dropdown .select2-search__field:focus,
+.select2-olive .select2-container--default.select2-Dropdown .select2-search__field:focus,
+.select2-olive .select2-container--default .select2-Dropdown .select2-search__field:focus,
 .select2-olive .select2-container--default .select2-search--inline .select2-search__field:focus {
   border: 1px solid #87cfaf;
 }
@@ -1233,11 +1233,11 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #81ffb8;
 }
 
-.select2-container--default .select2-lime.select2-dropdown .select2-search__field:focus,
-.select2-container--default .select2-lime .select2-dropdown .select2-search__field:focus,
+.select2-container--default .select2-lime.select2-Dropdown .select2-search__field:focus,
+.select2-container--default .select2-lime .select2-Dropdown .select2-search__field:focus,
 .select2-container--default .select2-lime .select2-search--inline .select2-search__field:focus,
-.select2-lime .select2-container--default.select2-dropdown .select2-search__field:focus,
-.select2-lime .select2-container--default .select2-dropdown .select2-search__field:focus,
+.select2-lime .select2-container--default.select2-Dropdown .select2-search__field:focus,
+.select2-lime .select2-container--default .select2-Dropdown .select2-search__field:focus,
 .select2-lime .select2-container--default .select2-search--inline .select2-search__field:focus {
   border: 1px solid #81ffb8;
 }
@@ -1290,11 +1290,11 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #f88adf;
 }
 
-.select2-container--default .select2-fuchsia.select2-dropdown .select2-search__field:focus,
-.select2-container--default .select2-fuchsia .select2-dropdown .select2-search__field:focus,
+.select2-container--default .select2-fuchsia.select2-Dropdown .select2-search__field:focus,
+.select2-container--default .select2-fuchsia .select2-Dropdown .select2-search__field:focus,
 .select2-container--default .select2-fuchsia .select2-search--inline .select2-search__field:focus,
-.select2-fuchsia .select2-container--default.select2-dropdown .select2-search__field:focus,
-.select2-fuchsia .select2-container--default .select2-dropdown .select2-search__field:focus,
+.select2-fuchsia .select2-container--default.select2-Dropdown .select2-search__field:focus,
+.select2-fuchsia .select2-container--default .select2-Dropdown .select2-search__field:focus,
 .select2-fuchsia .select2-container--default .select2-search--inline .select2-search__field:focus {
   border: 1px solid #f88adf;
 }
@@ -1347,11 +1347,11 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #f083ab;
 }
 
-.select2-container--default .select2-maroon.select2-dropdown .select2-search__field:focus,
-.select2-container--default .select2-maroon .select2-dropdown .select2-search__field:focus,
+.select2-container--default .select2-maroon.select2-Dropdown .select2-search__field:focus,
+.select2-container--default .select2-maroon .select2-Dropdown .select2-search__field:focus,
 .select2-container--default .select2-maroon .select2-search--inline .select2-search__field:focus,
-.select2-maroon .select2-container--default.select2-dropdown .select2-search__field:focus,
-.select2-maroon .select2-container--default .select2-dropdown .select2-search__field:focus,
+.select2-maroon .select2-container--default.select2-Dropdown .select2-search__field:focus,
+.select2-maroon .select2-container--default .select2-Dropdown .select2-search__field:focus,
 .select2-maroon .select2-container--default .select2-search--inline .select2-search__field:focus {
   border: 1px solid #f083ab;
 }
@@ -1404,11 +1404,11 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #80bdff;
 }
 
-.select2-container--default .select2-blue.select2-dropdown .select2-search__field:focus,
-.select2-container--default .select2-blue .select2-dropdown .select2-search__field:focus,
+.select2-container--default .select2-blue.select2-Dropdown .select2-search__field:focus,
+.select2-container--default .select2-blue .select2-Dropdown .select2-search__field:focus,
 .select2-container--default .select2-blue .select2-search--inline .select2-search__field:focus,
-.select2-blue .select2-container--default.select2-dropdown .select2-search__field:focus,
-.select2-blue .select2-container--default .select2-dropdown .select2-search__field:focus,
+.select2-blue .select2-container--default.select2-Dropdown .select2-search__field:focus,
+.select2-blue .select2-container--default .select2-Dropdown .select2-search__field:focus,
 .select2-blue .select2-container--default .select2-search--inline .select2-search__field:focus {
   border: 1px solid #80bdff;
 }
@@ -1461,11 +1461,11 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #b389f9;
 }
 
-.select2-container--default .select2-indigo.select2-dropdown .select2-search__field:focus,
-.select2-container--default .select2-indigo .select2-dropdown .select2-search__field:focus,
+.select2-container--default .select2-indigo.select2-Dropdown .select2-search__field:focus,
+.select2-container--default .select2-indigo .select2-Dropdown .select2-search__field:focus,
 .select2-container--default .select2-indigo .select2-search--inline .select2-search__field:focus,
-.select2-indigo .select2-container--default.select2-dropdown .select2-search__field:focus,
-.select2-indigo .select2-container--default .select2-dropdown .select2-search__field:focus,
+.select2-indigo .select2-container--default.select2-Dropdown .select2-search__field:focus,
+.select2-indigo .select2-container--default .select2-Dropdown .select2-search__field:focus,
 .select2-indigo .select2-container--default .select2-search--inline .select2-search__field:focus {
   border: 1px solid #b389f9;
 }
@@ -1518,11 +1518,11 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #b8a2e0;
 }
 
-.select2-container--default .select2-purple.select2-dropdown .select2-search__field:focus,
-.select2-container--default .select2-purple .select2-dropdown .select2-search__field:focus,
+.select2-container--default .select2-purple.select2-Dropdown .select2-search__field:focus,
+.select2-container--default .select2-purple .select2-Dropdown .select2-search__field:focus,
 .select2-container--default .select2-purple .select2-search--inline .select2-search__field:focus,
-.select2-purple .select2-container--default.select2-dropdown .select2-search__field:focus,
-.select2-purple .select2-container--default .select2-dropdown .select2-search__field:focus,
+.select2-purple .select2-container--default.select2-Dropdown .select2-search__field:focus,
+.select2-purple .select2-container--default .select2-Dropdown .select2-search__field:focus,
 .select2-purple .select2-container--default .select2-search--inline .select2-search__field:focus {
   border: 1px solid #b8a2e0;
 }
@@ -1575,11 +1575,11 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #f6b0d0;
 }
 
-.select2-container--default .select2-pink.select2-dropdown .select2-search__field:focus,
-.select2-container--default .select2-pink .select2-dropdown .select2-search__field:focus,
+.select2-container--default .select2-pink.select2-Dropdown .select2-search__field:focus,
+.select2-container--default .select2-pink .select2-Dropdown .select2-search__field:focus,
 .select2-container--default .select2-pink .select2-search--inline .select2-search__field:focus,
-.select2-pink .select2-container--default.select2-dropdown .select2-search__field:focus,
-.select2-pink .select2-container--default .select2-dropdown .select2-search__field:focus,
+.select2-pink .select2-container--default.select2-Dropdown .select2-search__field:focus,
+.select2-pink .select2-container--default .select2-Dropdown .select2-search__field:focus,
 .select2-pink .select2-container--default .select2-search--inline .select2-search__field:focus {
   border: 1px solid #f6b0d0;
 }
@@ -1632,11 +1632,11 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #efa2a9;
 }
 
-.select2-container--default .select2-red.select2-dropdown .select2-search__field:focus,
-.select2-container--default .select2-red .select2-dropdown .select2-search__field:focus,
+.select2-container--default .select2-red.select2-Dropdown .select2-search__field:focus,
+.select2-container--default .select2-red .select2-Dropdown .select2-search__field:focus,
 .select2-container--default .select2-red .select2-search--inline .select2-search__field:focus,
-.select2-red .select2-container--default.select2-dropdown .select2-search__field:focus,
-.select2-red .select2-container--default .select2-dropdown .select2-search__field:focus,
+.select2-red .select2-container--default.select2-Dropdown .select2-search__field:focus,
+.select2-red .select2-container--default .select2-Dropdown .select2-search__field:focus,
 .select2-red .select2-container--default .select2-search--inline .select2-search__field:focus {
   border: 1px solid #efa2a9;
 }
@@ -1689,11 +1689,11 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #fec392;
 }
 
-.select2-container--default .select2-orange.select2-dropdown .select2-search__field:focus,
-.select2-container--default .select2-orange .select2-dropdown .select2-search__field:focus,
+.select2-container--default .select2-orange.select2-Dropdown .select2-search__field:focus,
+.select2-container--default .select2-orange .select2-Dropdown .select2-search__field:focus,
 .select2-container--default .select2-orange .select2-search--inline .select2-search__field:focus,
-.select2-orange .select2-container--default.select2-dropdown .select2-search__field:focus,
-.select2-orange .select2-container--default .select2-dropdown .select2-search__field:focus,
+.select2-orange .select2-container--default.select2-Dropdown .select2-search__field:focus,
+.select2-orange .select2-container--default .select2-Dropdown .select2-search__field:focus,
 .select2-orange .select2-container--default .select2-search--inline .select2-search__field:focus {
   border: 1px solid #fec392;
 }
@@ -1746,11 +1746,11 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #ffe187;
 }
 
-.select2-container--default .select2-yellow.select2-dropdown .select2-search__field:focus,
-.select2-container--default .select2-yellow .select2-dropdown .select2-search__field:focus,
+.select2-container--default .select2-yellow.select2-Dropdown .select2-search__field:focus,
+.select2-container--default .select2-yellow .select2-Dropdown .select2-search__field:focus,
 .select2-container--default .select2-yellow .select2-search--inline .select2-search__field:focus,
-.select2-yellow .select2-container--default.select2-dropdown .select2-search__field:focus,
-.select2-yellow .select2-container--default .select2-dropdown .select2-search__field:focus,
+.select2-yellow .select2-container--default.select2-Dropdown .select2-search__field:focus,
+.select2-yellow .select2-container--default .select2-Dropdown .select2-search__field:focus,
 .select2-yellow .select2-container--default .select2-search--inline .select2-search__field:focus {
   border: 1px solid #ffe187;
 }
@@ -1803,11 +1803,11 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #71dd8a;
 }
 
-.select2-container--default .select2-green.select2-dropdown .select2-search__field:focus,
-.select2-container--default .select2-green .select2-dropdown .select2-search__field:focus,
+.select2-container--default .select2-green.select2-Dropdown .select2-search__field:focus,
+.select2-container--default .select2-green .select2-Dropdown .select2-search__field:focus,
 .select2-container--default .select2-green .select2-search--inline .select2-search__field:focus,
-.select2-green .select2-container--default.select2-dropdown .select2-search__field:focus,
-.select2-green .select2-container--default .select2-dropdown .select2-search__field:focus,
+.select2-green .select2-container--default.select2-Dropdown .select2-search__field:focus,
+.select2-green .select2-container--default .select2-Dropdown .select2-search__field:focus,
 .select2-green .select2-container--default .select2-search--inline .select2-search__field:focus {
   border: 1px solid #71dd8a;
 }
@@ -1860,11 +1860,11 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #7eeaca;
 }
 
-.select2-container--default .select2-teal.select2-dropdown .select2-search__field:focus,
-.select2-container--default .select2-teal .select2-dropdown .select2-search__field:focus,
+.select2-container--default .select2-teal.select2-Dropdown .select2-search__field:focus,
+.select2-container--default .select2-teal .select2-Dropdown .select2-search__field:focus,
 .select2-container--default .select2-teal .select2-search--inline .select2-search__field:focus,
-.select2-teal .select2-container--default.select2-dropdown .select2-search__field:focus,
-.select2-teal .select2-container--default .select2-dropdown .select2-search__field:focus,
+.select2-teal .select2-container--default.select2-Dropdown .select2-search__field:focus,
+.select2-teal .select2-container--default .select2-Dropdown .select2-search__field:focus,
 .select2-teal .select2-container--default .select2-search--inline .select2-search__field:focus {
   border: 1px solid #7eeaca;
 }
@@ -1917,11 +1917,11 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #63d9ec;
 }
 
-.select2-container--default .select2-cyan.select2-dropdown .select2-search__field:focus,
-.select2-container--default .select2-cyan .select2-dropdown .select2-search__field:focus,
+.select2-container--default .select2-cyan.select2-Dropdown .select2-search__field:focus,
+.select2-container--default .select2-cyan .select2-Dropdown .select2-search__field:focus,
 .select2-container--default .select2-cyan .select2-search--inline .select2-search__field:focus,
-.select2-cyan .select2-container--default.select2-dropdown .select2-search__field:focus,
-.select2-cyan .select2-container--default .select2-dropdown .select2-search__field:focus,
+.select2-cyan .select2-container--default.select2-Dropdown .select2-search__field:focus,
+.select2-cyan .select2-container--default .select2-Dropdown .select2-search__field:focus,
 .select2-cyan .select2-container--default .select2-search--inline .select2-search__field:focus {
   border: 1px solid #63d9ec;
 }
@@ -1974,11 +1974,11 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: white;
 }
 
-.select2-container--default .select2-white.select2-dropdown .select2-search__field:focus,
-.select2-container--default .select2-white .select2-dropdown .select2-search__field:focus,
+.select2-container--default .select2-white.select2-Dropdown .select2-search__field:focus,
+.select2-container--default .select2-white .select2-Dropdown .select2-search__field:focus,
 .select2-container--default .select2-white .select2-search--inline .select2-search__field:focus,
-.select2-white .select2-container--default.select2-dropdown .select2-search__field:focus,
-.select2-white .select2-container--default .select2-dropdown .select2-search__field:focus,
+.select2-white .select2-container--default.select2-Dropdown .select2-search__field:focus,
+.select2-white .select2-container--default .select2-Dropdown .select2-search__field:focus,
 .select2-white .select2-container--default .select2-search--inline .select2-search__field:focus {
   border: 1px solid white;
 }
@@ -2031,11 +2031,11 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #afb5ba;
 }
 
-.select2-container--default .select2-gray.select2-dropdown .select2-search__field:focus,
-.select2-container--default .select2-gray .select2-dropdown .select2-search__field:focus,
+.select2-container--default .select2-gray.select2-Dropdown .select2-search__field:focus,
+.select2-container--default .select2-gray .select2-Dropdown .select2-search__field:focus,
 .select2-container--default .select2-gray .select2-search--inline .select2-search__field:focus,
-.select2-gray .select2-container--default.select2-dropdown .select2-search__field:focus,
-.select2-gray .select2-container--default .select2-dropdown .select2-search__field:focus,
+.select2-gray .select2-container--default.select2-Dropdown .select2-search__field:focus,
+.select2-gray .select2-container--default .select2-Dropdown .select2-search__field:focus,
 .select2-gray .select2-container--default .select2-search--inline .select2-search__field:focus {
   border: 1px solid #afb5ba;
 }
@@ -2088,11 +2088,11 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #6d7a86;
 }
 
-.select2-container--default .select2-gray-dark.select2-dropdown .select2-search__field:focus,
-.select2-container--default .select2-gray-dark .select2-dropdown .select2-search__field:focus,
+.select2-container--default .select2-gray-dark.select2-Dropdown .select2-search__field:focus,
+.select2-container--default .select2-gray-dark .select2-Dropdown .select2-search__field:focus,
 .select2-container--default .select2-gray-dark .select2-search--inline .select2-search__field:focus,
-.select2-gray-dark .select2-container--default.select2-dropdown .select2-search__field:focus,
-.select2-gray-dark .select2-container--default .select2-dropdown .select2-search__field:focus,
+.select2-gray-dark .select2-container--default.select2-Dropdown .select2-search__field:focus,
+.select2-gray-dark .select2-container--default .select2-Dropdown .select2-search__field:focus,
 .select2-gray-dark .select2-container--default .select2-search--inline .select2-search__field:focus {
   border: 1px solid #6d7a86;
 }
@@ -2155,14 +2155,14 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   color: #fff;
 }
 
-.dark-mode .select2-dropdown .select2-search__field,
+.dark-mode .select2-Dropdown .select2-search__field,
 .dark-mode .select2-search--inline .select2-search__field {
   background-color: #343a40;
   border-color: #6c757d;
   color: white;
 }
 
-.dark-mode .select2-dropdown {
+.dark-mode .select2-Dropdown {
   background-color: #343a40;
   border-color: #6c757d;
   color: white;
@@ -2190,11 +2190,11 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #85a7ca;
 }
 
-.select2-container--default .dark-mode .select2-primary.select2-dropdown .select2-search__field:focus,
-.select2-container--default .dark-mode .select2-primary .select2-dropdown .select2-search__field:focus,
+.select2-container--default .dark-mode .select2-primary.select2-Dropdown .select2-search__field:focus,
+.select2-container--default .dark-mode .select2-primary .select2-Dropdown .select2-search__field:focus,
 .select2-container--default .dark-mode .select2-primary .select2-search--inline .select2-search__field:focus,
-.dark-mode .select2-primary .select2-container--default.select2-dropdown .select2-search__field:focus,
-.dark-mode .select2-primary .select2-container--default .select2-dropdown .select2-search__field:focus,
+.dark-mode .select2-primary .select2-container--default.select2-Dropdown .select2-search__field:focus,
+.dark-mode .select2-primary .select2-container--default .select2-Dropdown .select2-search__field:focus,
 .dark-mode .select2-primary .select2-container--default .select2-search--inline .select2-search__field:focus {
   border: 1px solid #85a7ca;
 }
@@ -2247,11 +2247,11 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #afb5ba;
 }
 
-.select2-container--default .dark-mode .select2-secondary.select2-dropdown .select2-search__field:focus,
-.select2-container--default .dark-mode .select2-secondary .select2-dropdown .select2-search__field:focus,
+.select2-container--default .dark-mode .select2-secondary.select2-Dropdown .select2-search__field:focus,
+.select2-container--default .dark-mode .select2-secondary .select2-Dropdown .select2-search__field:focus,
 .select2-container--default .dark-mode .select2-secondary .select2-search--inline .select2-search__field:focus,
-.dark-mode .select2-secondary .select2-container--default.select2-dropdown .select2-search__field:focus,
-.dark-mode .select2-secondary .select2-container--default .select2-dropdown .select2-search__field:focus,
+.dark-mode .select2-secondary .select2-container--default.select2-Dropdown .select2-search__field:focus,
+.dark-mode .select2-secondary .select2-container--default .select2-Dropdown .select2-search__field:focus,
 .dark-mode .select2-secondary .select2-container--default .select2-search--inline .select2-search__field:focus {
   border: 1px solid #afb5ba;
 }
@@ -2304,11 +2304,11 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #3dffcd;
 }
 
-.select2-container--default .dark-mode .select2-success.select2-dropdown .select2-search__field:focus,
-.select2-container--default .dark-mode .select2-success .select2-dropdown .select2-search__field:focus,
+.select2-container--default .dark-mode .select2-success.select2-Dropdown .select2-search__field:focus,
+.select2-container--default .dark-mode .select2-success .select2-Dropdown .select2-search__field:focus,
 .select2-container--default .dark-mode .select2-success .select2-search--inline .select2-search__field:focus,
-.dark-mode .select2-success .select2-container--default.select2-dropdown .select2-search__field:focus,
-.dark-mode .select2-success .select2-container--default .select2-dropdown .select2-search__field:focus,
+.dark-mode .select2-success .select2-container--default.select2-Dropdown .select2-search__field:focus,
+.dark-mode .select2-success .select2-container--default .select2-Dropdown .select2-search__field:focus,
 .dark-mode .select2-success .select2-container--default .select2-search--inline .select2-search__field:focus {
   border: 1px solid #3dffcd;
 }
@@ -2361,11 +2361,11 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #a0cfee;
 }
 
-.select2-container--default .dark-mode .select2-info.select2-dropdown .select2-search__field:focus,
-.select2-container--default .dark-mode .select2-info .select2-dropdown .select2-search__field:focus,
+.select2-container--default .dark-mode .select2-info.select2-Dropdown .select2-search__field:focus,
+.select2-container--default .dark-mode .select2-info .select2-Dropdown .select2-search__field:focus,
 .select2-container--default .dark-mode .select2-info .select2-search--inline .select2-search__field:focus,
-.dark-mode .select2-info .select2-container--default.select2-dropdown .select2-search__field:focus,
-.dark-mode .select2-info .select2-container--default .select2-dropdown .select2-search__field:focus,
+.dark-mode .select2-info .select2-container--default.select2-Dropdown .select2-search__field:focus,
+.dark-mode .select2-info .select2-container--default .select2-Dropdown .select2-search__field:focus,
 .dark-mode .select2-info .select2-container--default .select2-search--inline .select2-search__field:focus {
   border: 1px solid #a0cfee;
 }
@@ -2418,11 +2418,11 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #f9cf8b;
 }
 
-.select2-container--default .dark-mode .select2-warning.select2-dropdown .select2-search__field:focus,
-.select2-container--default .dark-mode .select2-warning .select2-dropdown .select2-search__field:focus,
+.select2-container--default .dark-mode .select2-warning.select2-Dropdown .select2-search__field:focus,
+.select2-container--default .dark-mode .select2-warning .select2-Dropdown .select2-search__field:focus,
 .select2-container--default .dark-mode .select2-warning .select2-search--inline .select2-search__field:focus,
-.dark-mode .select2-warning .select2-container--default.select2-dropdown .select2-search__field:focus,
-.dark-mode .select2-warning .select2-container--default .select2-dropdown .select2-search__field:focus,
+.dark-mode .select2-warning .select2-container--default.select2-Dropdown .select2-search__field:focus,
+.dark-mode .select2-warning .select2-container--default .select2-Dropdown .select2-search__field:focus,
 .dark-mode .select2-warning .select2-container--default .select2-search--inline .select2-search__field:focus {
   border: 1px solid #f9cf8b;
 }
@@ -2475,11 +2475,11 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #f5b4ae;
 }
 
-.select2-container--default .dark-mode .select2-danger.select2-dropdown .select2-search__field:focus,
-.select2-container--default .dark-mode .select2-danger .select2-dropdown .select2-search__field:focus,
+.select2-container--default .dark-mode .select2-danger.select2-Dropdown .select2-search__field:focus,
+.select2-container--default .dark-mode .select2-danger .select2-Dropdown .select2-search__field:focus,
 .select2-container--default .dark-mode .select2-danger .select2-search--inline .select2-search__field:focus,
-.dark-mode .select2-danger .select2-container--default.select2-dropdown .select2-search__field:focus,
-.dark-mode .select2-danger .select2-container--default .select2-dropdown .select2-search__field:focus,
+.dark-mode .select2-danger .select2-container--default.select2-Dropdown .select2-search__field:focus,
+.dark-mode .select2-danger .select2-container--default .select2-Dropdown .select2-search__field:focus,
 .dark-mode .select2-danger .select2-container--default .select2-search--inline .select2-search__field:focus {
   border: 1px solid #f5b4ae;
 }
@@ -2532,11 +2532,11 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: white;
 }
 
-.select2-container--default .dark-mode .select2-light.select2-dropdown .select2-search__field:focus,
-.select2-container--default .dark-mode .select2-light .select2-dropdown .select2-search__field:focus,
+.select2-container--default .dark-mode .select2-light.select2-Dropdown .select2-search__field:focus,
+.select2-container--default .dark-mode .select2-light .select2-Dropdown .select2-search__field:focus,
 .select2-container--default .dark-mode .select2-light .select2-search--inline .select2-search__field:focus,
-.dark-mode .select2-light .select2-container--default.select2-dropdown .select2-search__field:focus,
-.dark-mode .select2-light .select2-container--default .select2-dropdown .select2-search__field:focus,
+.dark-mode .select2-light .select2-container--default.select2-Dropdown .select2-search__field:focus,
+.dark-mode .select2-light .select2-container--default .select2-Dropdown .select2-search__field:focus,
 .dark-mode .select2-light .select2-container--default .select2-search--inline .select2-search__field:focus {
   border: 1px solid white;
 }
@@ -2589,11 +2589,11 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #6d7a86;
 }
 
-.select2-container--default .dark-mode .select2-dark.select2-dropdown .select2-search__field:focus,
-.select2-container--default .dark-mode .select2-dark .select2-dropdown .select2-search__field:focus,
+.select2-container--default .dark-mode .select2-dark.select2-Dropdown .select2-search__field:focus,
+.select2-container--default .dark-mode .select2-dark .select2-Dropdown .select2-search__field:focus,
 .select2-container--default .dark-mode .select2-dark .select2-search--inline .select2-search__field:focus,
-.dark-mode .select2-dark .select2-container--default.select2-dropdown .select2-search__field:focus,
-.dark-mode .select2-dark .select2-container--default .select2-dropdown .select2-search__field:focus,
+.dark-mode .select2-dark .select2-container--default.select2-Dropdown .select2-search__field:focus,
+.dark-mode .select2-dark .select2-container--default .select2-Dropdown .select2-search__field:focus,
 .dark-mode .select2-dark .select2-container--default .select2-search--inline .select2-search__field:focus {
   border: 1px solid #6d7a86;
 }
@@ -2646,11 +2646,11 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #e6f1f7;
 }
 
-.select2-container--default .dark-mode .select2-lightblue.select2-dropdown .select2-search__field:focus,
-.select2-container--default .dark-mode .select2-lightblue .select2-dropdown .select2-search__field:focus,
+.select2-container--default .dark-mode .select2-lightblue.select2-Dropdown .select2-search__field:focus,
+.select2-container--default .dark-mode .select2-lightblue .select2-Dropdown .select2-search__field:focus,
 .select2-container--default .dark-mode .select2-lightblue .select2-search--inline .select2-search__field:focus,
-.dark-mode .select2-lightblue .select2-container--default.select2-dropdown .select2-search__field:focus,
-.dark-mode .select2-lightblue .select2-container--default .select2-dropdown .select2-search__field:focus,
+.dark-mode .select2-lightblue .select2-container--default.select2-Dropdown .select2-search__field:focus,
+.dark-mode .select2-lightblue .select2-container--default .select2-Dropdown .select2-search__field:focus,
 .dark-mode .select2-lightblue .select2-container--default .select2-search--inline .select2-search__field:focus {
   border: 1px solid #e6f1f7;
 }
@@ -2703,11 +2703,11 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #006ad8;
 }
 
-.select2-container--default .dark-mode .select2-navy.select2-dropdown .select2-search__field:focus,
-.select2-container--default .dark-mode .select2-navy .select2-dropdown .select2-search__field:focus,
+.select2-container--default .dark-mode .select2-navy.select2-Dropdown .select2-search__field:focus,
+.select2-container--default .dark-mode .select2-navy .select2-Dropdown .select2-search__field:focus,
 .select2-container--default .dark-mode .select2-navy .select2-search--inline .select2-search__field:focus,
-.dark-mode .select2-navy .select2-container--default.select2-dropdown .select2-search__field:focus,
-.dark-mode .select2-navy .select2-container--default .select2-dropdown .select2-search__field:focus,
+.dark-mode .select2-navy .select2-container--default.select2-Dropdown .select2-search__field:focus,
+.dark-mode .select2-navy .select2-container--default .select2-Dropdown .select2-search__field:focus,
 .dark-mode .select2-navy .select2-container--default .select2-search--inline .select2-search__field:focus {
   border: 1px solid #006ad8;
 }
@@ -2760,11 +2760,11 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #cfecdf;
 }
 
-.select2-container--default .dark-mode .select2-olive.select2-dropdown .select2-search__field:focus,
-.select2-container--default .dark-mode .select2-olive .select2-dropdown .select2-search__field:focus,
+.select2-container--default .dark-mode .select2-olive.select2-Dropdown .select2-search__field:focus,
+.select2-container--default .dark-mode .select2-olive .select2-Dropdown .select2-search__field:focus,
 .select2-container--default .dark-mode .select2-olive .select2-search--inline .select2-search__field:focus,
-.dark-mode .select2-olive .select2-container--default.select2-dropdown .select2-search__field:focus,
-.dark-mode .select2-olive .select2-container--default .select2-dropdown .select2-search__field:focus,
+.dark-mode .select2-olive .select2-container--default.select2-Dropdown .select2-search__field:focus,
+.dark-mode .select2-olive .select2-container--default .select2-Dropdown .select2-search__field:focus,
 .dark-mode .select2-olive .select2-container--default .select2-search--inline .select2-search__field:focus {
   border: 1px solid #cfecdf;
 }
@@ -2817,11 +2817,11 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #e7fff1;
 }
 
-.select2-container--default .dark-mode .select2-lime.select2-dropdown .select2-search__field:focus,
-.select2-container--default .dark-mode .select2-lime .select2-dropdown .select2-search__field:focus,
+.select2-container--default .dark-mode .select2-lime.select2-Dropdown .select2-search__field:focus,
+.select2-container--default .dark-mode .select2-lime .select2-Dropdown .select2-search__field:focus,
 .select2-container--default .dark-mode .select2-lime .select2-search--inline .select2-search__field:focus,
-.dark-mode .select2-lime .select2-container--default.select2-dropdown .select2-search__field:focus,
-.dark-mode .select2-lime .select2-container--default .select2-dropdown .select2-search__field:focus,
+.dark-mode .select2-lime .select2-container--default.select2-Dropdown .select2-search__field:focus,
+.dark-mode .select2-lime .select2-container--default .select2-Dropdown .select2-search__field:focus,
 .dark-mode .select2-lime .select2-container--default .select2-search--inline .select2-search__field:focus {
   border: 1px solid #e7fff1;
 }
@@ -2874,11 +2874,11 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #feeaf9;
 }
 
-.select2-container--default .dark-mode .select2-fuchsia.select2-dropdown .select2-search__field:focus,
-.select2-container--default .dark-mode .select2-fuchsia .select2-dropdown .select2-search__field:focus,
+.select2-container--default .dark-mode .select2-fuchsia.select2-Dropdown .select2-search__field:focus,
+.select2-container--default .dark-mode .select2-fuchsia .select2-Dropdown .select2-search__field:focus,
 .select2-container--default .dark-mode .select2-fuchsia .select2-search--inline .select2-search__field:focus,
-.dark-mode .select2-fuchsia .select2-container--default.select2-dropdown .select2-search__field:focus,
-.dark-mode .select2-fuchsia .select2-container--default .select2-dropdown .select2-search__field:focus,
+.dark-mode .select2-fuchsia .select2-container--default.select2-Dropdown .select2-search__field:focus,
+.dark-mode .select2-fuchsia .select2-container--default .select2-Dropdown .select2-search__field:focus,
 .dark-mode .select2-fuchsia .select2-container--default .select2-search--inline .select2-search__field:focus {
   border: 1px solid #feeaf9;
 }
@@ -2931,11 +2931,11 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #fbdee8;
 }
 
-.select2-container--default .dark-mode .select2-maroon.select2-dropdown .select2-search__field:focus,
-.select2-container--default .dark-mode .select2-maroon .select2-dropdown .select2-search__field:focus,
+.select2-container--default .dark-mode .select2-maroon.select2-Dropdown .select2-search__field:focus,
+.select2-container--default .dark-mode .select2-maroon .select2-Dropdown .select2-search__field:focus,
 .select2-container--default .dark-mode .select2-maroon .select2-search--inline .select2-search__field:focus,
-.dark-mode .select2-maroon .select2-container--default.select2-dropdown .select2-search__field:focus,
-.dark-mode .select2-maroon .select2-container--default .select2-dropdown .select2-search__field:focus,
+.dark-mode .select2-maroon .select2-container--default.select2-Dropdown .select2-search__field:focus,
+.dark-mode .select2-maroon .select2-container--default .select2-Dropdown .select2-search__field:focus,
 .dark-mode .select2-maroon .select2-container--default .select2-search--inline .select2-search__field:focus {
   border: 1px solid #fbdee8;
 }
@@ -2988,11 +2988,11 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #85a7ca;
 }
 
-.select2-container--default .dark-mode .select2-blue.select2-dropdown .select2-search__field:focus,
-.select2-container--default .dark-mode .select2-blue .select2-dropdown .select2-search__field:focus,
+.select2-container--default .dark-mode .select2-blue.select2-Dropdown .select2-search__field:focus,
+.select2-container--default .dark-mode .select2-blue .select2-Dropdown .select2-search__field:focus,
 .select2-container--default .dark-mode .select2-blue .select2-search--inline .select2-search__field:focus,
-.dark-mode .select2-blue .select2-container--default.select2-dropdown .select2-search__field:focus,
-.dark-mode .select2-blue .select2-container--default .select2-dropdown .select2-search__field:focus,
+.dark-mode .select2-blue .select2-container--default.select2-Dropdown .select2-search__field:focus,
+.dark-mode .select2-blue .select2-container--default .select2-Dropdown .select2-search__field:focus,
 .dark-mode .select2-blue .select2-container--default .select2-search--inline .select2-search__field:focus {
   border: 1px solid #85a7ca;
 }
@@ -3045,11 +3045,11 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #b389f9;
 }
 
-.select2-container--default .dark-mode .select2-indigo.select2-dropdown .select2-search__field:focus,
-.select2-container--default .dark-mode .select2-indigo .select2-dropdown .select2-search__field:focus,
+.select2-container--default .dark-mode .select2-indigo.select2-Dropdown .select2-search__field:focus,
+.select2-container--default .dark-mode .select2-indigo .select2-Dropdown .select2-search__field:focus,
 .select2-container--default .dark-mode .select2-indigo .select2-search--inline .select2-search__field:focus,
-.dark-mode .select2-indigo .select2-container--default.select2-dropdown .select2-search__field:focus,
-.dark-mode .select2-indigo .select2-container--default .select2-dropdown .select2-search__field:focus,
+.dark-mode .select2-indigo .select2-container--default.select2-Dropdown .select2-search__field:focus,
+.dark-mode .select2-indigo .select2-container--default .select2-Dropdown .select2-search__field:focus,
 .dark-mode .select2-indigo .select2-container--default .select2-search--inline .select2-search__field:focus {
   border: 1px solid #b389f9;
 }
@@ -3102,11 +3102,11 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #b8a2e0;
 }
 
-.select2-container--default .dark-mode .select2-purple.select2-dropdown .select2-search__field:focus,
-.select2-container--default .dark-mode .select2-purple .select2-dropdown .select2-search__field:focus,
+.select2-container--default .dark-mode .select2-purple.select2-Dropdown .select2-search__field:focus,
+.select2-container--default .dark-mode .select2-purple .select2-Dropdown .select2-search__field:focus,
 .select2-container--default .dark-mode .select2-purple .select2-search--inline .select2-search__field:focus,
-.dark-mode .select2-purple .select2-container--default.select2-dropdown .select2-search__field:focus,
-.dark-mode .select2-purple .select2-container--default .select2-dropdown .select2-search__field:focus,
+.dark-mode .select2-purple .select2-container--default.select2-Dropdown .select2-search__field:focus,
+.dark-mode .select2-purple .select2-container--default .select2-Dropdown .select2-search__field:focus,
 .dark-mode .select2-purple .select2-container--default .select2-search--inline .select2-search__field:focus {
   border: 1px solid #b8a2e0;
 }
@@ -3159,11 +3159,11 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #f6b0d0;
 }
 
-.select2-container--default .dark-mode .select2-pink.select2-dropdown .select2-search__field:focus,
-.select2-container--default .dark-mode .select2-pink .select2-dropdown .select2-search__field:focus,
+.select2-container--default .dark-mode .select2-pink.select2-Dropdown .select2-search__field:focus,
+.select2-container--default .dark-mode .select2-pink .select2-Dropdown .select2-search__field:focus,
 .select2-container--default .dark-mode .select2-pink .select2-search--inline .select2-search__field:focus,
-.dark-mode .select2-pink .select2-container--default.select2-dropdown .select2-search__field:focus,
-.dark-mode .select2-pink .select2-container--default .select2-dropdown .select2-search__field:focus,
+.dark-mode .select2-pink .select2-container--default.select2-Dropdown .select2-search__field:focus,
+.dark-mode .select2-pink .select2-container--default .select2-Dropdown .select2-search__field:focus,
 .dark-mode .select2-pink .select2-container--default .select2-search--inline .select2-search__field:focus {
   border: 1px solid #f6b0d0;
 }
@@ -3216,11 +3216,11 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #f5b4ae;
 }
 
-.select2-container--default .dark-mode .select2-red.select2-dropdown .select2-search__field:focus,
-.select2-container--default .dark-mode .select2-red .select2-dropdown .select2-search__field:focus,
+.select2-container--default .dark-mode .select2-red.select2-Dropdown .select2-search__field:focus,
+.select2-container--default .dark-mode .select2-red .select2-Dropdown .select2-search__field:focus,
 .select2-container--default .dark-mode .select2-red .select2-search--inline .select2-search__field:focus,
-.dark-mode .select2-red .select2-container--default.select2-dropdown .select2-search__field:focus,
-.dark-mode .select2-red .select2-container--default .select2-dropdown .select2-search__field:focus,
+.dark-mode .select2-red .select2-container--default.select2-Dropdown .select2-search__field:focus,
+.dark-mode .select2-red .select2-container--default .select2-Dropdown .select2-search__field:focus,
 .dark-mode .select2-red .select2-container--default .select2-search--inline .select2-search__field:focus {
   border: 1px solid #f5b4ae;
 }
@@ -3273,11 +3273,11 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #fec392;
 }
 
-.select2-container--default .dark-mode .select2-orange.select2-dropdown .select2-search__field:focus,
-.select2-container--default .dark-mode .select2-orange .select2-dropdown .select2-search__field:focus,
+.select2-container--default .dark-mode .select2-orange.select2-Dropdown .select2-search__field:focus,
+.select2-container--default .dark-mode .select2-orange .select2-Dropdown .select2-search__field:focus,
 .select2-container--default .dark-mode .select2-orange .select2-search--inline .select2-search__field:focus,
-.dark-mode .select2-orange .select2-container--default.select2-dropdown .select2-search__field:focus,
-.dark-mode .select2-orange .select2-container--default .select2-dropdown .select2-search__field:focus,
+.dark-mode .select2-orange .select2-container--default.select2-Dropdown .select2-search__field:focus,
+.dark-mode .select2-orange .select2-container--default .select2-Dropdown .select2-search__field:focus,
 .dark-mode .select2-orange .select2-container--default .select2-search--inline .select2-search__field:focus {
   border: 1px solid #fec392;
 }
@@ -3330,11 +3330,11 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #f9cf8b;
 }
 
-.select2-container--default .dark-mode .select2-yellow.select2-dropdown .select2-search__field:focus,
-.select2-container--default .dark-mode .select2-yellow .select2-dropdown .select2-search__field:focus,
+.select2-container--default .dark-mode .select2-yellow.select2-Dropdown .select2-search__field:focus,
+.select2-container--default .dark-mode .select2-yellow .select2-Dropdown .select2-search__field:focus,
 .select2-container--default .dark-mode .select2-yellow .select2-search--inline .select2-search__field:focus,
-.dark-mode .select2-yellow .select2-container--default.select2-dropdown .select2-search__field:focus,
-.dark-mode .select2-yellow .select2-container--default .select2-dropdown .select2-search__field:focus,
+.dark-mode .select2-yellow .select2-container--default.select2-Dropdown .select2-search__field:focus,
+.dark-mode .select2-yellow .select2-container--default .select2-Dropdown .select2-search__field:focus,
 .dark-mode .select2-yellow .select2-container--default .select2-search--inline .select2-search__field:focus {
   border: 1px solid #f9cf8b;
 }
@@ -3387,11 +3387,11 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #3dffcd;
 }
 
-.select2-container--default .dark-mode .select2-green.select2-dropdown .select2-search__field:focus,
-.select2-container--default .dark-mode .select2-green .select2-dropdown .select2-search__field:focus,
+.select2-container--default .dark-mode .select2-green.select2-Dropdown .select2-search__field:focus,
+.select2-container--default .dark-mode .select2-green .select2-Dropdown .select2-search__field:focus,
 .select2-container--default .dark-mode .select2-green .select2-search--inline .select2-search__field:focus,
-.dark-mode .select2-green .select2-container--default.select2-dropdown .select2-search__field:focus,
-.dark-mode .select2-green .select2-container--default .select2-dropdown .select2-search__field:focus,
+.dark-mode .select2-green .select2-container--default.select2-Dropdown .select2-search__field:focus,
+.dark-mode .select2-green .select2-container--default .select2-Dropdown .select2-search__field:focus,
 .dark-mode .select2-green .select2-container--default .select2-search--inline .select2-search__field:focus {
   border: 1px solid #3dffcd;
 }
@@ -3444,11 +3444,11 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #7eeaca;
 }
 
-.select2-container--default .dark-mode .select2-teal.select2-dropdown .select2-search__field:focus,
-.select2-container--default .dark-mode .select2-teal .select2-dropdown .select2-search__field:focus,
+.select2-container--default .dark-mode .select2-teal.select2-Dropdown .select2-search__field:focus,
+.select2-container--default .dark-mode .select2-teal .select2-Dropdown .select2-search__field:focus,
 .select2-container--default .dark-mode .select2-teal .select2-search--inline .select2-search__field:focus,
-.dark-mode .select2-teal .select2-container--default.select2-dropdown .select2-search__field:focus,
-.dark-mode .select2-teal .select2-container--default .select2-dropdown .select2-search__field:focus,
+.dark-mode .select2-teal .select2-container--default.select2-Dropdown .select2-search__field:focus,
+.dark-mode .select2-teal .select2-container--default .select2-Dropdown .select2-search__field:focus,
 .dark-mode .select2-teal .select2-container--default .select2-search--inline .select2-search__field:focus {
   border: 1px solid #7eeaca;
 }
@@ -3501,11 +3501,11 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #a0cfee;
 }
 
-.select2-container--default .dark-mode .select2-cyan.select2-dropdown .select2-search__field:focus,
-.select2-container--default .dark-mode .select2-cyan .select2-dropdown .select2-search__field:focus,
+.select2-container--default .dark-mode .select2-cyan.select2-Dropdown .select2-search__field:focus,
+.select2-container--default .dark-mode .select2-cyan .select2-Dropdown .select2-search__field:focus,
 .select2-container--default .dark-mode .select2-cyan .select2-search--inline .select2-search__field:focus,
-.dark-mode .select2-cyan .select2-container--default.select2-dropdown .select2-search__field:focus,
-.dark-mode .select2-cyan .select2-container--default .select2-dropdown .select2-search__field:focus,
+.dark-mode .select2-cyan .select2-container--default.select2-Dropdown .select2-search__field:focus,
+.dark-mode .select2-cyan .select2-container--default .select2-Dropdown .select2-search__field:focus,
 .dark-mode .select2-cyan .select2-container--default .select2-search--inline .select2-search__field:focus {
   border: 1px solid #a0cfee;
 }
@@ -3558,11 +3558,11 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: white;
 }
 
-.select2-container--default .dark-mode .select2-white.select2-dropdown .select2-search__field:focus,
-.select2-container--default .dark-mode .select2-white .select2-dropdown .select2-search__field:focus,
+.select2-container--default .dark-mode .select2-white.select2-Dropdown .select2-search__field:focus,
+.select2-container--default .dark-mode .select2-white .select2-Dropdown .select2-search__field:focus,
 .select2-container--default .dark-mode .select2-white .select2-search--inline .select2-search__field:focus,
-.dark-mode .select2-white .select2-container--default.select2-dropdown .select2-search__field:focus,
-.dark-mode .select2-white .select2-container--default .select2-dropdown .select2-search__field:focus,
+.dark-mode .select2-white .select2-container--default.select2-Dropdown .select2-search__field:focus,
+.dark-mode .select2-white .select2-container--default .select2-Dropdown .select2-search__field:focus,
 .dark-mode .select2-white .select2-container--default .select2-search--inline .select2-search__field:focus {
   border: 1px solid white;
 }
@@ -3615,11 +3615,11 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #afb5ba;
 }
 
-.select2-container--default .dark-mode .select2-gray.select2-dropdown .select2-search__field:focus,
-.select2-container--default .dark-mode .select2-gray .select2-dropdown .select2-search__field:focus,
+.select2-container--default .dark-mode .select2-gray.select2-Dropdown .select2-search__field:focus,
+.select2-container--default .dark-mode .select2-gray .select2-Dropdown .select2-search__field:focus,
 .select2-container--default .dark-mode .select2-gray .select2-search--inline .select2-search__field:focus,
-.dark-mode .select2-gray .select2-container--default.select2-dropdown .select2-search__field:focus,
-.dark-mode .select2-gray .select2-container--default .select2-dropdown .select2-search__field:focus,
+.dark-mode .select2-gray .select2-container--default.select2-Dropdown .select2-search__field:focus,
+.dark-mode .select2-gray .select2-container--default .select2-Dropdown .select2-search__field:focus,
 .dark-mode .select2-gray .select2-container--default .select2-search--inline .select2-search__field:focus {
   border: 1px solid #afb5ba;
 }
@@ -3672,11 +3672,11 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #6d7a86;
 }
 
-.select2-container--default .dark-mode .select2-gray-dark.select2-dropdown .select2-search__field:focus,
-.select2-container--default .dark-mode .select2-gray-dark .select2-dropdown .select2-search__field:focus,
+.select2-container--default .dark-mode .select2-gray-dark.select2-Dropdown .select2-search__field:focus,
+.select2-container--default .dark-mode .select2-gray-dark .select2-Dropdown .select2-search__field:focus,
 .select2-container--default .dark-mode .select2-gray-dark .select2-search--inline .select2-search__field:focus,
-.dark-mode .select2-gray-dark .select2-container--default.select2-dropdown .select2-search__field:focus,
-.dark-mode .select2-gray-dark .select2-container--default .select2-dropdown .select2-search__field:focus,
+.dark-mode .select2-gray-dark .select2-container--default.select2-Dropdown .select2-search__field:focus,
+.dark-mode .select2-gray-dark .select2-container--default .select2-Dropdown .select2-search__field:focus,
 .dark-mode .select2-gray-dark .select2-container--default .select2-search--inline .select2-search__field:focus {
   border: 1px solid #6d7a86;
 }

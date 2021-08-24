@@ -1,0 +1,12 @@
+﻿@model AdminLTE1.Models.CMS
+@{
+    ViewData["Title"] = "Index";
+}
+
+<img style="width:1070px;height:150px; object-fit:cover" src="~/CMSImages/@Model.BannerImage">
+
+
+
+@Html.Raw(Model.Description)
+
+

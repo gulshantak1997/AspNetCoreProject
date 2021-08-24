@@ -27,15 +27,15 @@ The main header contains the navbar. Construction of the navbar differs slightly
     <li class="nav-item d-none d-sm-inline-block">
       <a href="#" class="nav-link">Contact</a>
     </li>
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <li class="nav-item Dropdown">
+      <a class="nav-link Dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="Dropdown" aria-haspopup="true" aria-expanded="false">
         Help
       </a>
-      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-        <a class="dropdown-item" href="#">FAQ</a>
-        <a class="dropdown-item" href="#">Support</a>
-        <div class="dropdown-divider"></div>
-        <a class="dropdown-item" href="#">Contact</a>
+      <div class="Dropdown-menu" aria-labelledby="navbarDropdown">
+        <a class="Dropdown-item" href="#">FAQ</a>
+        <a class="Dropdown-item" href="#">Support</a>
+        <div class="Dropdown-divider"></div>
+        <a class="Dropdown-item" href="#">Contact</a>
       </div>
     </li>
   </ul>
@@ -55,18 +55,18 @@ The main header contains the navbar. Construction of the navbar differs slightly
   <!-- Right navbar links -->
   <ul class="navbar-nav ml-auto">
     <!-- Messages Dropdown Menu -->
-    <li class="nav-item dropdown">
-      <a class="nav-link" data-toggle="dropdown" href="#">
+    <li class="nav-item Dropdown">
+      <a class="nav-link" data-toggle="Dropdown" href="#">
         <i class="far fa-comments"></i>
         <span class="badge badge-danger navbar-badge">3</span>
       </a>
-      <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-        <a href="#" class="dropdown-item">
+      <div class="Dropdown-menu Dropdown-menu-lg Dropdown-menu-right">
+        <a href="#" class="Dropdown-item">
           <!-- Message Start -->
           <div class="media">
             <img src="{{ '/assets/img/user1-128x128.jpg' | prepend: site.baseurl }}" alt="User Avatar" class="img-size-50 mr-3 img-circle">
             <div class="media-body">
-              <h3 class="dropdown-item-title">
+              <h3 class="Dropdown-item-title">
                 Brad Diesel
                 <span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span>
               </h3>
@@ -76,13 +76,13 @@ The main header contains the navbar. Construction of the navbar differs slightly
           </div>
           <!-- Message End -->
         </a>
-        <div class="dropdown-divider"></div>
-        <a href="#" class="dropdown-item">
+        <div class="Dropdown-divider"></div>
+        <a href="#" class="Dropdown-item">
           <!-- Message Start -->
           <div class="media">
             <img src="{{ '/assets/img/user8-128x128.jpg' | prepend: site.baseurl }}" alt="User Avatar" class="img-size-50 img-circle mr-3">
             <div class="media-body">
-              <h3 class="dropdown-item-title">
+              <h3 class="Dropdown-item-title">
                 John Pierce
                 <span class="float-right text-sm text-muted"><i class="fas fa-star"></i></span>
               </h3>
@@ -92,13 +92,13 @@ The main header contains the navbar. Construction of the navbar differs slightly
           </div>
           <!-- Message End -->
         </a>
-        <div class="dropdown-divider"></div>
-        <a href="#" class="dropdown-item">
+        <div class="Dropdown-divider"></div>
+        <a href="#" class="Dropdown-item">
           <!-- Message Start -->
           <div class="media">
             <img src="{{ '/assets/img/user3-128x128.jpg' | prepend: site.baseurl }}" alt="User Avatar" class="img-size-50 img-circle mr-3">
             <div class="media-body">
-              <h3 class="dropdown-item-title">
+              <h3 class="Dropdown-item-title">
                 Nora Silvester
                 <span class="float-right text-sm text-warning"><i class="fas fa-star"></i></span>
               </h3>
@@ -108,35 +108,35 @@ The main header contains the navbar. Construction of the navbar differs slightly
           </div>
           <!-- Message End -->
         </a>
-        <div class="dropdown-divider"></div>
-        <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
+        <div class="Dropdown-divider"></div>
+        <a href="#" class="Dropdown-item Dropdown-footer">See All Messages</a>
       </div>
     </li>
     <!-- Notifications Dropdown Menu -->
-    <li class="nav-item dropdown">
-      <a class="nav-link" data-toggle="dropdown" href="#">
+    <li class="nav-item Dropdown">
+      <a class="nav-link" data-toggle="Dropdown" href="#">
         <i class="far fa-bell"></i>
         <span class="badge badge-warning navbar-badge">15</span>
       </a>
-      <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-        <span class="dropdown-header">15 Notifications</span>
-        <div class="dropdown-divider"></div>
-        <a href="#" class="dropdown-item">
+      <div class="Dropdown-menu Dropdown-menu-lg Dropdown-menu-right">
+        <span class="Dropdown-header">15 Notifications</span>
+        <div class="Dropdown-divider"></div>
+        <a href="#" class="Dropdown-item">
           <i class="fas fa-envelope mr-2"></i> 4 new messages
           <span class="float-right text-muted text-sm">3 mins</span>
         </a>
-        <div class="dropdown-divider"></div>
-        <a href="#" class="dropdown-item">
+        <div class="Dropdown-divider"></div>
+        <a href="#" class="Dropdown-item">
           <i class="fas fa-users mr-2"></i> 8 friend requests
           <span class="float-right text-muted text-sm">12 hours</span>
         </a>
-        <div class="dropdown-divider"></div>
-        <a href="#" class="dropdown-item">
+        <div class="Dropdown-divider"></div>
+        <a href="#" class="Dropdown-item">
           <i class="fas fa-file mr-2"></i> 3 new reports
           <span class="float-right text-muted text-sm">2 days</span>
         </a>
-        <div class="dropdown-divider"></div>
-        <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
+        <div class="Dropdown-divider"></div>
+        <a href="#" class="Dropdown-item Dropdown-footer">See All Notifications</a>
       </div>
     </li>
     <li class="nav-item">
@@ -160,15 +160,15 @@ The main header contains the navbar. Construction of the navbar differs slightly
     <li class="nav-item d-none d-sm-inline-block">
       <a href="#" class="nav-link">Contact</a>
     </li>
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <li class="nav-item Dropdown">
+      <a class="nav-link Dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="Dropdown" aria-haspopup="true" aria-expanded="false">
         Help
       </a>
-      <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
-        <a class="dropdown-item" href="#">FAQ</a>
-        <a class="dropdown-item" href="#">Support</a>
-        <div class="dropdown-divider"></div>
-        <a class="dropdown-item" href="#">Contact</a>
+      <div class="Dropdown-menu" aria-labelledby="navbarDropdown2">
+        <a class="Dropdown-item" href="#">FAQ</a>
+        <a class="Dropdown-item" href="#">Support</a>
+        <div class="Dropdown-divider"></div>
+        <a class="Dropdown-item" href="#">Contact</a>
       </div>
     </li>
   </ul>
@@ -188,18 +188,18 @@ The main header contains the navbar. Construction of the navbar differs slightly
   <!-- Right navbar links -->
   <ul class="navbar-nav ml-auto">
     <!-- Messages Dropdown Menu -->
-    <li class="nav-item dropdown">
-      <a class="nav-link" data-toggle="dropdown" href="#">
+    <li class="nav-item Dropdown">
+      <a class="nav-link" data-toggle="Dropdown" href="#">
         <i class="far fa-comments"></i>
         <span class="badge badge-danger navbar-badge">3</span>
       </a>
-      <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-        <a href="#" class="dropdown-item">
+      <div class="Dropdown-menu Dropdown-menu-lg Dropdown-menu-right">
+        <a href="#" class="Dropdown-item">
           <!-- Message Start -->
           <div class="media">
             <img src="dist/img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle">
             <div class="media-body">
-              <h3 class="dropdown-item-title">
+              <h3 class="Dropdown-item-title">
                 Brad Diesel
                 <span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span>
               </h3>
@@ -209,13 +209,13 @@ The main header contains the navbar. Construction of the navbar differs slightly
           </div>
           <!-- Message End -->
         </a>
-        <div class="dropdown-divider"></div>
-        <a href="#" class="dropdown-item">
+        <div class="Dropdown-divider"></div>
+        <a href="#" class="Dropdown-item">
           <!-- Message Start -->
           <div class="media">
             <img src="dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
             <div class="media-body">
-              <h3 class="dropdown-item-title">
+              <h3 class="Dropdown-item-title">
                 John Pierce
                 <span class="float-right text-sm text-muted"><i class="fas fa-star"></i></span>
               </h3>
@@ -225,13 +225,13 @@ The main header contains the navbar. Construction of the navbar differs slightly
           </div>
           <!-- Message End -->
         </a>
-        <div class="dropdown-divider"></div>
-        <a href="#" class="dropdown-item">
+        <div class="Dropdown-divider"></div>
+        <a href="#" class="Dropdown-item">
           <!-- Message Start -->
           <div class="media">
             <img src="dist/img/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
             <div class="media-body">
-              <h3 class="dropdown-item-title">
+              <h3 class="Dropdown-item-title">
                 Nora Silvester
                 <span class="float-right text-sm text-warning"><i class="fas fa-star"></i></span>
               </h3>
@@ -241,35 +241,35 @@ The main header contains the navbar. Construction of the navbar differs slightly
           </div>
           <!-- Message End -->
         </a>
-        <div class="dropdown-divider"></div>
-        <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
+        <div class="Dropdown-divider"></div>
+        <a href="#" class="Dropdown-item Dropdown-footer">See All Messages</a>
       </div>
     </li>
     <!-- Notifications Dropdown Menu -->
-    <li class="nav-item dropdown">
-      <a class="nav-link" data-toggle="dropdown" href="#">
+    <li class="nav-item Dropdown">
+      <a class="nav-link" data-toggle="Dropdown" href="#">
         <i class="far fa-bell"></i>
         <span class="badge badge-warning navbar-badge">15</span>
       </a>
-      <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-        <span class="dropdown-header">15 Notifications</span>
-        <div class="dropdown-divider"></div>
-        <a href="#" class="dropdown-item">
+      <div class="Dropdown-menu Dropdown-menu-lg Dropdown-menu-right">
+        <span class="Dropdown-header">15 Notifications</span>
+        <div class="Dropdown-divider"></div>
+        <a href="#" class="Dropdown-item">
           <i class="fas fa-envelope mr-2"></i> 4 new messages
           <span class="float-right text-muted text-sm">3 mins</span>
         </a>
-        <div class="dropdown-divider"></div>
-        <a href="#" class="dropdown-item">
+        <div class="Dropdown-divider"></div>
+        <a href="#" class="Dropdown-item">
           <i class="fas fa-users mr-2"></i> 8 friend requests
           <span class="float-right text-muted text-sm">12 hours</span>
         </a>
-        <div class="dropdown-divider"></div>
-        <a href="#" class="dropdown-item">
+        <div class="Dropdown-divider"></div>
+        <a href="#" class="Dropdown-item">
           <i class="fas fa-file mr-2"></i> 3 new reports
           <span class="float-right text-muted text-sm">2 days</span>
         </a>
-        <div class="dropdown-divider"></div>
-        <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
+        <div class="Dropdown-divider"></div>
+        <a href="#" class="Dropdown-item Dropdown-footer">See All Notifications</a>
       </div>
     </li>
     <li class="nav-item">
@@ -309,15 +309,15 @@ Top navbar example can be found in this [demo page](https://adminlte.io/themes/d
       <li class="nav-item d-none d-sm-inline-block">
         <a href="#" class="nav-link">Contact</a>
       </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <li class="nav-item Dropdown">
+        <a class="nav-link Dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="Dropdown" aria-haspopup="true" aria-expanded="false">
           Help
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown3">
-          <a class="dropdown-item" href="#">FAQ</a>
-          <a class="dropdown-item" href="#">Support</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Contact</a>
+        <div class="Dropdown-menu" aria-labelledby="navbarDropdown3">
+          <a class="Dropdown-item" href="#">FAQ</a>
+          <a class="Dropdown-item" href="#">Support</a>
+          <div class="Dropdown-divider"></div>
+          <a class="Dropdown-item" href="#">Contact</a>
         </div>
       </li>
     </ul>
@@ -335,18 +335,18 @@ Top navbar example can be found in this [demo page](https://adminlte.io/themes/d
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
       <!-- Messages Dropdown Menu -->
-      <li class="nav-item dropdown">
-        <a class="nav-link" data-toggle="dropdown" href="#">
+      <li class="nav-item Dropdown">
+        <a class="nav-link" data-toggle="Dropdown" href="#">
           <i class="fas fa-comments"></i>
           <span class="badge badge-danger navbar-badge">3</span>
         </a>
-       <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-          <a href="#" class="dropdown-item">
+       <div class="Dropdown-menu Dropdown-menu-lg Dropdown-menu-right">
+          <a href="#" class="Dropdown-item">
             <!-- Message Start -->
             <div class="media">
               <img src="{{ '/assets/img/user1-128x128.jpg' | prepend: site.baseurl }}" alt="User Avatar" class="img-size-50 mr-3 img-circle">
               <div class="media-body">
-                <h3 class="dropdown-item-title">
+                <h3 class="Dropdown-item-title">
                   Brad Diesel
                   <span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span>
                 </h3>
@@ -356,13 +356,13 @@ Top navbar example can be found in this [demo page](https://adminlte.io/themes/d
             </div>
             <!-- Message End -->
           </a>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
+          <div class="Dropdown-divider"></div>
+          <a href="#" class="Dropdown-item">
             <!-- Message Start -->
             <div class="media">
               <img src="{{ '/assets/img/user8-128x128.jpg' | prepend: site.baseurl }}" alt="User Avatar" class="img-size-50 img-circle mr-3">
               <div class="media-body">
-                <h3 class="dropdown-item-title">
+                <h3 class="Dropdown-item-title">
                   John Pierce
                   <span class="float-right text-sm text-muted"><i class="fas fa-star"></i></span>
                 </h3>
@@ -372,13 +372,13 @@ Top navbar example can be found in this [demo page](https://adminlte.io/themes/d
             </div>
             <!-- Message End -->
           </a>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
+          <div class="Dropdown-divider"></div>
+          <a href="#" class="Dropdown-item">
             <!-- Message Start -->
             <div class="media">
               <img src="{{ '/assets/img/user3-128x128.jpg' | prepend: site.baseurl }}" alt="User Avatar" class="img-size-50 img-circle mr-3">
               <div class="media-body">
-                <h3 class="dropdown-item-title">
+                <h3 class="Dropdown-item-title">
                   Nora Silvester
                   <span class="float-right text-sm text-warning"><i class="fas fa-star"></i></span>
                 </h3>
@@ -388,35 +388,35 @@ Top navbar example can be found in this [demo page](https://adminlte.io/themes/d
             </div>
             <!-- Message End -->
           </a>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
+          <div class="Dropdown-divider"></div>
+          <a href="#" class="Dropdown-item Dropdown-footer">See All Messages</a>
         </div>
       </li>
       <!-- Notifications Dropdown Menu -->
-      <li class="nav-item dropdown">
-        <a class="nav-link" data-toggle="dropdown" href="#">
+      <li class="nav-item Dropdown">
+        <a class="nav-link" data-toggle="Dropdown" href="#">
           <i class="far fa-bell"></i>
           <span class="badge badge-warning navbar-badge">15</span>
         </a>
-        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-          <span class="dropdown-header">15 Notifications</span>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
+        <div class="Dropdown-menu Dropdown-menu-lg Dropdown-menu-right">
+          <span class="Dropdown-header">15 Notifications</span>
+          <div class="Dropdown-divider"></div>
+          <a href="#" class="Dropdown-item">
             <i class="fas fa-envelope mr-2"></i> 4 new messages
             <span class="float-right text-muted text-sm">3 mins</span>
           </a>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
+          <div class="Dropdown-divider"></div>
+          <a href="#" class="Dropdown-item">
             <i class="fas fa-users mr-2"></i> 8 friend requests
             <span class="float-right text-muted text-sm">12 hours</span>
           </a>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
+          <div class="Dropdown-divider"></div>
+          <a href="#" class="Dropdown-item">
             <i class="fas fa-file mr-2"></i> 3 new reports
             <span class="float-right text-muted text-sm">2 days</span>
           </a>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
+          <div class="Dropdown-divider"></div>
+          <a href="#" class="Dropdown-item Dropdown-footer">See All Notifications</a>
         </div>
       </li>
       <li class="nav-item">
@@ -446,15 +446,15 @@ Top navbar example can be found in this [demo page](https://adminlte.io/themes/d
       <li class="nav-item d-none d-sm-inline-block">
         <a href="#" class="nav-link">Contact</a>
       </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown4" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <li class="nav-item Dropdown">
+        <a class="nav-link Dropdown-toggle" href="#" id="navbarDropdown4" role="button" data-toggle="Dropdown" aria-haspopup="true" aria-expanded="false">
           Help
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown4">
-          <a class="dropdown-item" href="#">FAQ</a>
-          <a class="dropdown-item" href="#">Support</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Contact</a>
+        <div class="Dropdown-menu" aria-labelledby="navbarDropdown4">
+          <a class="Dropdown-item" href="#">FAQ</a>
+          <a class="Dropdown-item" href="#">Support</a>
+          <div class="Dropdown-divider"></div>
+          <a class="Dropdown-item" href="#">Contact</a>
         </div>
       </li>
     </ul>
@@ -472,18 +472,18 @@ Top navbar example can be found in this [demo page](https://adminlte.io/themes/d
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
       <!-- Messages Dropdown Menu -->
-      <li class="nav-item dropdown">
-        <a class="nav-link" data-toggle="dropdown" href="#">
+      <li class="nav-item Dropdown">
+        <a class="nav-link" data-toggle="Dropdown" href="#">
           <i class="fas fa-comments"></i>
           <span class="badge badge-danger navbar-badge">3</span>
         </a>
-        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-          <a href="#" class="dropdown-item">
+        <div class="Dropdown-menu Dropdown-menu-lg Dropdown-menu-right">
+          <a href="#" class="Dropdown-item">
             <!-- Message Start -->
             <div class="media">
               <img src="dist/img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle">
               <div class="media-body">
-                <h3 class="dropdown-item-title">
+                <h3 class="Dropdown-item-title">
                   Brad Diesel
                   <span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span>
                 </h3>
@@ -493,13 +493,13 @@ Top navbar example can be found in this [demo page](https://adminlte.io/themes/d
             </div>
             <!-- Message End -->
           </a>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
+          <div class="Dropdown-divider"></div>
+          <a href="#" class="Dropdown-item">
             <!-- Message Start -->
             <div class="media">
               <img src="dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
               <div class="media-body">
-                <h3 class="dropdown-item-title">
+                <h3 class="Dropdown-item-title">
                   John Pierce
                   <span class="float-right text-sm text-muted"><i class="fas fa-star"></i></span>
                 </h3>
@@ -509,13 +509,13 @@ Top navbar example can be found in this [demo page](https://adminlte.io/themes/d
             </div>
             <!-- Message End -->
           </a>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
+          <div class="Dropdown-divider"></div>
+          <a href="#" class="Dropdown-item">
             <!-- Message Start -->
             <div class="media">
               <img src="dist/img/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
               <div class="media-body">
-                <h3 class="dropdown-item-title">
+                <h3 class="Dropdown-item-title">
                   Nora Silvester
                   <span class="float-right text-sm text-warning"><i class="fas fa-star"></i></span>
                 </h3>
@@ -525,35 +525,35 @@ Top navbar example can be found in this [demo page](https://adminlte.io/themes/d
             </div>
             <!-- Message End -->
           </a>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
+          <div class="Dropdown-divider"></div>
+          <a href="#" class="Dropdown-item Dropdown-footer">See All Messages</a>
         </div>
       </li>
       <!-- Notifications Dropdown Menu -->
-      <li class="nav-item dropdown">
-        <a class="nav-link" data-toggle="dropdown" href="#">
+      <li class="nav-item Dropdown">
+        <a class="nav-link" data-toggle="Dropdown" href="#">
           <i class="far fa-bell"></i>
           <span class="badge badge-warning navbar-badge">15</span>
         </a>
-        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-          <span class="dropdown-header">15 Notifications</span>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
+        <div class="Dropdown-menu Dropdown-menu-lg Dropdown-menu-right">
+          <span class="Dropdown-header">15 Notifications</span>
+          <div class="Dropdown-divider"></div>
+          <a href="#" class="Dropdown-item">
             <i class="fas fa-envelope mr-2"></i> 4 new messages
             <span class="float-right text-muted text-sm">3 mins</span>
           </a>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
+          <div class="Dropdown-divider"></div>
+          <a href="#" class="Dropdown-item">
             <i class="fas fa-users mr-2"></i> 8 friend requests
             <span class="float-right text-muted text-sm">12 hours</span>
           </a>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
+          <div class="Dropdown-divider"></div>
+          <a href="#" class="Dropdown-item">
             <i class="fas fa-file mr-2"></i> 3 new reports
             <span class="float-right text-muted text-sm">2 days</span>
           </a>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
+          <div class="Dropdown-divider"></div>
+          <a href="#" class="Dropdown-item Dropdown-footer">See All Notifications</a>
         </div>
       </li>
       <li class="nav-item">
@@ -569,6 +569,6 @@ Top navbar example can be found in this [demo page](https://adminlte.io/themes/d
 
 
 > ##### Tip!
-> To get a bigger dropdown menu you can add `.dropdown-menu-lg` or `.dropdown-menu-xl` to `.dropdown-menu`.
-> You can also get the legacy dropdown offset with adding `.dropdown-legacy` to `.main-header`.
+> To get a bigger Dropdown menu you can add `.Dropdown-menu-lg` or `.Dropdown-menu-xl` to `.Dropdown-menu`.
+> You can also get the legacy Dropdown offset with adding `.Dropdown-legacy` to `.main-header`.
 {: .quote-info}

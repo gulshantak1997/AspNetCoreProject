@@ -92,20 +92,20 @@
   var $header_fixed_container = $('<div />', { class: 'mb-1' }).append($header_fixed_checkbox).append('<span>Fixed</span>')
   $container.append($header_fixed_container)
 
-  var $dropdown_legacy_offset_checkbox = $('<input />', {
+  var $Dropdown_legacy_offset_checkbox = $('<input />', {
     type: 'checkbox',
     value: 1,
-    checked: $('.main-header').hasClass('dropdown-legacy'),
+    checked: $('.main-header').hasClass('Dropdown-legacy'),
     class: 'mr-1'
   }).on('click', function () {
     if ($(this).is(':checked')) {
-      $('.main-header').addClass('dropdown-legacy')
+      $('.main-header').addClass('Dropdown-legacy')
     } else {
-      $('.main-header').removeClass('dropdown-legacy')
+      $('.main-header').removeClass('Dropdown-legacy')
     }
   })
-  var $dropdown_legacy_offset_container = $('<div />', { class: 'mb-1' }).append($dropdown_legacy_offset_checkbox).append('<span>Dropdown Legacy Offset</span>')
-  $container.append($dropdown_legacy_offset_container)
+  var $Dropdown_legacy_offset_container = $('<div />', { class: 'mb-1' }).append($Dropdown_legacy_offset_checkbox).append('<span>Dropdown Legacy Offset</span>')
+  $container.append($Dropdown_legacy_offset_container)
 
   var $no_border_checkbox = $('<input />', {
     type: 'checkbox',

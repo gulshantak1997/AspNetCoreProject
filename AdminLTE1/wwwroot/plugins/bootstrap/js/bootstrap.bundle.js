@@ -4150,9 +4150,9 @@
    * ------------------------------------------------------------------------
    */
 
-  var NAME$4 = 'dropdown';
+  var NAME$4 = 'Dropdown';
   var VERSION$4 = '4.6.0';
-  var DATA_KEY$4 = 'bs.dropdown';
+  var DATA_KEY$4 = 'bs.Dropdown';
   var EVENT_KEY$4 = "." + DATA_KEY$4;
   var DATA_API_KEY$4 = '.data-api';
   var JQUERY_NO_CONFLICT$4 = $__default['default'].fn[NAME$4];
@@ -4182,13 +4182,13 @@
   var CLASS_NAME_DROPUP = 'dropup';
   var CLASS_NAME_DROPRIGHT = 'dropright';
   var CLASS_NAME_DROPLEFT = 'dropleft';
-  var CLASS_NAME_MENURIGHT = 'dropdown-menu-right';
+  var CLASS_NAME_MENURIGHT = 'Dropdown-menu-right';
   var CLASS_NAME_POSITION_STATIC = 'position-static';
-  var SELECTOR_DATA_TOGGLE$2 = '[data-toggle="dropdown"]';
-  var SELECTOR_FORM_CHILD = '.dropdown form';
-  var SELECTOR_MENU = '.dropdown-menu';
+  var SELECTOR_DATA_TOGGLE$2 = '[data-toggle="Dropdown"]';
+  var SELECTOR_FORM_CHILD = '.Dropdown form';
+  var SELECTOR_MENU = '.Dropdown-menu';
   var SELECTOR_NAVBAR_NAV = '.navbar-nav';
-  var SELECTOR_VISIBLE_ITEMS = '.dropdown-menu .dropdown-item:not(.disabled):not(:disabled)';
+  var SELECTOR_VISIBLE_ITEMS = '.Dropdown-menu .Dropdown-item:not(.disabled):not(:disabled)';
   var PLACEMENT_TOP = 'top-start';
   var PLACEMENT_TOPEND = 'top-end';
   var PLACEMENT_BOTTOM = 'bottom-start';
@@ -4277,7 +4277,7 @@
          * Popper - https://popper.js.org
          */
         if (typeof Popper === 'undefined') {
-          throw new TypeError('Bootstrap\'s dropdowns require Popper (https://popper.js.org)');
+          throw new TypeError('Bootstrap\'s Dropdowns require Popper (https://popper.js.org)');
         }
 
         var referenceElement = this._element;
@@ -4501,7 +4501,7 @@
           continue;
         }
 
-        var dropdownMenu = context._menu;
+        var DropdownMenu = context._menu;
 
         if (!$__default['default'](parent).hasClass(CLASS_NAME_SHOW$2)) {
           continue;
@@ -4530,7 +4530,7 @@
           context._popper.destroy();
         }
 
-        $__default['default'](dropdownMenu).removeClass(CLASS_NAME_SHOW$2);
+        $__default['default'](DropdownMenu).removeClass(CLASS_NAME_SHOW$2);
         $__default['default'](parent).removeClass(CLASS_NAME_SHOW$2).trigger($__default['default'].Event(EVENT_HIDDEN$1, relatedTarget));
       }
     };
@@ -4549,12 +4549,12 @@
 
     Dropdown._dataApiKeydownHandler = function _dataApiKeydownHandler(event) {
       // If not input/textarea:
-      //  - And not a key in REGEXP_KEYDOWN => not a dropdown command
+      //  - And not a key in REGEXP_KEYDOWN => not a Dropdown command
       // If input/textarea:
-      //  - If space key => not a dropdown command
+      //  - If space key => not a Dropdown command
       //  - If key is other than escape
-      //    - If key is not up or down => not a dropdown command
-      //    - If trigger inside the menu => not a dropdown command
+      //    - If key is not up or down => not a Dropdown command
+      //    - If trigger inside the menu => not a Dropdown command
       if (/input|textarea/i.test(event.target.tagName) ? event.which === SPACE_KEYCODE || event.which !== ESCAPE_KEYCODE && (event.which !== ARROW_DOWN_KEYCODE && event.which !== ARROW_UP_KEYCODE || $__default['default'](event.target).closest(SELECTOR_MENU).length) : !REGEXP_KEYDOWN.test(event.which)) {
         return;
       }
@@ -6315,16 +6315,16 @@
   var EVENT_ACTIVATE = "activate" + EVENT_KEY$8;
   var EVENT_SCROLL = "scroll" + EVENT_KEY$8;
   var EVENT_LOAD_DATA_API$2 = "load" + EVENT_KEY$8 + DATA_API_KEY$6;
-  var CLASS_NAME_DROPDOWN_ITEM = 'dropdown-item';
+  var CLASS_NAME_Dropdown_ITEM = 'Dropdown-item';
   var CLASS_NAME_ACTIVE$2 = 'active';
   var SELECTOR_DATA_SPY = '[data-spy="scroll"]';
   var SELECTOR_NAV_LIST_GROUP = '.nav, .list-group';
   var SELECTOR_NAV_LINKS = '.nav-link';
   var SELECTOR_NAV_ITEMS = '.nav-item';
   var SELECTOR_LIST_ITEMS = '.list-group-item';
-  var SELECTOR_DROPDOWN = '.dropdown';
-  var SELECTOR_DROPDOWN_ITEMS = '.dropdown-item';
-  var SELECTOR_DROPDOWN_TOGGLE = '.dropdown-toggle';
+  var SELECTOR_Dropdown = '.Dropdown';
+  var SELECTOR_Dropdown_ITEMS = '.Dropdown-item';
+  var SELECTOR_Dropdown_TOGGLE = '.Dropdown-toggle';
   var METHOD_OFFSET = 'offset';
   var METHOD_POSITION = 'position';
   /**
@@ -6340,7 +6340,7 @@
       this._element = element;
       this._scrollElement = element.tagName === 'BODY' ? window : element;
       this._config = this._getConfig(config);
-      this._selector = this._config.target + " " + SELECTOR_NAV_LINKS + "," + (this._config.target + " " + SELECTOR_LIST_ITEMS + ",") + (this._config.target + " " + SELECTOR_DROPDOWN_ITEMS);
+      this._selector = this._config.target + " " + SELECTOR_NAV_LINKS + "," + (this._config.target + " " + SELECTOR_LIST_ITEMS + ",") + (this._config.target + " " + SELECTOR_Dropdown_ITEMS);
       this._offsets = [];
       this._targets = [];
       this._activeTarget = null;
@@ -6489,8 +6489,8 @@
 
       var $link = $__default['default']([].slice.call(document.querySelectorAll(queries.join(','))));
 
-      if ($link.hasClass(CLASS_NAME_DROPDOWN_ITEM)) {
-        $link.closest(SELECTOR_DROPDOWN).find(SELECTOR_DROPDOWN_TOGGLE).addClass(CLASS_NAME_ACTIVE$2);
+      if ($link.hasClass(CLASS_NAME_Dropdown_ITEM)) {
+        $link.closest(SELECTOR_Dropdown).find(SELECTOR_Dropdown_TOGGLE).addClass(CLASS_NAME_ACTIVE$2);
         $link.addClass(CLASS_NAME_ACTIVE$2);
       } else {
         // Set triggered link as active
@@ -6599,18 +6599,18 @@
   var EVENT_SHOW$3 = "show" + EVENT_KEY$9;
   var EVENT_SHOWN$3 = "shown" + EVENT_KEY$9;
   var EVENT_CLICK_DATA_API$6 = "click" + EVENT_KEY$9 + DATA_API_KEY$7;
-  var CLASS_NAME_DROPDOWN_MENU = 'dropdown-menu';
+  var CLASS_NAME_Dropdown_MENU = 'Dropdown-menu';
   var CLASS_NAME_ACTIVE$3 = 'active';
   var CLASS_NAME_DISABLED$1 = 'disabled';
   var CLASS_NAME_FADE$4 = 'fade';
   var CLASS_NAME_SHOW$6 = 'show';
-  var SELECTOR_DROPDOWN$1 = '.dropdown';
+  var SELECTOR_Dropdown$1 = '.Dropdown';
   var SELECTOR_NAV_LIST_GROUP$1 = '.nav, .list-group';
   var SELECTOR_ACTIVE$2 = '.active';
   var SELECTOR_ACTIVE_UL = '> li > .active';
   var SELECTOR_DATA_TOGGLE$4 = '[data-toggle="tab"], [data-toggle="pill"], [data-toggle="list"]';
-  var SELECTOR_DROPDOWN_TOGGLE$1 = '.dropdown-toggle';
-  var SELECTOR_DROPDOWN_ACTIVE_CHILD = '> .dropdown-menu .active';
+  var SELECTOR_Dropdown_TOGGLE$1 = '.Dropdown-toggle';
+  var SELECTOR_Dropdown_ACTIVE_CHILD = '> .Dropdown-menu .active';
   /**
    * ------------------------------------------------------------------------
    * Class Definition
@@ -6713,10 +6713,10 @@
     _proto._transitionComplete = function _transitionComplete(element, active, callback) {
       if (active) {
         $__default['default'](active).removeClass(CLASS_NAME_ACTIVE$3);
-        var dropdownChild = $__default['default'](active.parentNode).find(SELECTOR_DROPDOWN_ACTIVE_CHILD)[0];
+        var DropdownChild = $__default['default'](active.parentNode).find(SELECTOR_Dropdown_ACTIVE_CHILD)[0];
 
-        if (dropdownChild) {
-          $__default['default'](dropdownChild).removeClass(CLASS_NAME_ACTIVE$3);
+        if (DropdownChild) {
+          $__default['default'](DropdownChild).removeClass(CLASS_NAME_ACTIVE$3);
         }
 
         if (active.getAttribute('role') === 'tab') {
@@ -6736,12 +6736,12 @@
         element.classList.add(CLASS_NAME_SHOW$6);
       }
 
-      if (element.parentNode && $__default['default'](element.parentNode).hasClass(CLASS_NAME_DROPDOWN_MENU)) {
-        var dropdownElement = $__default['default'](element).closest(SELECTOR_DROPDOWN$1)[0];
+      if (element.parentNode && $__default['default'](element.parentNode).hasClass(CLASS_NAME_Dropdown_MENU)) {
+        var DropdownElement = $__default['default'](element).closest(SELECTOR_Dropdown$1)[0];
 
-        if (dropdownElement) {
-          var dropdownToggleList = [].slice.call(dropdownElement.querySelectorAll(SELECTOR_DROPDOWN_TOGGLE$1));
-          $__default['default'](dropdownToggleList).addClass(CLASS_NAME_ACTIVE$3);
+        if (DropdownElement) {
+          var DropdownToggleList = [].slice.call(DropdownElement.querySelectorAll(SELECTOR_Dropdown_TOGGLE$1));
+          $__default['default'](DropdownToggleList).addClass(CLASS_NAME_ACTIVE$3);
         }
 
         element.setAttribute('aria-expanded', true);

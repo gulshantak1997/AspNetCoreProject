@@ -37,7 +37,7 @@
     }
 
     &[class*="-right"] {
-      .dropdown-menu {
+      .Dropdown-menu {
         left: auto;
         margin-top: -3px;
         right: 0;
@@ -50,7 +50,7 @@
     }
   }
 
-  &.dropdown-legacy .dropdown-menu {
+  &.Dropdown-legacy .Dropdown-menu {
     top: $nav-link-height + $navbar-padding-y;
     margin-top: 0;
   }

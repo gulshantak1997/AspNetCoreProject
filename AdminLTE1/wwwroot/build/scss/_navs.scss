@@ -12,9 +12,9 @@
   }
 
   .nav-item {
-    &.dropdown.show {
+    &.Dropdown.show {
       .nav-link:hover {
-        color: $dropdown-link-active-color;
+        color: $Dropdown-link-active-color;
       }
     }
   }
@@ -71,7 +71,7 @@
     padding-right: $navbar-nav-link-padding-x;
   }
 
-  .dropdown-menu {
+  .Dropdown-menu {
     position: absolute;
   }
 }

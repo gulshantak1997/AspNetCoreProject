@@ -62,7 +62,7 @@
   }
 
   .status,
-  .dropdown-menu {
+  .Dropdown-menu {
     font-size: $font-size-sm;
   }
 }
@@ -238,12 +238,12 @@
       }
     }
 
-    .dropdown-menu {
+    .Dropdown-menu {
       @include box-shadow(0 2px 4px rgba(0, 0, 0, .4));
       border-color: darken($sidebar-light-hover-bg, 5%);
     }
 
-    .dropdown-item {
+    .Dropdown-item {
       color: $body-color;
     }
   }
@@ -367,12 +367,12 @@
       }
     }
 
-    .dropdown-menu {
+    .Dropdown-menu {
       @include box-shadow(0 2px 4px rgba(0, 0, 0, .4));
       border-color: darken($sidebar-dark-hover-bg, 5%);
     }
 
-    .dropdown-item {
+    .Dropdown-item {
       color: $body-color;
     }
   }

@@ -1,0 +1,131 @@
+﻿@model List<AdminLTE1.ViewModels.QuestionsRelatedsurvayViewModel>
+
+@{
+    ViewBag.Title = "Feedback";
+}
+<div class="row">
+
+    <div class="col-md-6">
+        <form method="post" id="Surveyform">
+
+            @foreach (var item in Model)
+            {
+
+                <input asp-for="@item.Id" value="@item.Id" type="hidden" />
+                @if (item.Type == TitleType.TextBox.ToString())
+                {
+                    <div class="form-group">
+                        <input asp-for="@item.Answer" type="text" />
+                    </div>
+                }
+
+
+                @*<div class="target" id="div_@item.Id">
+
+                    @item.Title
+
+                    <input type="hidden" id="hndType_@item.Id" value="@item.Type" />
+
+
+
+                    @if (item.Type == TitleType.TextBox.ToString())
+                    {
+                        <div class="form-group">
+                            <input asp-for="@item.Answer" type="text" />
+                        </div>
+                    }
+
+                    else if (@item.Type == TitleType.TextArea.ToString())
+                    {
+                        <div class="form-group">
+                            <textarea id="area_@item.Id" rows="5" cols="40" name="valtextarea"></textarea>
+                            <span></span>
+                        </div>
+                    }
+
+                    else if (@item.Type == TitleType.CheckBox.ToString())
+                    {
+                        <div class="form-group">
+                            @foreach (var inneritem in item.SelectList)
+                            {
+                                <input type="checkbox" id="chk_@item.Id.ToString()_@inneritem.Value" value="@inneritem.Value" name="valcheckbox">
+                                <label for="@item.Id.ToString()_@inneritem.Value"> @inneritem.Text</label><br>
+                                <span></span>
+                            }
+                        </div>
+                    }
+
+                    else if (@item.Type == TitleType.DropDown.ToString())
+                    {
+                        <div class="form-group">
+                            <select id="select_@item.Id">
+                                @foreach (var inneritem in item.SelectList)
+                                {
+                                    <option value="@inneritem.Value">@inneritem.Text</option>
+                                }
+                            </select>
+                        </div>
+                    }
+
+                    else if (@item.Type == TitleType.RadioButton.ToString())
+                    {
+
+                        <div class="form-group">
+                            @foreach (var inneritem in item.SelectList)
+                            {
+                                <input type="radio" name="valradio_@item.Id.ToString()" id="radio_@item.Id.ToString()_@inneritem.Value" value="@inneritem.Value">
+                                <label for="@item.Id.ToString()_@inneritem.Value"> @inneritem.Text</label><br>
+                                <span></span>
+                            }
+                        </div>
+                    }
+                    <br />
+                </div>*@
+            }
+
+            <button id="btnSave" name="savebutton" type="submit" class="btn btn-primary">Save</button>
+            @*<button id="btnSave" name="savebutton" type="submit" class="btn btn-primary" disabled="disabled">Save</button>*@
+        </form>
+    </div>
+</div>
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+
+
+
+    @*<script>
+        var inputs = $("form#Surveyform input");
+
+        var validateInputs = function validateInputs(inputs) {
+            
+            var validForm = true;
+            inputs.each(function (index) {            
+                var input = $(this);
+                if (!input.val() || (input.type === "radio" && !input.is(':checked'))) {
+                    $("#savebutton").attr("disabled", "disabled");
+                    validForm = false;
+                }
+            });
+            return validForm;
+        }
+
+
+        inputs.change(function () {
+            var retrun = validateInputs(inputs);
+            debugger;
+            if (retrun) {
+                $("#btnSave").removeAttr("disabled");
+            }
+        });
+
+    </script>*@

@@ -66,7 +66,7 @@ div.dt-button-collection {
   position: absolute;
   z-index: 2001;
 }
-div.dt-button-collection div.dropdown-menu {
+div.dt-button-collection div.Dropdown-menu {
   display: block;
   z-index: 2002;
   min-width: 100%;

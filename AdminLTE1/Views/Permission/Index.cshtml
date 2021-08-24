@@ -4,46 +4,54 @@
         Layout = "~/Views/Shared/_Layout.cshtml";
     }
 
-    <table class="table" id="MyDataTable">
-        <thead>
-            <tr>
-                <th>Serial No</th>
-                <th>RoleName</th>
-                <th>Edit</th>
-                <th>Delete</th>
-                <th>View</th>
 
-            </tr>
-        </thead>
-        <tbody>
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-header">
+            <a class="btn btn-primary" style="width:auto" asp-controller="Permission" asp-action="CreatePermission">Create Permission</a>
+        </div>
 
-            @{int count = 1;}
-            @foreach (var role in Model)
-            {
-
+        <table class="table" id="MyDataTable">
+            <thead>
                 <tr>
-                    <td>@count</td>
-                    <td>@role.RoleName</td>
-                    <td><a asp-action="EditPermission" asp-controller="Permission" asp-route-RoleId="@role.RoleId" class="btn btn-primary">Edit</a></td>
-                    <td><a asp-action="DeletePermission" asp-controller="Permission" asp-route-RoleId="@role.RoleId" class="btn btn-primary">Delete</a></td>
-                    <td><a asp-action="ViewPermission" asp-controller="Permission" asp-route-RoleId="@role.RoleId" class="btn btn-primary">View</a></td>
+                    <th>Serial No</th>
+                    <th>RoleName</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                    <th>View</th>
+
                 </tr>
-                count++;
-            }
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
 
-    @section scripts{
-        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.25/af-2.3.7/datatables.min.css" />
+                @{int count = 1;}
+                @foreach (var role in Model)
+                {
 
-        <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.25/af-2.3.7/datatables.min.js"></script>
+                    <tr>
+                        <td>@count</td>
+                        <td>@role.RoleName</td>
+                        <td><a asp-action="EditPermission" asp-controller="Permission" asp-route-RoleId="@role.RoleId" class="btn btn-primary">Edit</a></td>
+                        <td><a asp-action="DeletePermission" asp-controller="Permission" asp-route-RoleId="@role.RoleId" class="btn btn-primary">Delete</a></td>
+                        <td><a asp-action="ViewPermission" asp-controller="Permission" asp-route-RoleId="@role.RoleId" class="btn btn-primary">View</a></td>
+                    </tr>
+                    count++;
+                }
+            </tbody>
+        </table>
+        </div>
+    </div>
+        @section scripts{
+            <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.25/af-2.3.7/datatables.min.css" />
 
-        <script>
-            $(document).ready(function () {
-                $("#MyDataTable").DataTable();
-            }
-            )
-        </script>
-    }
+            <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.25/af-2.3.7/datatables.min.js"></script>
+
+            <script>
+                $(document).ready(function () {
+                    $("#MyDataTable").DataTable();
+                }
+                )
+            </script>
+        }
 
 

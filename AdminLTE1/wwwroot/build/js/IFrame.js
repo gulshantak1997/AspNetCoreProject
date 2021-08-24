@@ -34,7 +34,7 @@ const SELECTOR_TAB_PANE = `${SELECTOR_TAB_CONTENT} .tab-pane`
 const SELECTOR_SIDEBAR_MENU_ITEM = '.main-sidebar .nav-item > a.nav-link'
 const SELECTOR_SIDEBAR_SEARCH_ITEM = '.sidebar-search-results .list-group-item'
 const SELECTOR_HEADER_MENU_ITEM = '.main-header .nav-item a.nav-link'
-const SELECTOR_HEADER_DROPDOWN_ITEM = '.main-header a.dropdown-item'
+const SELECTOR_HEADER_Dropdown_ITEM = '.main-header a.Dropdown-item'
 const CLASS_NAME_IFRAME_MODE = 'iframe-mode'
 const CLASS_NAME_FULLSCREEN_MODE = 'iframe-mode-fullscreen'
 
@@ -258,7 +258,7 @@ class IFrame {
     })
 
     if (this._config.useNavbarItems) {
-      $(document).on('click', `${SELECTOR_HEADER_MENU_ITEM}, ${SELECTOR_HEADER_DROPDOWN_ITEM}`, e => {
+      $(document).on('click', `${SELECTOR_HEADER_MENU_ITEM}, ${SELECTOR_HEADER_Dropdown_ITEM}`, e => {
         e.preventDefault()
         this.openTabSidebar(e.target)
       })
@@ -334,11 +334,11 @@ class IFrame {
   }
 
   _setItemActive(href) {
-    $(`${SELECTOR_SIDEBAR_MENU_ITEM}, ${SELECTOR_HEADER_DROPDOWN_ITEM}`).removeClass('active')
+    $(`${SELECTOR_SIDEBAR_MENU_ITEM}, ${SELECTOR_HEADER_Dropdown_ITEM}`).removeClass('active')
     $(SELECTOR_HEADER_MENU_ITEM).parent().removeClass('active')
 
     const $headerMenuItem = $(`${SELECTOR_HEADER_MENU_ITEM}[href$="${href}"]`)
-    const $headerDropdownItem = $(`${SELECTOR_HEADER_DROPDOWN_ITEM}[href$="${href}"]`)
+    const $headerDropdownItem = $(`${SELECTOR_HEADER_Dropdown_ITEM}[href$="${href}"]`)
     const $sidebarMenuItem = $(`${SELECTOR_SIDEBAR_MENU_ITEM}[href$="${href}"]`)
 
     $headerMenuItem.each((i, e) => {

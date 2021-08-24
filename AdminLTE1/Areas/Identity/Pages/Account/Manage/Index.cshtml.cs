@@ -62,13 +62,18 @@ namespace AdminLTE1.Areas.Identity.Pages.Account.Manage
             [Display(Name = "Phone number")]
             public string PhoneNumber { get; set; }
 
+
+            public string Address1 { get; set; }
+            public string Address2 { get; set; }
+
+
             [Display(Name = "Profile Picture")]
             public string Image { get; set; }
 
             [Display(Name = "Profile Picture")]
-            public IFormFile ImageFile{ get; set; }
+            public IFormFile ImageFile { get; set; }
 
-            
+
 
 
 
@@ -91,6 +96,10 @@ namespace AdminLTE1.Areas.Identity.Pages.Account.Manage
             var lastName = user.LastName;
             var profilePicture = user.Image;
 
+
+            var address1 = user.Address1;
+            var address2 = user.Address2;
+
             Input = new InputModel
             {
                 Email = email,
@@ -98,7 +107,9 @@ namespace AdminLTE1.Areas.Identity.Pages.Account.Manage
 
                 Image = profilePicture,
                 FirstName = firstName,
-                LastName = lastName
+                LastName = lastName,
+                Address1 = address1,
+                Address2 = address2
             };
 
             IsEmailConfirmed = await _userManager.IsEmailConfirmedAsync(user);
@@ -162,24 +173,62 @@ namespace AdminLTE1.Areas.Identity.Pages.Account.Manage
 
             var profilePicture = user.Image;
 
+
             if (Input.Image != profilePicture)
             {
-                if (Input.ImageFile != null)
+
+                var paths = Path.Combine(_hostingEnvironment.WebRootPath, "Images", user.Image);
+
+                if (System.IO.File.Exists(paths))
                 {
-                    string wwwRootPath = _hostingEnvironment.WebRootPath;
-                    string fileName = Path.GetFileNameWithoutExtension(Input.ImageFile.FileName);
-                    string extension = Path.GetExtension(Input.ImageFile.FileName);
-                    user.Image = DateTime.Now.ToString("yymmssfff") + extension;
-
-
-                    string path = Path.Combine(wwwRootPath, "Upload", user.Image);
-                    var fileStream = new FileStream(path, FileMode.Create);
-                    Input.ImageFile.CopyTo(fileStream);
-                    await _userManager.UpdateAsync(user);
-
+                    // If file found, delete it    
+                    System.IO.File.Delete(Path.Combine(paths));
                 }
+
+                string wwwRootPath = _hostingEnvironment.WebRootPath;
+                string fileName = Path.GetFileNameWithoutExtension(Input.ImageFile.FileName);
+                string extension = Path.GetExtension(Input.ImageFile.FileName);
+                user.Image = DateTime.Now.ToString("yymmssfff") + extension;
+
+
+                string path = Path.Combine(wwwRootPath, "Images", user.Image);
+                var fileStream = new FileStream(path, FileMode.Create);
+                Input.ImageFile.CopyTo(fileStream);
+                await _userManager.UpdateAsync(user);
+
+            }
+            else if (profilePicture == null)
+            {
+                string wwwRootPath = _hostingEnvironment.WebRootPath;
+                string fileName = Path.GetFileNameWithoutExtension(Input.ImageFile.FileName);
+                string extension = Path.GetExtension(Input.ImageFile.FileName);
+                user.Image = DateTime.Now.ToString("yymmssfff") + extension;
+
+
+                string path = Path.Combine(wwwRootPath, "Images", user.Image);
+                var fileStream = new FileStream(path, FileMode.Create);
+                Input.ImageFile.CopyTo(fileStream);
+                await _userManager.UpdateAsync(user);
             }
 
+
+
+
+
+
+
+            var address1 = user.Address1;
+            var address2 = user.Address2;
+            if (Input.Address1 != address1)
+            {
+                user.Address1 = Input.Address1;
+                await _userManager.UpdateAsync(user);
+            }
+            if (Input.Address2 != address2)
+            {
+                user.Address2 = Input.Address2;
+                await _userManager.UpdateAsync(user);
+            }
 
 
 
