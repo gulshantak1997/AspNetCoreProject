@@ -1,0 +1,115 @@
+﻿@{
+    Layout = null;
+}
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-header">
+            <label>Select Role</label><br />
+            @Html.DropDownList("RoleId", (IEnumerable<SelectListItem>)ViewBag.RolesList, "Select")
+            <button id="btnSave" class="btn btn-primary fa-pull-right">Save</button>
+        </div>
+    </div>
+</div>
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>ComboTree jQuery Plugin Demos</title>
+    <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/flatly/bootstrap.min.css">
+    <link rel="https://www.jqueryscript.net/demo/Drop-Down-Combo-Tree/style.css?v2" href="style.css?v2">
+    <style>
+
+        body {
+        }
+
+        .container {
+            margin: 150px auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>ComboTree jQuery Plugin Demos</h1>
+        <div class="row">
+            <div class="col-lg-6">
+                <h3>Multi Selection</h3>
+                <input type="text" id="justAnInputBox" placeholder="Select" />
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://www.jqueryscript.net/demo/Drop-Down-Combo-Tree/icontains.js?v2" type="text/javascript"></script>   
+    <script src="~/js/comboTreePlugin.js"></script>
+    <script type="text/javascript">
+
+       
+        var comboTree1;
+        var myData1 =@Html.Raw(ViewBag.Json);
+        var menuPermission ="@Html.Raw(ViewBag.Per)";
+
+           var perArray = [];
+            $("#RoleId").on("change", function () {
+                var selectedId = $(this).val();
+                window.location.href = '@Url.Action("TreeViewFinal", "TestPermission")' + '?RoleId=' + selectedId;
+            });
+
+        if (menuPermission !== undefined) {
+            menuPermission = menuPermission.trim();
+        }
+        if (menuPermission !== '') {
+            perArray = menuPermission.split(',');
+        }
+
+        for (var i = 0; i < perArray.length; i++) {
+            perArray[i] = perArray[i].toString();
+        }
+      
+        if (perArray.length > 0) {
+            //console.log(perArray)
+            window.comboTrees = $('#justAnInputBox').comboTree({
+                source: myData1,
+                isMultiple: true,
+                cascadeSelect: false,
+                selected: perArray
+            });
+        }
+        else {
+            window.comboTrees = $('#justAnInputBox').comboTree({
+                source: myData1,
+                isMultiple: true,
+                cascadeSelect: false
+            });
+        }
+
+       
+        $("#btnSave").on('click', function (e) {
+            var RoleId = $('#RoleId').val();
+            var arr = [];
+
+            $('input[type=checkbox]:checked').each(function () {                var selectedIds = $(this).parents('span').attr('data-id');                requestData = {                    MenuId: selectedIds,                    RoleId: RoleId                }                arr.push(requestData);            });
+
+
+            $.ajax({
+                url: '/TestPermission/UpdatePermission',
+                type: 'POST',
+                data: JSON.stringify(arr),
+                dataType: 'json',
+                contentType: 'application/json',
+                error: function (xhr) {
+                    alert('Error: ' + xhr.statusText);
+                },
+                success: function (result) {
+                    alert(result);
+                },
+
+            });
+        });
+       
+
+    </script>
+</body>
+</html>

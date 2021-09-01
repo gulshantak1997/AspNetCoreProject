@@ -10,6 +10,7 @@ using AdminLTE1.ViewModels;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Identity;
 using System.Security.Claims;
+using System.Globalization;
 
 namespace AdminLTE1.Controllers
 {
@@ -76,9 +77,6 @@ namespace AdminLTE1.Controllers
 
 
 
-
-
-
         //public JsonResult EmailAlreadyExist(string Email)
         //{
         //    var validateName = _context.Users.FirstOrDefault(x => x.Email == Email);
@@ -92,8 +90,6 @@ namespace AdminLTE1.Controllers
         //        return Json(true, new JsonSerializerSettings());
         //    }
         //}
-
-
 
 
 
@@ -194,8 +190,6 @@ namespace AdminLTE1.Controllers
 
             List<QuestionsRelatedValueViewModel> questionList = new List<QuestionsRelatedValueViewModel>();
 
-
-
                 var lstquestion = (from t in _context.Questions
                                    select new Questions
                                    {
@@ -228,8 +222,6 @@ namespace AdminLTE1.Controllers
 
 
                 return View(questionList);
-
-            
 
         }
 
@@ -268,61 +260,59 @@ namespace AdminLTE1.Controllers
 
             return Json("You have posted the feedback successfully");
 
-
-
         }
 
 
-        public IActionResult SurveyNew()
-        {
+        //public IActionResult SurveyNew()
+        //{
 
-            List<QuestionsRelatedsurvayViewModel> questionList = new List<QuestionsRelatedsurvayViewModel>();
+        //    List<QuestionsRelatedsurvayViewModel> questionList = new List<QuestionsRelatedsurvayViewModel>();
 
-            var lstquestion = (from t in _context.Questions
-                               select new Questions
-                               {
-                                   Id = t.Id,
-                                   Title = t.Title,
-                                   Type = t.Type
-                               }).ToList();
+        //    var lstquestion = (from t in _context.Questions
+        //                       select new Questions
+        //                       {
+        //                           Id = t.Id,
+        //                           Title = t.Title,
+        //                           Type = t.Type
+        //                       }).ToList();
 
-            foreach (var item in lstquestion)
-            {
-                QuestionsRelatedsurvayViewModel questions = new QuestionsRelatedsurvayViewModel();
-                questions.Id = item.Id;
-                questions.Title = item.Title;
-                questions.Type = item.Type;
+        //    foreach (var item in lstquestion)
+        //    {
+        //        QuestionsRelatedsurvayViewModel questions = new QuestionsRelatedsurvayViewModel();
+        //        questions.Id = item.Id;
+        //        questions.Title = item.Title;
+        //        questions.Type = item.Type;
 
-                if (item.Type == TitleType.RadioButton.ToString() || item.Type == TitleType.CheckBox.ToString() || item.Type == TitleType.DropDown.ToString())
-                {
+        //        if (item.Type == TitleType.RadioButton.ToString() || item.Type == TitleType.CheckBox.ToString() || item.Type == TitleType.DropDown.ToString())
+        //        {
 
-                    questions.SelectList = (from que in _context.RelatedValues.Where(r => r.QuestionId == item.Id)
-                                            select new SelectListItem
-                                            {
-                                                Value = que.Id.ToString(),
-                                                Text = que.Values
-                                            }).ToList();
-                }
-                questionList.Add(questions);
-            }
-            return View(questionList);
-        }
+        //            questions.SelectList = (from que in _context.RelatedValues.Where(r => r.QuestionId == item.Id)
+        //                                    select new SelectListItem
+        //                                    {
+        //                                        Value = que.Id.ToString(),
+        //                                        Text = que.Values
+        //                                    }).ToList();
+        //        }
+        //        questionList.Add(questions);
+        //    }
+        //    return View(questionList);
+        //}
 
 
-        [HttpPost]
-        public IActionResult SurveyNew([FromBody] QuestionsRelatedsurvayViewModel[] survey)
-        {
+        //[HttpPost]
+        //public IActionResult SurveyNew([FromBody] QuestionsRelatedsurvayViewModel[] survey)
+        //{
 
-            //foreach (var item in survey)
-            //{
-            //    var userId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
-            //    item.TeamId = userId;
-            //    //_context.FeedbackResult.Add(item);
-            //    _context.SaveChanges();
-            //}
+        //    //foreach (var item in survey)
+        //    //{
+        //    //    var userId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
+        //    //    item.TeamId = userId;
+        //    //    //_context.FeedbackResult.Add(item);
+        //    //    _context.SaveChanges();
+        //    //}
 
-            return Json("You have posted the feedback successfully");
-        }
+        //    return Json("You have posted the feedback successfully");
+        //}
 
     }
 }

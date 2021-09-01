@@ -11,6 +11,7 @@ namespace AdminLTE1.ViewModels
     {
         public int Id { get; set; }
 
+        [Required]
         public string Title { get; set; }
 
         [Required]

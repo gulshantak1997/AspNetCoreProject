@@ -1,6 +1,10 @@
-﻿using AdminLTE1.Models;using AdminLTE1.Security;using AdminLTE1.ViewModels;using Microsoft.AspNetCore.Mvc;using Microsoft.AspNetCore.Mvc.Rendering;using Microsoft.Extensions.Configuration;using System;using System.Linq;namespace AdminLTE1.Controllers{
+﻿using AdminLTE1.Models;using AdminLTE1.Security;using AdminLTE1.ViewModels;using Microsoft.AspNetCore.Mvc;using Microsoft.AspNetCore.Mvc.Rendering;using Microsoft.Extensions.Configuration;using System;using System.Globalization;
+using System.Linq;using System.Threading;
 
-    public class UserDetailController : Controller    {        private readonly AppDbContext _context;        private readonly IConfiguration _configuration;        public UserDetailController(AppDbContext context, IConfiguration configuration)        {            _context = context;            _configuration = configuration;        }
+namespace AdminLTE1.Controllers{
+
+    //public class UserDetailController : Controller    public class UserDetailController : BaseController
+    {        private readonly AppDbContext _context;        private readonly IConfiguration _configuration;        public UserDetailController(AppDbContext context, IConfiguration configuration)        {            _context = context;            _configuration = configuration;                      }
 
 
 
@@ -38,8 +42,9 @@
 
 
 
-        [HttpPost]        public JsonResult GetUser(SurveyURLViewModel model)        {            var cryptURL = model.UserIdNew +"^"+ model.code;
-            Encryption encryptObj = new Encryption();            string uniqueKey = _configuration["Encryption:UniqueKey"];            var encriptURL= encryptObj.EncryptString(cryptURL, uniqueKey);            SurveyUrl survObj = new SurveyUrl();            survObj.URL = cryptURL;            survObj.EncriptURL = encriptURL;            survObj.StartDate = model.StartDate;            survObj.EndDate = model.Enddate;            _context.SurveyURL.Add(survObj);            _context.SaveChanges();            return Json("Saved Successfully");        }
+        [HttpPost]        public JsonResult GetUser(SurveyURLViewModel model)        {
+            var cryptURL = model.UserIdNew +"^"+ model.code;
+            Encryption encryptObj = new Encryption();            string uniqueKey = _configuration["Encryption:UniqueKey"];            var encriptURL= encryptObj.EncryptString(cryptURL, uniqueKey);            SurveyUrl survObj = new SurveyUrl();            survObj.URL = cryptURL;            survObj.EncriptURL = encriptURL;            survObj.StartDate = model.StartDate;            survObj.EndDate = model.EndDate;            _context.SurveyURL.Add(survObj);            _context.SaveChanges();            return Json("Saved Successfully");        }
 
 
         public IActionResult Decrypt()

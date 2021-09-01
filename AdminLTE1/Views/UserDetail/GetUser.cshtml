@@ -3,7 +3,6 @@
     ViewBag.Title = "Survey URL";
 }
 <environment include="Development">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     @*<link rel="stylesheet" href="/resources/demos/style.css">*@
@@ -54,13 +53,13 @@
     <form method="post">
         <div class="form-group">
             <label asp-for="StartDate" class="control-label"></label>
-            <input asp-for="StartDate" type="text" class="form-control" autocomplete="off" />
+            <input asp-for="StartDate" id="StartDate" type="text" class="form-control" autocomplete="off" />
             <span asp-validation-for="StartDate" class="text-danger"></span>
         </div>
         <div class="form-group">
-            <label asp-for="Enddate" class="control-label"></label>
-            <input asp-for="Enddate" type="text" class="form-control" />
-            <span asp-validation-for="Enddate" class="text-danger"></span>
+            <label asp-for="EndDate" class="control-label"></label>
+            <input asp-for="EndDate" id="EndDate" type="text" class="form-control" />
+            <span asp-validation-for="EndDate" class="text-danger"></span>
         </div>
         <input type="hidden" asp-for="code" />
         <input type="hidden" asp-for="UserIdNew" />
@@ -71,7 +70,7 @@
 </html>
 
 
-
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
 <script type="text/javascript">
     $(document).ready(function () {
 
@@ -103,13 +102,13 @@
 
 
            let r = (Math.random() + 1).toString(36).substring(7);
-         
+
            window.location.href = '@Url.Action("GetUser", "UserDetail")' + '?UserId=' + selectedId + '&code=' + r;
         });
 
 
         $(function () {
-            var dateFormat = "MM/dd/yyyy",
+            //var dateFormat = "MM/dd/yyyy",
                 from = $("#StartDate")
                     .datepicker({
                         defaultDate: "+1w",
@@ -119,7 +118,7 @@
                     .on("change", function () {
                         to.datepicker("option", "minDate", getDate(this));
                     }),
-                to = $("#Enddate").datepicker({
+                to = $("#EndDate").datepicker({
                     defaultDate: "+1w",
                     changeMonth: true,
                     numberOfMonths: 1
@@ -129,6 +128,7 @@
                     });
 
             function getDate(element) {
+                debugger
                 var date;
                 try {
                     date = $.datepicker.parseDate(dateFormat, element.value);

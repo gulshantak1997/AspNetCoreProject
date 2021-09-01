@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using System.Collections.Generic;
 using System.Globalization;
 using System.Threading;
 
@@ -62,13 +63,23 @@ namespace AdminLTE1
             services.AddTransient<IEmailSender, EmailSender>();
 
 
-            CultureInfo cultureInfo = (CultureInfo)Thread.CurrentThread.CurrentCulture.Clone();
-            cultureInfo.DateTimeFormat.ShortDatePattern = "MM/dd/yyyy";
-            cultureInfo.DateTimeFormat.DateSeparator = "/";
-            Thread.CurrentThread.CurrentCulture = cultureInfo;
+            //CultureInfo cultureInfo = (CultureInfo)Thread.CurrentThread.CurrentCulture.Clone();
+            //cultureInfo.DateTimeFormat.ShortDatePattern = "MM/dd/yyyy";
+            //cultureInfo.DateTimeFormat.DateSeparator = "/";
+            ////cultureInfo.DateTimeFormat.LongDatePattern = "MM/dd/yyyy:";
+            //Thread.CurrentThread.CurrentCulture = cultureInfo;
+
+
+            //System.Globalization.CultureInfo customCulture = new System.Globalization.CultureInfo("en-US", true);
+            //customCulture.DateTimeFormat.ShortDatePattern = "MM/dd/yyyy h:mm tt";
+            //string shortUsDateFormatString = customCulture.DateTimeFormat.ShortDatePattern;
+            //string shortUsTimeFormatString = customCulture.DateTimeFormat.ShortTimePattern; 
+
+
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+          
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -10,17 +10,20 @@
         <strong>Success!</strong> @ViewBag.successMessage
     </div>
 }
+
+
+    <div class="card-header">
+        <a class="btn btn-primary" style="width:auto"
+           asp-controller="Home" asp-action="AddQuestions">
+            Add Question
+        </a>
+    </div>
+
 @if (Model.Any())
 {
     <div class="col-md-12">
         <div class="card">
 
-            <div class="card-header">
-                <a class="btn btn-primary" style="width:auto"
-                   asp-controller="Home" asp-action="AddQuestions">
-                    Add Question
-                </a>
-            </div>
             <div class="card-body p-0">
                 <table class="table">
                     <thead>

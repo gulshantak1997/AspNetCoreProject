@@ -9,90 +9,91 @@
 
 <html>
 <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="js/bsvalidate/jquery.bsvalidate.js"></script>
-        <script type="text/javascript" src="js/bsvalidate/main.js"></script>
-
-
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="css/bsvalidate/style.css">
-
-
-    @*<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
-    <script src="~/lib/jquery/dist/jquery.js"></script>
-    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>*@
-
-
-
+   
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 
 </head>
 <body>
 
     <div class="row">
 
-        <div class="col-md-6">
+        <div class="col-md-10">
 
-            <form method="post" id="Surveyform">
-
+            <form method="post">
 
                 @foreach (var item in Model)
                 {
-
+                    <br />
                     <div class="target" id="div_@item.Id">
 
-                        @item.Title
+                        <div class="row">
+                            <div class="col-sm-6 col-md-6 col-xs-12">
+                                <div class="form-group">
+                                    <label for="title">@item.Title</label>
+                                </div>
+                            </div>
+                        </div>
+
 
                         <input type="hidden" id="hnd_@item.Id" value="@item.Id" />
 
                         <input type="hidden" id="hndType_@item.Id" value="@item.Type" />
 
 
-
-                        @if (item.Type == AdminLTE1.Models.TitleType.TextBox.ToString())
+                        @if (item.Type == TitleType.TextBox.ToString())
                         {
-                        <div class="form-group">
-                            <input type="text" id="txt_@item.Id" class="form-control" required />
-                            <br />
-                            @*<span id="span_@item.Id" style="color:red;display:none; ">this is required</span>*@
+                            <div class="form-group">
+                                <input type="text" id="txt_@item.Id" />
 
-                        </div>
+                                <br />
+                                <span id="span_@item.Id" style="color:red;display:none; ">this is required</span>
+
+                            </div>
                         }
 
                         else if (@item.Type == TitleType.TextArea.ToString())
                         {
                             <div class="form-group">
-                                <textarea id="area_@item.Id" rows="5" cols="40"  required></textarea>
-                                <span></span>
+                                <textarea id="area_@item.Id" rows="5" cols="40"></textarea>
+                                <span id="span_@item.Id" style="color:red;display:none; ">this is required</span>
+
                             </div>
                         }
 
                         else if (@item.Type == TitleType.CheckBox.ToString())
                         {
 
-
                             <div class="form-group">
 
                                 @foreach (var inneritem in item.SelectList)
                                 {
-                                    <input type="checkbox" id="chk_@item.Id.ToString()_@inneritem.Value" value="@inneritem.Value" name="valcheckbox" required>
+                                    <input type="checkbox" id="chk_@item.Id.ToString()_@inneritem.Value" value="@inneritem.Value" />
                                     <label for="@item.Id.ToString()_@inneritem.Value"> @inneritem.Text</label><br>
-                                    <span></span>
+
                                 }
+
+                                <span id="span_@item.Id" style="color:red;display:none; ">this is required</span>
+
                             </div>
+
                         }
 
                         else if (@item.Type == TitleType.DropDown.ToString())
                         {
 
-
                             <div class="form-group">
                                 <select id="select_@item.Id">
+                                    <option value="">Select</option>
                                     @foreach (var inneritem in item.SelectList)
                                     {
                                         <option value="@inneritem.Value">@inneritem.Text</option>
                                     }
                                 </select>
+
+                                <span id="span_@item.Id" style="color:red;display:none; ">this is required</span>
+
                             </div>
                         }
 
@@ -102,11 +103,15 @@
                             <div class="form-group">
                                 @foreach (var inneritem in item.SelectList)
                                 {
-                                    <input type="radio" name="valradio_@item.Id.ToString()" id="radio_@item.Id.ToString()_@inneritem.Value" value="@inneritem.Value" required>
+                                    <input type="radio" name="radio_@item.Id.ToString()" id="radio_@item.Id.ToString()_@inneritem.Value" value="@inneritem.Value" />
                                     <label for="@item.Id.ToString()_@inneritem.Value"> @inneritem.Text</label><br>
-                                    <span></span>
                                 }
+
+
+                                <span id="span_@item.Id" style="color:red;display:none; ">this is required</span>
+
                             </div>
+
                         }
 
                         <br />
@@ -114,106 +119,198 @@
                     </div>
                 }
 
-
                 <button id="btnSave" type="button" class="btn btn-primary" asp-controller="Home" asp-action="SurveyPost">Save</button>
 
             </form>
 
-
-
         </div>
     </div>
 
-    @section Scripts {
-        <partial name="_ValidationScriptsPartial" />
-    }
+  
+    <script>
+        function validate() {
+
+            var validateNew = true;
+
+         
+
+            $(".target").each(function () {
+                var id = $(this).attr('id').split('_')[1];
+                var queid = $('#hnd_' + id).val();
+                var queType = $('#hndType_' + id).val();
+
+                if (queType == '@TitleType.CheckBox.ToString()') {
+                    var checkid = 'input:checkbox[id^=chk_' + queid.toString() + ']:checked';
+                    if ($(checkid).length > 0) {
+                        $('#span_' + id).hide();
+
+                    }
+                    else {
+                        $('#span_' + id).show();
+
+                        if (validateNew) {
+                            validateNew = false;
+                        }
+
+                    }
+                }
+                else if (queType == '@TitleType.RadioButton.ToString()') {
+                    var radioid = 'input:radio[id^=radio_' + queid.toString() + ']:checked';
+                    if ($(radioid).length > 0) {
+                        $('#span_' + id).hide();
+                    }
+                    else {
+                        $('#span_' + id).show();
+
+                        if (validateNew) {
+                            validateNew = false;
+                        }
+                    }
+                }
+
+                else if (queType == '@TitleType.DropDown.ToString()') {
+                    var dropid = '[id^=select_' + queid + ']';
+
+                    if ($(dropid).val() != "") {
+                        $('#span_' + id).hide();
+
+                    }
+                    else {
+                        $('#span_' + id).show();
 
 
+                        if (validateNew) {
+                            validateNew = false;
+                        }
+                    }
 
+                }
 
+                else if (queType == '@TitleType.TextBox.ToString()') {
 
+                    if ($('#txt_' + queid).val() != "") {
+                        $('#span_' + id).hide();
+                    }
+                    else {
+                        $('#span_' + id).show();
+
+                        if (validateNew) {
+                            validateNew = false;
+                        }
+                    }
+
+                }
+
+                else if (queType == '@TitleType.TextArea.ToString()') {
+
+                    if ($('#area_' + queid).val() != "") {
+                        $('#span_' + id).hide();
+                    }
+                    else {
+                        $('#span_' + id).show();
+
+                        if (validateNew) {
+                            validateNew = false;
+                        }
+                    }
+
+                }
+                //debugger
+            });
+
+            return validateNew;
+
+        }
+
+    </script>
 
 
     <script>
 
-    $(document).ready(function () {
+        $(document).ready(function () {
 
-        $("#btnSave").on('click', function (e) {
+            $("#btnSave").on('click', function (e) {
 
+                if (validate()) {
 
-                var arr = [];
-                $(".target").each(function () {
+                    var arr = [];
+                    $(".target").each(function () {
 
-                    var id = $(this).attr('id').split('_')[1];
-                    var queid = $('#hnd_' + id).val();
-                    var queType = $('#hndType_' + id).val();
-                    var answer = "";
-
-
-                    if (queType == '@TitleType.CheckBox.ToString()') {
-                        var chkans = "";
-                        var checkid = 'input:checkbox[id^=chk_' + queid.toString() + ']:checked';
-                        $(checkid).each(function () {
-                            if (chkans != "") {
-                                chkans = chkans + ',' + $(this).val();
-                            }
-                            else {
-                                chkans = $(this).val();
-                            }
-                        });
-                        answer = chkans;
-                    }
+                        var id = $(this).attr('id').split('_')[1];
+                        var queid = $('#hnd_' + id).val();
+                        var queType = $('#hndType_' + id).val();
+                        var answer = "";
 
 
-                    else if (queType == '@TitleType.RadioButton.ToString()') {
-                        var chkans = "";
-                        var radioid = 'input:radio[id^=radio_' + queid.toString() + ']:checked';
-                        $('input.radio').prop('disbled', true);
-                        chkans = $(radioid).val();
-                        answer = chkans;
-                    }
+                        if (queType == '@TitleType.CheckBox.ToString()') {
+                            var chkans = "";
+                            var checkid = 'input:checkbox[id^=chk_' + queid.toString() + ']:checked';
+                            $(checkid).each(function () {
+                                if (chkans != "") {
+                                    chkans = chkans + ',' + $(this).val();
+                                }
+                                else {
+                                    chkans = $(this).val();
+                                }
+                            });
+                            answer = chkans;
+                        }
 
-                    else if (queType == '@TitleType.DropDown.ToString()') {
-                        var chkans = "";
-                        var dropid = '[id^=select_' + queid + ']';
-                        chkans = $(dropid).val();
-                        answer = chkans;
-                    }
+                        else if (queType == '@TitleType.RadioButton.ToString()') {
+                            var chkans = "";
+                            var radioid = 'input:radio[id^=radio_' + queid.toString() + ']:checked';
+                            //$('input.radio').prop('disabled', true);
+                            chkans = $(radioid).val();
+                            answer = chkans;
+                        }
 
-                    else if (queType == '@TitleType.TextBox.ToString()') {
-                        answer = $('#txt_' + queid).val();
-                    }
+                        else if (queType == '@TitleType.DropDown.ToString()') {
+                            var chkans = "";
+                            var dropid = '[id^=select_' + queid + ']';
+                            chkans = $(dropid).val();
+                            answer = chkans;
+                        }
 
-                    else if (queType == '@TitleType.TextArea.ToString()') {
-                        answer = $('#area_' + queid).val();
-                    }
-                    requestData = {
-                        QuestionId: queid,
-                        Answer: answer,
-                        Type: queType
-                    }
-                    arr.push(requestData);
-                });
+                        else if (queType == '@TitleType.TextBox.ToString()') {
+                            answer = $('#txt_' + queid).val();
+                        }
 
-                $.ajax({
-                    url: '/Home/SurveyPost',
-                    type: 'POST',
-                    data: JSON.stringify(arr),
-                    dataType: 'json',
-                    contentType: 'application/json',
-                    error: function (xhr) {
-                        alert('Error: ' + xhr.statusText);
-                    },
-                    success: function (result) {
-                        alert(result);
+                        else if (queType == '@TitleType.TextArea.ToString()') {
+                            answer = $('#area_' + queid).val();
+                        }
+                        requestData = {
+                            QuestionId: queid,
+                            Answer: answer,
+                            Type: queType
+                        }
+                        arr.push(requestData);
+                    });
 
-                        window.location.href = '@Url.Action("SurveyPost", "Home")';
-                    }
-                });
-            //}
+                     debugger
+                    $.ajax({
+                        url: '/Home/SurveyPost',
+                        type: 'POST',
+                        data: JSON.stringify(arr),
+                        dataType: 'json',
+                        contentType: 'application/json',
+                        error: function (xhr) {
+                            alert('Error: ' + xhr.statusText);
+                        },
+                        success: function (result) {
+                            alert(result);
+
+                            window.location.href = '@Url.Action("SurveyPost", "Home")';
+                        }
+                    });
+                }
+
+                else {
+                    alert("Please fill all the required fields")
+                }
+
+            });
 
         });
-    });
     </script>
 
 </body>
