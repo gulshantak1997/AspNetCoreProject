@@ -11,6 +11,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Identity;
 using System.Security.Claims;
 using System.Globalization;
+using Microsoft.AspNetCore.Hosting;
+using System.IO;
+//using Microsoft.AspNetCore.Identity.UI.Services;
+using System.Net.Mail;
+using System.Net;
 
 namespace AdminLTE1.Controllers
 {
@@ -19,11 +24,13 @@ namespace AdminLTE1.Controllers
         private readonly AppDbContext _context;
         private readonly UserManager<ApplicationUser> _userManager;
 
+        private readonly IHostingEnvironment _hostingEnvironment;
 
-        public HomeController(UserManager<ApplicationUser> userManager, AppDbContext context)
+        public HomeController(UserManager<ApplicationUser> userManager, AppDbContext context, IHostingEnvironment hostingEnvironment)
         {
             _userManager = userManager;
             _context = context;
+            _hostingEnvironment = hostingEnvironment;
 
         }
 
@@ -190,38 +197,38 @@ namespace AdminLTE1.Controllers
 
             List<QuestionsRelatedValueViewModel> questionList = new List<QuestionsRelatedValueViewModel>();
 
-                var lstquestion = (from t in _context.Questions
-                                   select new Questions
-                                   {
-                                       Id = t.Id,
-                                       Title = t.Title,
-                                       Type = t.Type
-                                   }).ToList();
+            var lstquestion = (from t in _context.Questions
+                               select new Questions
+                               {
+                                   Id = t.Id,
+                                   Title = t.Title,
+                                   Type = t.Type
+                               }).ToList();
 
-                foreach (var item in lstquestion)
+            foreach (var item in lstquestion)
+            {
+                QuestionsRelatedValueViewModel questions = new QuestionsRelatedValueViewModel();
+                questions.Id = item.Id;
+                questions.Title = item.Title;
+                questions.Type = item.Type;
+
+                if (item.Type == TitleType.RadioButton.ToString() || item.Type == TitleType.CheckBox.ToString() || item.Type == TitleType.DropDown.ToString())
                 {
-                    QuestionsRelatedValueViewModel questions = new QuestionsRelatedValueViewModel();
-                    questions.Id = item.Id;
-                    questions.Title = item.Title;
-                    questions.Type = item.Type;
 
-                    if (item.Type == TitleType.RadioButton.ToString() || item.Type == TitleType.CheckBox.ToString() || item.Type == TitleType.DropDown.ToString())
-                    {
-
-                        questions.SelectList = (from que in _context.RelatedValues.Where(r => r.QuestionId == item.Id)
-                                                select new SelectListItem
-                                                {
-                                                    Value = que.Id.ToString(),
-                                                    Text = que.Values
-                                                }).ToList();
-                    }
-
-                    questionList.Add(questions);
-
+                    questions.SelectList = (from que in _context.RelatedValues.Where(r => r.QuestionId == item.Id)
+                                            select new SelectListItem
+                                            {
+                                                Value = que.Id.ToString(),
+                                                Text = que.Values
+                                            }).ToList();
                 }
 
+                questionList.Add(questions);
 
-                return View(questionList);
+            }
+
+
+            return View(questionList);
 
         }
 
@@ -313,6 +320,8 @@ namespace AdminLTE1.Controllers
 
         //    return Json("You have posted the feedback successfully");
         //}
+
+
 
     }
 }

@@ -103,7 +103,7 @@ namespace AdminLTE1.Areas.Identity.Pages.Account
             public string Address2 { get; set; }
 
 
-           
+
             [Display(Name = "Image")]
             public IFormFile ImageFile { get; set; }
 
@@ -135,21 +135,21 @@ namespace AdminLTE1.Areas.Identity.Pages.Account
 
 
 
-//           [AllowAnonymous]
-//public async Task<JsonResult> UserAlreadyExistsAsync(string email)
-//{
-//    var result = 
-//        await _userManager.FindByNameAsync(email) ?? 
-//        await userManager.FindByEmailAsync(email);
-//    return Json(result == null, JsonRequestBehavior.AllowGet);
-//}
+            //           [AllowAnonymous]
+            //public async Task<JsonResult> UserAlreadyExistsAsync(string email)
+            //{
+            //    var result = 
+            //        await _userManager.FindByNameAsync(email) ?? 
+            //        await userManager.FindByEmailAsync(email);
+            //    return Json(result == null, JsonRequestBehavior.AllowGet);
+            //}
 
         }
 
 
 
 
-       
+
 
         public void OnGet(string returnUrl = null)
         {
@@ -159,7 +159,7 @@ namespace AdminLTE1.Areas.Identity.Pages.Account
         }
 
 
-        
+
         public async Task<IActionResult> OnPostAsync(string returnUrl = null)
         {
             returnUrl = returnUrl ?? Url.Content("~/");
@@ -198,31 +198,34 @@ namespace AdminLTE1.Areas.Identity.Pages.Account
                 }
 
 
-        //{
-        //    var file = user.ImageUpload;
+                //{
+                //    var file = user.ImageUpload;
 
-        ////Get the path of the folder Images in the wwwroot file
-        //var uploads = Path.Combine(_hostingEnvironment.WebRootPath, "Images");
-        //var filePathName = ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
-        //var fileExtention = Path.GetExtension(filePathName);
-        //var fileName = Guid.NewGuid().ToString("N").Substring(0, 6) + fileExtention;
-        //var path = Path.Combine(uploads, fileName);
-
-
-
-        //var stream = new MemoryStream();
-
-        //var stringBytes = Encoding.UTF8.GetBytes(path);
-        //stream.Write(stringBytes, 0, stringBytes.Length);
-
-        //await file.CopyToAsync(stream);
+                ////Get the path of the folder Images in the wwwroot file
+                //var uploads = Path.Combine(_hostingEnvironment.WebRootPath, "Images");
+                //var filePathName = ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
+                //var fileExtention = Path.GetExtension(filePathName);
+                //var fileName = Guid.NewGuid().ToString("N").Substring(0, 6) + fileExtention;
+                //var path = Path.Combine(uploads, fileName);
 
 
 
+                //var stream = new MemoryStream();
 
-        var result = await _userManager.CreateAsync(user, Input.Password);
+                //var stringBytes = Encoding.UTF8.GetBytes(path);
+                //stream.Write(stringBytes, 0, stringBytes.Length);
+
+                //await file.CopyToAsync(stream);
+
+
+
+
+                var result = await _userManager.CreateAsync(user, Input.Password);
                 if (result.Succeeded)
                 {
+                    var roleName = "User";
+                    await _userManager.AddToRoleAsync(user ,roleName);
+
                     _logger.LogInformation("User created a new account with password.");
 
                     var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
@@ -244,13 +247,14 @@ namespace AdminLTE1.Areas.Identity.Pages.Account
                         await _signInManager.SignInAsync(user, isPersistent: false);
                         return LocalRedirect(returnUrl);
                     }
-                    //await _signInManager.SignInAsync(user, isPersistent: false);
-                    //return LocalRedirect(returnUrl);
+
+
                 }
                 foreach (var error in result.Errors)
                 {
                     ModelState.AddModelError(string.Empty, error.Description);
                 }
+
             }
 
             // If we got this far, something failed, redisplay form

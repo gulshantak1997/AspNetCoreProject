@@ -36,6 +36,12 @@ namespace AdminLTE1.Services
             smtpClient.Send(message);
         }
 
+
+
+    
+
+
+
     }
 }
 

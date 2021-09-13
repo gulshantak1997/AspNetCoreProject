@@ -1,0 +1,420 @@
+﻿@model IEnumerable<AdminLTE1.Models.Users>
+@{
+    ViewBag.Title = "Leave";
+
+    if (User.Identity.IsAuthenticated)
+    {
+        Layout = "~/Views/Shared/_Layout.cshtml";
+        
+    }
+    else
+    {
+        Layout = "~/Views/Shared/_NormalLayout.cshtml";
+    }
+}
+
+
+<div id="calendar"></div>
+
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title"><span id="eventTitle"></span></h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <button id="btnDelete" class="btn btn-default btn-sm pull-right" style="display:none">
+                    <span class="glyphicon glyphicon-remove"></span> Remove
+                </button>
+                <button id="btnEdit" class="btn btn-default btn-sm pull-right" style="margin-right:5px;display:none">
+                    <span class="glyphicon glyphicon-pencil"></span> Edit
+                </button>
+                <button id="btnUnApprove" class="btn btn-default btn-sm pull-right" style="margin-right:5px;display:none"> UnApprove </button>
+                <button id="btnApprove" class="btn btn-default btn-sm pull-right" style="margin-right:5px;display:none"> Approve </button>
+                <p id="pDetails"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="myModalSave" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Manage Leave</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form class="col-md-12 form-horizontal">
+                    <input type="hidden" id="hdEventID" value="0" />
+
+                    <div class="form-group">
+                        <label>Leave Start Date</label>
+                        <input type="text" id="txtStart" class="form-control" autocomplete="off" />
+                    </div>
+                    <div class="form-group" id="divEndDate">
+                        <label>End Date</label>
+                        <input type="text" id="txtEnd" class="form-control" autocomplete="off" />
+                    </div>
+                    <div class="form-group">
+                        <div class="checkbox">
+                            <label><input type="checkbox" id="chkIsHalfDay" />  Is Half Day leave</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Reason for Leave</label>
+                        <textarea id="txtReason" rows="3" class="form-control"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Who will take care of the work given to me in my absence?</label>
+                        <select id="handOverId" class="form-control">
+                            <option value="">Select</option>
+                            @foreach (var item in Model)
+                            {
+                                <option value="@item.UserId">@item.UserName</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Work Handover Description:</label>
+                        <textarea id="txtDescription" rows="3" class="form-control"></textarea>
+                    </div>
+                    <button type="button" id="btnSave" class="btn btn-success">Save</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<link href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.css" rel="stylesheet" />
+<link href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.print.css" rel="stylesheet" media="print" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+@section Scripts{
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script>
+
+        $(document).ready(function () {
+            var selectedEvent = null;
+            FetchEventAndRenderCalendar();
+            function FetchEventAndRenderCalendar() {
+                var events = [];
+
+                $.ajax({
+                    type: "GET",
+                    url: "/FinalProject/GetLeaveEvent",
+                    success: function (data) {
+                        $.each(data, function (i, v) {
+                            events.push({
+                                eventId: v.Id,
+                                //title:"Someone applied for leave",
+                                //title: leaveUser,
+                                userId: v.UserId,
+                                start: v.StartDate,
+                                //end: moment(v.EndDate).add(1, 'days'),
+                                end: v.EndDate,
+                                halfDay: v.IsHalfDay,
+                                reason: v.Reason,
+                                description: v.Description,
+                                handOverPId: v.HandOverPId,
+                                status: v.Status,
+                            });
+                        });
+                        GenerateCalender(events);
+                    },
+                    error: function (error) {
+                        alert('failed');
+                    }
+                });
+            }
+
+            function GenerateCalender(events) {
+
+                $('#calendar').fullCalendar('destroy');
+                $('#calendar').fullCalendar({
+                    contentHeight: 400,
+                    defaultDate: new Date(),
+                    header: {
+                        left: 'prev,next today',
+                        center: 'title',
+                        right: 'month,basicWeek,basicDay'
+                    },
+                    //eventLimit: true,
+                    eventColor: '#378006',
+                    events: events,
+                    displayEventTime: false,
+                    eventClick: function (calEvent) {
+                        selectedEvent = calEvent;
+                        UserFirstLastName();
+                        function UserFirstLastName() {
+                            $.ajax({
+                                type: "Get",
+                                url: '/FinalProject/UserFirstLastName',
+                                data: $('#hdEventID').val(selectedEvent.eventId),
+                                success: function (data) {
+                                     var leaveUser = data.leaveUserFirstLastName;
+                                    var handOverUser = data.handOverFirstLastName;
+
+                                    var $description = $('<div/>');
+                                    $description.append($('<p/>').html('<b>Status: </b>' + calEvent.status));
+                                    $description.append($('<p/>').html('<b>Leave User Name: </b>' + leaveUser));
+                                    $description.append($('<p/>').html('<b>Start: </b>' + calEvent.start.format("DD-MMM-YYYY")));
+                                    $description.append($('<p/>').html('<b>End: </b>' + calEvent.end.format("DD-MMM-YYYY")));
+                                    $description.append($('<p/>').html('<b>IsHalfDay: </b>' + calEvent.halfDay));
+                                    $description.append($('<p/>').html('<b>Reason: </b>' + calEvent.reason));
+                                    $description.append($('<p/>').html('<b>Description: </b>' + calEvent.description));
+                                    $description.append($('<p/>').html('<b>Hand Over Person Name: </b>' + handOverUser));
+
+                                    $('#myModal #pDetails').empty().html($description);
+                                    $('#myModal').modal();
+                                },
+                                error: function () {
+                                    alert('Failed');
+                                }
+                            });
+                        }
+
+
+                        if (calEvent.status == "Pending") {
+                            if (calEvent.userId=='@ViewBag.userId') {
+
+                                $('#btnEdit').show();
+                                $('#btnDelete').show();
+                            }
+                            else {
+                                $('#btnEdit').hide();
+                                $('#btnDelete').hide();
+                            }
+                            if ('@ViewBag.userId'=='@ViewBag.headUser') {
+                                $("#btnApprove").show();
+                                $("#btnUnApprove").show();
+                            }
+                            else {
+                                $("#btnApprove").hide();
+                                $("#btnUnApprove").hide();
+                            }
+                        }
+                    },
+
+                    selectable: true,
+                    select: function (start, end) {
+                        if (moment().diff(start, 'days') > 0) {
+                            $('#calendar').fullCalendar('unselect');
+                            alert('Please select present or future date');
+                            return false;
+                        }
+
+                        selectedEvent = {
+                            eventId: 0,
+                            title: '',
+                            description: '',
+                            start: start,
+                            end: moment(end).subtract(1,'days'),
+                            halfDay: false,
+                            reason: '',
+                            description: '',
+                        };
+
+
+                        openAddEditForm();
+                    }
+                });
+            }
+
+
+
+            $('#btnEdit').click(function () {
+                //Open modal dialog for editing the event
+                openAddEditForm();
+            });
+
+
+            $('#btnApprove').click(function () {
+                if (confirm('Are you sure you wants to approve the leave?')) {
+                    $.ajax({
+                        type: 'GET',
+                        url: '/FinalProject/ApproveLeave',
+                        data: { 'eventID': selectedEvent.eventId },
+                        success: function (data) {
+                            if (data.status) {
+                                FetchEventAndRenderCalendar();
+                                $('#myModal').modal('hide');
+                            }
+                        },
+                        error: function () {
+                            alert('Failed');
+                        }
+                    });
+                }
+
+            });
+
+            $('#btnUnApprove').click(function () {
+                if (confirm('Are you sure you wants to Unapprove the leave?')) {
+                    $.ajax({
+                        type: 'GET',
+                        url: '/FinalProject/UnApproveLeave',
+                        data: { 'eventID': selectedEvent.eventId },
+                        success: function (data) {
+                            if (data.status) {
+                                FetchEventAndRenderCalendar();
+                                $('#myModal').modal('hide');
+                            }
+                        },
+                        error: function () {
+                            alert('Failed');
+                        }
+                    });
+                }
+
+            });
+
+            $('#btnDelete').click(function () {
+                if (selectedEvent != null && confirm('Are you sure?')) {
+
+                    $.ajax({
+                        type: "POST",
+                        url: '/FinalProject/DeleteLeave',
+                        data: { 'eventID': selectedEvent.eventId },
+                        success: function (data) {
+
+                            if (data.status) {
+
+                                //Refresh the calendar
+                                FetchEventAndRenderCalendar();
+                                $('#myModal').modal('hide');
+                            }
+                        },
+                        error: function () {
+                            alert('Failed');
+                        }
+                    });
+                }
+            });
+
+            $('#txtStart,#txtEnd').datepicker({
+                dateFormat: "dd/mm/yy",
+                minDate: new Date()
+            });
+
+
+            function openAddEditForm() {
+
+                $("#handOverId").val("");
+                if (selectedEvent != null) {
+                    $('#hdEventID').val(selectedEvent.eventId);
+                    $('#txtStart').val(selectedEvent.start.format('DD/MM/YYYY'));
+                    $('#txtEnd').val(selectedEvent.end.format('DD/MM/YYYY'));
+                    $('#chkIsHalfDay').prop("checked", selectedEvent.halfDay || false);
+                    $('#chkIsHalfDay').change();
+                    $('#txtReason').val(selectedEvent.reason);
+                    $('#txtDescription').val(selectedEvent.description);
+
+                    if (selectedEvent.eventId > 0) {
+                        $.ajax({
+                            type: "Get",
+                            url: '/FinalProject/GetHandOverPId',
+                            data: $('#hdEventID').val(selectedEvent.eventId),
+                            success: function (data) {
+                                debugger;
+
+                                $("#handOverId").find("option[value=" + data+ "]").prop("selected", true);
+                            },
+                            error: function () {
+                                alert('Failed');
+                            }
+                        });
+                    }
+
+                    $('#myModal').modal('hide');
+
+                    $('#myModalSave').modal();
+                }
+            }
+
+                $('#btnSave').click(function () {
+                    //Validation
+                    if ($('#txtStart').val().trim() == "") {
+                        alert('Start date required');
+                        return;
+                    }
+                    if ($('#txtEnd').val().trim() == "") {
+                        alert('End date required');
+                        return;
+                    }
+
+                    if ($('#txtReason').val().trim() == "") {
+                        alert('Reason required');
+                        return;
+                    }
+
+                    if ($('#handOverId option:selected').val().trim() == "") {
+                        alert('Hand Over Person Id required');
+                        return;
+                    }
+
+                    if ($('#txtDescription').val().trim() == "") {
+                        alert('Description required');
+                        return;
+                    }
+                    else {
+                        var startDate = moment($('#txtStart').val(), "DD/MM/YYYY").toDate();
+                        var endDate = moment($('#txtEnd').val(), "DD/MM/YYYY").toDate();
+                        if (startDate > endDate) {
+                            alert('Invalid end date');
+                            return;
+                        }
+                    }
+                    var EndDateUpdate = $('#txtEnd').val().trim();
+                    var data = {
+                        Id: $('#hdEventID').val(),
+                        StartDate: $('#txtStart').val().trim(),
+                        EndDate: EndDateUpdate + " 20:00:00",
+                        IsHalfDay: $('#chkIsHalfDay').is(':checked'),
+                        Reason: $('#txtReason').val(),
+                        HandOverPId: $('#handOverId option:selected').val(),
+                        Description: $('#txtDescription').val()
+                    }
+
+                    SaveEvent(data);
+
+                });
+
+                function SaveEvent(data) {
+                    $.ajax({
+                        type: "POST",
+                        url: '/FinalProject/SaveLeaveEvent',
+                        data: data,
+                        success: function (data) {
+
+                            if (data.status) {
+
+                                //Refresh the calendar
+                                FetchEventAndRenderCalendar();
+                                $('#myModalSave').modal('hide');
+                            }
+                        },
+                        error: function () {
+                            alert('Failed');
+                        }
+                    });
+                }
+
+            });
+
+
+    </script>
+}

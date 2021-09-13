@@ -25,6 +25,7 @@ namespace AdminLTE1.Controllers
 
             CultureInfo cultureInfo = (CultureInfo)Thread.CurrentThread.CurrentCulture.Clone();
             cultureInfo.DateTimeFormat.ShortDatePattern = "MM/dd/yyyy";
+            //cultureInfo.DateTimeFormat.ShortDatePattern = "dd/MM/yyyy";
             cultureInfo.DateTimeFormat.DateSeparator = "/";
             Thread.CurrentThread.CurrentCulture = cultureInfo;
         }

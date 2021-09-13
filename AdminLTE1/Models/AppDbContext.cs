@@ -37,6 +37,11 @@ namespace AdminLTE1.Models
 
         public DbSet<SurveyUrl> SurveyURL { get; set; }
 
+        public DbSet<Event> Event { get; set; }
+        public DbSet<Attendees> Attendees{ get; set; }
+
+        public DbSet<Head> Head{ get; set; }
+        public DbSet<Leave> Leave{ get; set; }
 
 
     }
